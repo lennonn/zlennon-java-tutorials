@@ -1,0 +1,2 @@
+[12:15:26:386] [INFO] - com.zlennon.spi.impl.ChineseGreeting.greeting(ChineseGreeting.java:10) - 你好，Java SPI
+[12:15:26:412] [INFO] - com.zlennon.spi.impl.EnglishGreeting.greeting(EnglishGreeting.java:11) - Hello,Java SPI

@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: cloud-stream-service
+  profiles:
+    active: kafka
+server:
+  port: 7777

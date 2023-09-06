@@ -1,0 +1,13 @@
+server:
+  port: 7003
+
+spring:
+  application:
+    name: cloud-config-server
+  cloud:
+    config:
+      server:
+        git:
+          default-label: master
+          uri: https://github.com/lennonn/spring-cloud-config
+          search-paths: /

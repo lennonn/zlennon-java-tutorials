@@ -1,0 +1,49 @@
+spring:
+  application:
+    name: account-service
+  datasource:
+    url: jdbc:mysql://localhost:3306/seata_account?useSSL=false
+    username: root
+    password: 123456
+    #type:  com.alibaba.druid.pool.DruidDataSource
+  jpa:
+    database-platform: org.hibernate.dialect.MySQLDialect
+    hibernate.ddl-auto: update
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: guest
+    password: guest
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+        auto-register: true
+        group: SEATA-GROUP
+    consul:
+      host: 127.0.0.1
+      port: 8500
+      config:
+        enabled: false
+      discovery:
+        enabled: true
+        register: true
+        instance-id: ${spring.application.name}-${server.port}
+        health-check-path: /actuator/health
+        health-check-interval: 30s
+  profiles:
+    active: seata-xa
+
+server:
+  port: 6002
+
+
+springdoc:
+  swagger-ui.path: /swagger-ui.html
+
+logging:
+  level:
+    org.springframework.data: ERROR
+    com.netflix: ERROR
+  pattern:
+    console: '%d{yyyy-MM-dd HH:mm:ss:SSS} [S=${APP_NAME:-}] [T=%X{traceId}] %-5level %logger{36}.%L %msg%n'

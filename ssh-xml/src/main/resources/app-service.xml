@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans default-lazy-init="default" default-autowire="byName"
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+						http://www.springframework.org/schema/beans/spring-beans-4.1.xsd">
+	<import resource="classpath:app-dao.xml"/>
+	<bean id="transactionService" class="com.zl.service.spring.TransactionService">
+		 <property name="transactionDAO" ref="transactionDAO"></property>
+	</bean>
+
+</beans>

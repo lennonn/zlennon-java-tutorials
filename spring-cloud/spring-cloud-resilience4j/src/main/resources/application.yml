@@ -1,0 +1,33 @@
+server:
+  port: 7200
+spring:
+  application:
+    name: circuit-breaker-service
+management:
+  health:
+    circuitbreakers:
+      enabled: true
+    ratelimiters:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      enabled: true
+      show-details: always
+resilience4j.bulkhead:
+  instances:
+    myBulkhead:
+      maxWaitDuration: 100
+      maxConcurrentCalls: 2
+resilience4j:
+ retry:
+  instances:
+    myRetry:
+      maxRetryAttempts: 6
+      waitDuration: 1s
+      retryExceptions: java.net.ConnectException
+      enableExponentialBackoff: true
+      exponentialBackoffMultiplier: 2

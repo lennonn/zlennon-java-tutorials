@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JS Study</title>
+<script type="text/javascript">
+	function off_on_bulb() {
+		var img_blub = document.getElementById("img_blub");
+		if (img_blub.src.match("bulbon")) {
+			img_blub.src = "images/bulboff.gif";
+		} else {
+			img_blub.src = "images/bulbon.gif";
+		}
+	}
+</script>
+</head>
+<body>
+	<p>请点击下面的图片实现开灯与关灯</p>
+	<img id="img_blub" alt="bulb" src="images/bulboff.gif"
+		onclick="off_on_bulb();" />
+</body>
+</html>

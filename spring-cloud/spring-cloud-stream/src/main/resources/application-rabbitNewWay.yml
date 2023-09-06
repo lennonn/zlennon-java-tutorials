@@ -1,0 +1,17 @@
+spring:
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: guest
+    password: guest
+  cloud:
+    stream:
+      bindings:
+        modelId-out-0:
+          destination: model-id
+        model-in-0:
+          destination: model
+      function:
+        definition: modelId;model
+  zipkin:
+    baseUrl: http://127.0.0.1:9411/

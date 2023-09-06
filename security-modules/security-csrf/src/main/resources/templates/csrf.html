@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Thymeleaf Example</title>
+</head>
+<meta name="_csrf" content="${_csrf.token}"/>
+<meta name="_csrf_header" content="${_csrf.headerName}"/>
+<body>
+<h1>Welcome to Thymeleaf!</h1>
+<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+
+<p th:text="'Hello, ' + ${name} + '!'"></p>
+
+<p><a href="/csrf/index" th:href="@{/csrf/index}">csrf</a></p>
+
+</body>
+<script>
+    var token = $("meta[name='_csrf']").attr("content");
+    var header = $("meta[name='_csrf_header']").attr("content");
+    alert(token+"=="+header);
+</script>
+</html>

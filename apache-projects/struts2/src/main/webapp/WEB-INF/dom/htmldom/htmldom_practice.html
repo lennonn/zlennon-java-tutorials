@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>html_dom study</title>
+<style type="text/css">
+body{
+	background-image:url("images/html_dom1.gif");
+	background-repeat:no-repeat;
+	background-position: right;
+	background-attachment: fixed;
+}
+.html_dom{
+	background-color: highlight;
+}
+.html_dom.button{
+	font: 12px;
+	background-color: green;
+}
+</style>
+<script type="text/javascript">
+function obtainh1(){
+	var para=document.createElement("p");
+	var node=document.createTextNode("This is new.");
+	para.appendChild(node);
+	var content =document.getElementById("button1");
+	content.appendChild(para);
+	document.write("Content h1 is:"+content.innerHTML);
+}
+function showDate(){
+	document.getElementById("button2").innerHTML=Date();
+}
+
+function mOver(obj)
+{
+obj.innerHTML="Thank You"
+}
+
+function mOut(obj)
+{
+obj.innerHTML="Mouse Over Me"
+}
+</script>
+
+<body>
+	<h1>html_dom study ,do something</h1>
+
+	<div class="html_dom">
+		<button id="button1" onclick="obtainh1();">obtain content of h1</button>
+		<button id="button2" onclick="showDate();">showDate</button>
+		<button id="button3" onmouseenter="mOver(this)" onmousedown="mOut(this)">mouse operator</button>
+	</div>
+</body>
+</html>

@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: chatgpt-api-service
+  cloud:
+    consul:
+      host: 127.0.0.1
+      port: 8500
+      config:
+        enabled: false
+  zipkin:
+    baseUrl: http://127.0.0.1:9411/

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Spring Authorization Server sample</title>
+    <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.css" th:href="@{/webjars/bootstrap/css/bootstrap.css}" />
+</head>
+<body>
+<div th:replace="~{page-templates :: navbar}"></div>
+<div class="container">
+        <p>"sub": <span th:text="${messages.sub}"></span></p>
+        <p>"name": <span th:text="${messages.name}"></span></p>
+        <p>"given_name": <span th:text="${messages.given_name}"></span></p>
+        <p>"family_name": <span th:text="${messages.family_name}"></span></p>
+        <p>"middle_name": <span th:text="${messages.middle_name}"></span></p>
+        <p>"nickname": <span th:text="${messages.nickname}"></span></p>
+        <p>"preferred_username": <span th:text="${messages.preferred_username}"></span></p>
+        <p>"profile": <span th:text="${messages.profile}"></span></p>
+        <p>"picture": <span th:text="${messages.picture}"></span></p>
+        <p>"website": <span th:text="${messages.website}"></span></p>
+        <p>"email": <span th:text="${messages.email}"></span></p>
+        <p>"email_verified": <span th:text="${messages.email_verified}"></span></p>
+        <p>"gender": <span th:text="${messages.gender}"></span></p>
+        <p>"birthdate": <span th:text="${messages.birthdate}"></span></p>
+        <p>"zoneinfo": <span th:text="${messages.zoneinfo}"></span></p>
+        <p>"locale": <span th:text="${messages.locale}"></span></p>
+        <p>"phone_number": <span th:text="${messages.phone_number}"></span></p>
+        <p>"phone_number_verified": <span th:text="${messages.phone_number_verified}"></span></p>
+        <p>"address": <span th:text="${messages.address}"></span></p>
+        <p>"updated_at": <span th:text="${messages.updated_at}"></span></p>
+</div>
+<script src="/webjars/bootstrap/js/bootstrap.bundle.min.js" th:src="@{/webjars/bootstrap/js/bootstrap.bundle.min.js}"></script>
+<script src="/webjars/jquery/jquery.min.js" th:src="@{/webjars/jquery/jquery.min.js}"></script>
+<script src="/webjars/popper.js/umd/popper.js" th:src="@{/webjars/popper.js/umd/popper.js}"></script>
+</body>
+</html>

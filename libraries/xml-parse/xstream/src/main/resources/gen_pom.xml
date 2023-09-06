@@ -1,0 +1,11 @@
+<Project>
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.zlennon</groupId>
+    <relativePath>../pom.xml</relativePath>
+    <artifactId>xml-parse</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  <artifactId>xstream</artifactId>
+  <packaging>pom</packaging>
+</Project>

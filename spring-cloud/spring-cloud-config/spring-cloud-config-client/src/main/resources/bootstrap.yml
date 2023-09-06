@@ -1,0 +1,39 @@
+server:
+  port: 7004
+spring:
+  application:
+    name: cloud-config-client-service
+  profiles:
+    active: dev
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+  config:
+    import: optional:configserver:http://localhost:7005
+  cloud:
+    config:
+      label: master
+      name: dev #需要从github上读取的资源名称，注意没有yml后缀名
+      profile: dev   #本次访问的配置项
+      #uri: http://localhost:7005
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        enabled: true
+        register: true
+        instance-id: ${spring.application.name}-${server.port}
+        health-check-path: /actuator/health
+        health-check-interval: 30s
+management:
+  security:
+    enabled: false
+  endpoints: #actuator endpoints are not exposed by default
+    web:
+      exposure:
+        include: "*"
+logging:
+  level:
+    org.springframework.cloud.bus: debug

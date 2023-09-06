@@ -1,0 +1,32 @@
+
+spring:
+  application:
+    name: chatgpt-model-service
+  datasource:
+    url: jdbc:mysql://localhost:3306/chatgpt?serverTimezone=UTC&useSSL=false
+    username: root
+    password: 123456
+  jpa:
+    hibernate:
+      ddl-auto: update
+      show-sql: false
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: guest
+    password: guest
+  cloud:
+    stream:
+      defaultBinder: rabbit
+      modelId-in-0:
+        destination: model-id
+      model-out-0:
+        destination: model
+      function:
+        definition: modelId;model
+
+  #zipkin:
+  #  baseUrl: http://127.0.0.1:9411/
+
+server:
+  port: 7888

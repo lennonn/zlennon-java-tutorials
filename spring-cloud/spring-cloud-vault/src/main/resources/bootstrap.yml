@@ -1,0 +1,21 @@
+spring:
+  profiles:
+    active: http
+  application:
+    name: fakebank
+  cloud:
+    vault:
+      host: localhost
+      port: 8200
+      scheme: http
+      token: hvs.QLpOfMBHl6A1lA2zGbqYKYlP
+  datasource:
+    url: jdbc:mysql://localhost:3306/fakebank?serverTimezone=GMT-3
+    hikari:
+      connection-test-query: select 1
+      idle-timeout: 5000
+      max-lifetime: 120000
+      maximum-pool-size: 5
+      minimum-idle: 5
+      password: ${dbpassword}
+      username: ${dbusername}

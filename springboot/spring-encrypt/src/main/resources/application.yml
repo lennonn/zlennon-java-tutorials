@@ -1,0 +1,13 @@
+jasypt:
+  encryptor:
+    password: encrypt
+    algorithm: PBEWithMD5AndTripleDES
+    iv-generator-classname: org.jasypt.iv.NoIvGenerator
+
+spring:
+  application:
+    name: encrypt-service
+  datasource:
+    url: jdbc:mysql://localhost:3306/chatgpt?useSSL=false
+    username: root
+    password: ENC(msDTQnolu787ikK3Q4be+Abz6MZg=)

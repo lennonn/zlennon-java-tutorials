@@ -1,0 +1,568 @@
+{
+  "nodes": [
+    {
+      "type": "node",
+      "size": "39*39",
+      "shape": "flow-circle",
+      "color": "red",
+      "label": "AccountCatch",
+      "stateId": "AccountCatch",
+      "stateType": "Catch",
+      "x": 440.71874084472654,
+      "y": 564.3499965667725,
+      "id": "92902297",
+      "index": 31
+    },
+    {
+      "type": "node",
+      "size": "110*48",
+      "shape": "flow-capsule",
+      "color": "red",
+      "label": "Compensation\nTrigger",
+      "stateId": "CompensationTrigger3",
+      "stateType": "CompensationTrigger",
+      "x": 137.7187408447266,
+      "y": 564.3499965667725,
+      "id": "57ce3633",
+      "index": 7
+    },
+    {
+      "type": "node",
+      "size": "72*72",
+      "shape": "flow-circle",
+      "color": "#FA8C16",
+      "label": "Start",
+      "stateId": "Start1",
+      "stateType": "Start",
+      "stateProps": {
+        "StateMachine": {
+          "Name": "CreateOrder",
+          "Comment": "",
+          "Version": "0.0.1"
+        },
+        "Next": "CreateOrderAction"
+      },
+      "x": 513.7187408447265,
+      "y": -103.10000228881836,
+      "id": "1c4fad42",
+      "index": 16
+    },
+    {
+      "type": "node",
+      "size": "110*48",
+      "shape": "flow-rect",
+      "color": "#1890FF",
+      "label": "CreateOrderAction",
+      "stateId": "CreateOrderAction",
+      "Next": "UpdateProductAction",
+      "stateType": "ServiceTask",
+      "stateProps": {
+        "ServiceName": "orderSagaAction",
+        "ServiceMethod": "placeOrder",
+        "Input": [
+          "$.[productId]",
+          "$.[quantity]",
+          "$.[customerId]"
+        ],
+        "Output": {
+          "orderResult": "$.#root"
+        },
+        "Status": {
+          "#root == true": "SU",
+          "#root == false": "FA",
+          "$Exception{java.lang.Throwable}": "UN"
+        },
+        "Retry": []
+      },
+      "x": 513.7187408447265,
+      "y": 7.899997711181641,
+      "id": "9f8172a2",
+      "index": 17
+    },
+    {
+      "type": "node",
+      "size": "110*48",
+      "shape": "flow-rect",
+      "color": "#1890FF",
+      "label": "UpdateProductAction",
+      "stateId": "UpdateProductAction",
+      "stateType": "ServiceTask",
+      "stateProps": {
+        "ServiceName": "productSagaAction",
+        "ServiceMethod": "reduceProduct",
+        "Input": [
+          "$.[productId]",
+          "$.[quantity]"
+        ],
+        "Output": {},
+        "Status": {},
+        "Retry": []
+      },
+      "x": 513.2187408447265,
+      "y": 248.84999656677246,
+      "id": "c5b1a820",
+      "index": 18
+    },
+    {
+      "type": "node",
+      "size": "110*48",
+      "shape": "flow-rect",
+      "color": "#1890FF",
+      "label": "UpdateAccountAction",
+      "stateId": "UpdateAccountAction",
+      "stateType": "ServiceTask",
+      "Next": "Succeed",
+      "stateProps": {
+        "ServiceName": "com.zlennon.account.service.saga.AccountSagaActionImpl",
+        "ServiceMethod": "withdrawl",
+        "Input": [
+          "$.[productId]",
+          "$.[amount]"
+        ],
+        "Output": {},
+        "Status": {},
+        "Retry": []
+      },
+      "x": 513.2187408447265,
+      "y": 543.8499965667725,
+      "id": "04d9e080",
+      "index": 19
+    },
+    {
+      "type": "node",
+      "size": "72*72",
+      "shape": "flow-circle",
+      "color": "#05A465",
+      "label": "Succeed",
+      "stateId": "Succeed",
+      "stateType": "Succeed",
+      "x": 513.2187408447265,
+      "y": 879.8499965667725,
+      "id": "b4cc700e",
+      "index": 20
+    },
+    {
+      "type": "node",
+      "size": "80*72",
+      "shape": "flow-rhombus",
+      "color": "#13C2C2",
+      "label": "CreateOrderChoice",
+      "stateId": "CreateOrderChoice",
+      "stateType": "Choice",
+      "x": 513.2187408447265,
+      "y": 112.04999923706055,
+      "id": "97c92be3",
+      "index": 21,
+      "stateProps": {
+        "Type": "Choice",
+        "Choices": [
+          {
+            "Expression": "[orderResult] == true",
+            "Next": "UpdateProductAction"
+          }
+        ],
+        "Default": "Fail"
+      }
+    },
+    {
+      "type": "node",
+      "size": "72*72",
+      "shape": "flow-circle",
+      "color": "red",
+      "label": "Fail",
+      "stateId": "Fail1",
+      "stateType": "Fail",
+      "stateProps": {
+        "ErrorCode": "",
+        "Message": ""
+      },
+      "x": 138.2187408447266,
+      "y": 112.54999923706055,
+      "id": "227d3f2b",
+      "index": 22
+    },
+    {
+      "type": "node",
+      "size": "80*72",
+      "shape": "flow-rhombus",
+      "color": "#13C2C2",
+      "label": "UpdateProductChoice",
+      "stateId": "Choice2",
+      "stateType": "Choice",
+      "stateProps": {
+        "Type": "Choice",
+        "Choices": [
+          {
+            "Expression": "[productResult] == true",
+            "Next": "UpdateAccountAction"
+          }
+        ],
+        "Default": "Fail"
+      },
+      "x": 513.2187408447265,
+      "y": 387.84999656677246,
+      "id": "859fb472",
+      "index": 23
+    },
+    {
+      "type": "node",
+      "size": "72*72",
+      "shape": "flow-circle",
+      "color": "red",
+      "label": "Fail",
+      "stateId": "Fail2",
+      "stateType": "Fail",
+      "stateProps": {
+        "ErrorCode": "",
+        "Message": ""
+      },
+      "x": 137.2187408447266,
+      "y": 388.34999656677246,
+      "id": "b4db1c11",
+      "index": 24
+    },
+    {
+      "type": "node",
+      "size": "80*72",
+      "shape": "flow-rhombus",
+      "color": "#13C2C2",
+      "label": "UpdateAccountChoice",
+      "stateId": "UpdateAccountChoice",
+      "stateType": "Choice",
+      "stateProps": {
+        "Type": "Choice",
+        "Choices": [
+          {
+            "Expression": "[accountResult] == true",
+            "Next": "Succeed"
+          }
+        ],
+        "Default": "Fail"
+      },
+      "x": 512.7187408447265,
+      "y": 723.8499965667725,
+      "id": "9a34ec42",
+      "index": 25
+    },
+    {
+      "type": "node",
+      "size": "110*48",
+      "shape": "flow-capsule",
+      "color": "#722ED1",
+      "label": "OrderCompensation",
+      "stateId": "OrderCompensation",
+      "stateType": "Compensation",
+      "stateProps": {
+        "ServiceName": "",
+        "ServiceMethod": "",
+        "Input": [
+          {}
+        ],
+        "Output": {},
+        "Status": {},
+        "Retry": []
+      },
+      "x": 731.2187408447265,
+      "y": 8.39999771118164,
+      "id": "3af15645",
+      "index": 26
+    },
+    {
+      "type": "node",
+      "size": "110*48",
+      "shape": "flow-capsule",
+      "color": "#722ED1",
+      "label": "ProductCompensation",
+      "stateId": "ProductCompensation",
+      "stateType": "Compensation",
+      "stateProps": {
+        "ServiceName": "",
+        "ServiceMethod": "",
+        "Input": [
+          {}
+        ],
+        "Output": {},
+        "Status": {},
+        "Retry": []
+      },
+      "x": 744.7187408447265,
+      "y": 248.34999656677246,
+      "id": "ae66804d",
+      "index": 27
+    },
+    {
+      "type": "node",
+      "size": "110*48",
+      "shape": "flow-capsule",
+      "color": "#722ED1",
+      "label": "AccountCompensation",
+      "stateId": "AccountCompensation",
+      "stateType": "Compensation",
+      "stateProps": {
+        "ServiceName": "",
+        "ServiceMethod": "",
+        "Input": [
+          {}
+        ],
+        "Output": {},
+        "Status": {},
+        "Retry": []
+      },
+      "x": 745.7187408447265,
+      "y": 544.3499965667725,
+      "id": "3750da12",
+      "index": 28
+    },
+    {
+      "type": "node",
+      "size": "72*72",
+      "shape": "flow-circle",
+      "color": "red",
+      "label": "Fail",
+      "stateId": "Fail4",
+      "stateType": "Fail",
+      "stateProps": {
+        "ErrorCode": "",
+        "Message": ""
+      },
+      "x": 138.7187408447266,
+      "y": 724.3499965667725,
+      "id": "d1ca192d",
+      "index": 29
+    },
+    {
+      "type": "node",
+      "size": "110*48",
+      "shape": "flow-capsule",
+      "color": "red",
+      "label": "Compensation\nTrigger",
+      "stateId": "CompensationTrigger2",
+      "stateType": "CompensationTrigger",
+      "x": 138.7187408447266,
+      "y": 273.84999656677246,
+      "id": "a1913fe0",
+      "index": 30
+    },
+    {
+      "type": "node",
+      "size": "39*39",
+      "shape": "flow-circle",
+      "color": "red",
+      "label": "ProductCatch",
+      "stateId": "ProductCatch",
+      "stateType": "Catch",
+      "x": 459.21874084472654,
+      "y": 273.34999656677246,
+      "id": "e5a255e9"
+    }
+  ],
+  "edges": [
+    {
+      "source": "1c4fad42",
+      "sourceAnchor": 2,
+      "target": "9f8172a2",
+      "targetAnchor": 0,
+      "id": "cca8e673",
+      "shape": "flow-polyline-round",
+      "index": 0
+    },
+    {
+      "source": "859fb472",
+      "sourceAnchor": 0,
+      "target": "859fb472",
+      "targetAnchor": 1,
+      "id": "8d37a304",
+      "shape": "flow-polyline-round",
+      "stateProps": {
+        "Expression": "",
+        "Default": false
+      },
+      "index": 2
+    },
+    {
+      "source": "97c92be3",
+      "sourceAnchor": 2,
+      "target": "c5b1a820",
+      "targetAnchor": 0,
+      "id": "6a0e6b38",
+      "shape": "flow-polyline-round",
+      "stateProps": {
+        "Expression": "",
+        "Default": false
+      },
+      "index": 8
+    },
+    {
+      "source": "97c92be3",
+      "sourceAnchor": 3,
+      "target": "227d3f2b",
+      "targetAnchor": 1,
+      "id": "08ee12be",
+      "shape": "flow-polyline-round",
+      "stateProps": {
+        "Expression": "",
+        "Default": false
+      },
+      "index": 9
+    },
+    {
+      "source": "859fb472",
+      "sourceAnchor": 2,
+      "target": "04d9e080",
+      "targetAnchor": 0,
+      "id": "180427b2",
+      "shape": "flow-polyline-round",
+      "stateProps": {
+        "Expression": "",
+        "Default": false
+      },
+      "index": 10
+    },
+    {
+      "source": "9a34ec42",
+      "sourceAnchor": 2,
+      "target": "b4cc700e",
+      "targetAnchor": 0,
+      "id": "4abd0fc1",
+      "shape": "flow-polyline-round",
+      "stateProps": {
+        "Expression": "",
+        "Default": false
+      },
+      "index": 11
+    },
+    {
+      "source": "9a34ec42",
+      "sourceAnchor": 3,
+      "target": "d1ca192d",
+      "targetAnchor": 1,
+      "id": "0a411a3d",
+      "shape": "flow-polyline-round",
+      "stateProps": {
+        "Expression": "",
+        "Default": false
+      },
+      "index": 12
+    },
+    {
+      "source": "9f8172a2",
+      "sourceAnchor": 1,
+      "target": "3af15645",
+      "targetAnchor": 3,
+      "id": "bae54fe3",
+      "shape": "flow-polyline-round",
+      "style": {
+        "lineDash": "4",
+        "endArrow": false
+      },
+      "type": "Compensation",
+      "index": 13
+    },
+    {
+      "source": "c5b1a820",
+      "sourceAnchor": 1,
+      "target": "ae66804d",
+      "targetAnchor": 3,
+      "id": "2685fefe",
+      "shape": "flow-polyline-round",
+      "style": {
+        "lineDash": "4",
+        "endArrow": false
+      },
+      "type": "Compensation",
+      "index": 14
+    },
+    {
+      "source": "04d9e080",
+      "sourceAnchor": 1,
+      "target": "3750da12",
+      "targetAnchor": 3,
+      "id": "12b79376",
+      "shape": "flow-polyline-round",
+      "style": {
+        "lineDash": "4",
+        "endArrow": false
+      },
+      "type": "Compensation",
+      "index": 15
+    },
+    {
+      "source": "57ce3633",
+      "sourceAnchor": 0,
+      "target": "b4db1c11",
+      "targetAnchor": 2,
+      "id": "e81835ca",
+      "shape": "flow-polyline-round"
+    },
+    {
+      "source": "a1913fe0",
+      "sourceAnchor": 0,
+      "target": "227d3f2b",
+      "targetAnchor": 2,
+      "id": "4f430f7a",
+      "shape": "flow-polyline-round"
+    },
+    {
+      "source": "92902297",
+      "sourceAnchor": 3,
+      "target": "57ce3633",
+      "targetAnchor": 1,
+      "id": "e884100a",
+      "shape": "flow-polyline-round",
+      "stateProps": {
+        "Exceptions": [
+          "java.lang.Throwable"
+        ]
+      }
+    },
+    {
+      "source": "859fb472",
+      "sourceAnchor": 3,
+      "target": "b4db1c11",
+      "targetAnchor": 1,
+      "id": "2b96a2f6",
+      "shape": "flow-polyline-round",
+      "stateProps": {
+        "Expression": "",
+        "Default": false
+      }
+    },
+    {
+      "source": "04d9e080",
+      "sourceAnchor": 2,
+      "target": "9a34ec42",
+      "targetAnchor": 0,
+      "id": "14a9f3dd",
+      "shape": "flow-polyline-round"
+    },
+    {
+      "source": "c5b1a820",
+      "sourceAnchor": 2,
+      "target": "859fb472",
+      "targetAnchor": 0,
+      "id": "4006a808",
+      "shape": "flow-polyline-round"
+    },
+    {
+      "source": "e5a255e9",
+      "sourceAnchor": 3,
+      "target": "a1913fe0",
+      "targetAnchor": 1,
+      "id": "b6f9204c",
+      "shape": "flow-polyline-round",
+      "stateProps": {
+        "Exceptions": [
+          "java.lang.Throwable"
+        ]
+      }
+    },
+    {
+      "source": "9f8172a2",
+      "sourceAnchor": 2,
+      "target": "97c92be3",
+      "targetAnchor": 0,
+      "id": "e0508f74",
+      "shape": "flow-polyline-round"
+    }
+  ]
+}

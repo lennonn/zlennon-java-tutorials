@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: country-service
+  webservices:
+    path: /ws
+server:
+  port: 5003

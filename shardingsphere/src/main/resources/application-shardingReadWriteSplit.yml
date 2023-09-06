@@ -1,0 +1,30 @@
+spring:
+  shardingsphere:
+    datasource:
+      names: chatgpt,chatgpt0,chatgpt1
+      chatgpt:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        password: '123456'
+        type: com.zaxxer.hikari.HikariDataSource
+        jdbc-url: jdbc:mysql://localhost:3306/chatgpt
+        username: root
+      chatgpt0:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        password: '123456'
+        type: com.zaxxer.hikari.HikariDataSource
+        jdbc-url: jdbc:mysql://localhost:3306/chatgpt0
+        username: root
+      chatgpt1:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        password: '123456'
+        type: com.zaxxer.hikari.HikariDataSource
+        jdbc-url: jdbc:mysql://localhost:3306/chatgpt1
+        username: root
+    masterslave:
+      load-balance-algorithm-type: round_robin
+      master-data-source-name: chatgpt
+      name: ms
+      slave-data-source-names: chatgpt0,chatgpt1
+    props:
+      sql:
+        show: true

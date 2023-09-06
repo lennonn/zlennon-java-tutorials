@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:jaxws="http://cxf.apache.org/jaxws" xmlns:cxf="http://cxf.apache.org/core"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+						http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+						http://www.springframework.org/schema/aop
+						http://www.springframework.org/schema/aop/spring-aop-4.1.xsd
+	           			http://www.springframework.org/schema/tx
+	           			http://www.springframework.org/schema/tx/spring-tx-4.1.xsd
+	           			http://www.springframework.org/schema/util
+	           			http://www.springframework.org/schema/util/spring-util-4.1.xsd
+	           			http://cxf.apache.org/jaxws
+      					http://cxf.apache.org/schemas/jaxws.xsd">
+	<!-- <import resource="classpath:META-INF/cxf/cxf-extension-soap.xml"/>
+		<import resource="classpath:META-INF/cxf/cxf-servlet.xml" /> -->
+	<import resource="classpath:META-INF/cxf/cxf.xml" />
+	<!-- JAX-RS -->
+	<!-- <jaxrs:server id="webService" address="/"> <jaxrs:serviceBeans> <ref
+		bean="webService" /> </jaxrs:serviceBeans> </jaxrs:server> -->
+
+	<!-- JAX-WS -->
+	<!-- <jaxws:endpoint implementor="#webService" address="/webService" publish="true"
+		xmlns:e="http://service.jaxws.cxf.apache.org/endpoint" xmlns:s="http://service.jaxws.cxf.apache.org/service">
+		</jaxws:endpoint> <bean id="webService" class="com.zl.service.spring.WebServiceTestSpringImpl"></bean> -->
+
+	<jaxws:server id="webServcieServer" address="/webService">
+		<jaxws:serviceBean>
+			<bean class="com.zl.service.spring.WebServiceTestSpringImpl" />
+		</jaxws:serviceBean>
+	</jaxws:server>
+	<!-- <jaxws:server id="webService" serviceClass= "com.zl.service.spring.WebServiceTestSpringImpl"
+		address="/webService"bus="cxf"> <jaxws:invoker> <bean class="org.apache.cxf.service.invoker.BeanInvoker">
+		<constructor-arg> <bean class="org.apache.cxf.mytype.AnonymousComplexTypeImpl"/>
+		</constructor-arg> </bean> </jaxws:invoker> <jaxws:dataBinding> <bean class="org.apache.cxf.jaxb.JAXBDataBinding">
+		<property name="namespaceMap"> <map> <entry> <key> <value>http://cxf.apache.org/anon_complex_type/</value>
+		</key> <value>BeepBeep</value> </entry> </map> </property> </bean> </jaxws:dataBinding>
+		</jaxws:server> -->
+	<!-- <bean id="client" class="com.zl.service.facade.WebServiceTest"
+		factory-bean="clientFactory" factory-method="create" />
+
+	<bean id="clientFactory" class="org.apache.cxf.jaxws.JaxWsProxyFactoryBean">
+		<property name="serviceClass" value="com.zl.service.facade.WebServiceTest" />
+		<property name="address"
+			value="http://localhost:8080/SSHXmlConfigration/webservice/webService" />
+	</bean> -->
+	<jaxws:client id="webServiceCient" serviceClass="com.zl.service.facade.WebServiceTest"
+		address="http://localhost:8080/SSHXmlConfigration/webservice/webService">
+		<!-- <jaxws:inInterceptors>
+			<bean class="org.apache.cxf.interceptor.LoggingInInterceptor" />
+			<ref bean="anotherInterceptor" />
+		</jaxws:inInterceptors>
+			<jaxws:handlers>
+				<ref bean="jaxwsHandler" />
+			</jaxws:handlers>
+			<jaxws:properties>
+				<entry key="mtom-enabled" value="true" />
+			</jaxws:properties> -->
+	</jaxws:client>
+
+</beans>

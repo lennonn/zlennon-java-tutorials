@@ -1,0 +1,28 @@
+spring:
+  profiles:
+    active: dev
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+  cloud:
+    stream:
+      binders:
+        local_rabbit:
+          type: rabbit
+          environment:
+            spring:
+              rabbitmq:
+                host: localhost
+                port: 5672
+                username: guest
+                password: guest
+                virtual-host: /
+      bindings:
+        input:
+          binder: local_rabbit
+          destination: modelIdtest
+        output:
+          binder: local_rabbit
+          destination: modelIdtest

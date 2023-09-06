@@ -1,0 +1,50 @@
+server:
+  port: 7999
+
+logging:
+  level:
+    root: INFO
+    org.springframework.web: DEBUG
+    org.springframework.security: TRACE
+    org.springframework.security.oauth2: TRACE
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/oauth2?useSSL=false
+    username: root
+    password: 123456
+  jpa:
+    database-platform: org.hibernate.dialect.MySQLDialect
+    hibernate.ddl-auto: create
+  thymeleaf:
+    cache: false
+    prefix: classpath:/templates/
+    encoding: UTF-8
+    suffix: .html
+    mode: HTML
+    enabled: true
+  security:
+    oauth2:
+      client:
+        registration:
+          messaging-client-oidc:
+            provider: spring
+            client-id: messaging-client
+            client-secret: secret
+            authorization-grant-type: authorization_code
+            redirect-uri: "http://127.0.0.1:7999/login/oauth2/code/{registrationId}"
+            scope: openid,profile,message.read,message.write
+            client-name: messaging-client-oidc
+          messaging-client-authorization-code:
+            provider: spring
+            client-id: messaging-client
+            client-secret: secret
+            authorization-grant-type: authorization_code
+            redirect-uri: "http://127.0.0.1:7999/authorized"
+            scope: openid,message.read,message.write
+            client-name: messaging-client-authorization-code
+        provider:
+          spring:
+            issuer-uri: http://localhost:8500
+messages:
+  base-uri: http://127.0.0.1:8301/messages

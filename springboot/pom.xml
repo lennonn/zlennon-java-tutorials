@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>springboot</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<name>springboot</name>
+	<description>Demo project for Spring Boot</description>
+
+	<parent>
+		<groupId>com.zlennon</groupId>
+		<artifactId>zlennon-tutorials</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+		<relativePath>../pom.xml</relativePath>
+	</parent>
+
+	<modules>
+		<module>springboot-i18n</module>
+		<module>spring-ymal</module>
+		<module>spring-websocket</module>
+		<module>spring-webservice</module>
+		<module>spring-upload</module>
+		<module>spring-transaction</module>
+		<module>spring-statemachine</module>
+		<module>spring-security</module>
+		<module>spring-scheduling</module>
+		<module>spring-rsocket</module>
+		<module>spring-retry</module>
+		<module>spring-reactor</module>
+		<module>spring-ratelimiter</module>
+		<module>spring-session</module>
+		<module>spring-okhttp3</module>
+		<module>spring-mybatisplus</module>
+		<module>spring-integration</module>
+		<module>spring-graphql</module>
+		<module>spring-framwork</module>
+		<module>spring-encrypt</module>
+		<module>spring-cache</module>
+		<module>spring-autoconfig</module>
+		<module>spring-applicationEvent</module>
+		<module>ftp-module</module>
+		<module>file-convert</module>
+		<module>captcha</module>
+	</modules>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>17</java.version>
+	</properties>
+
+	<dependencies>
+
+	</dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+
+
+</project>

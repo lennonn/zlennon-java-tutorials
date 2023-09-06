@@ -1,0 +1,178 @@
+{
+  "Name":"CreateOrder",
+  "Comment":"business pacle order",
+  "Version":"0.0.1",
+  "StartState":"orderService",
+  "States":{
+    "orderService":{
+      "Type":"ServiceTask",
+      "Comment":"orderService",
+      "CompensateState":"compensateOrder",
+      "ServiceName": "orderSagaAction",
+      "ServiceMethod": "placeOrder",
+      "Input": [
+        "$.[productId]",
+        "$.[quantity]",
+        "$.[customerId]"
+      ],
+      "Output": {
+        "orderResult": "$.#root"
+      },
+      "Status": {
+        "#root == true": "SU",
+        "#root == false": "FA",
+        "$Exception{java.lang.Throwable}": "UN"
+      },
+      "Catch":[
+        {
+          "Exceptions":[
+            "java.lang.Throwable"
+          ],
+          "Next":"CompensationTrigger"
+        }
+      ],
+      "Next":"orderChoice"
+    },
+    "orderChoice":{
+      "Comment":"orderChoice",
+      "Type":"Choice",
+      "Choices":[
+        {
+          "Expression":"[orderResult] == true",
+          "Next":"productService"
+        },
+        {
+          "Expression":"[orderResult] == false",
+          "Next":"CompensationTrigger"
+        }
+      ]
+    },
+    "productService":{
+      "Type":"ServiceTask",
+      "Comment":"productService",
+      "CompensateState":"compensateProduct",
+      "ServiceName": "com.zlennon.order.feign.ProductFeign",
+      "ServiceMethod": "reduceProduct",
+      "Input": [
+        "$.[productId]",
+        "$.[quantity]"
+      ],
+      "Output":{
+        "productResult":"$.#root"
+      },
+      "Status":{
+        "#root == true":"SU",
+        "#root == false":"FA",
+        "$Exception{java.lang.Throwable}":"UN"
+      },
+      "Catch":[
+        {
+          "Exceptions":[
+            "java.lang.Throwable"
+          ],
+          "Next":"CompensationTrigger"
+        }
+      ],
+      "Next":"productChoice"
+    },
+    "productChoice":{
+      "Comment":"productChoice",
+      "Type":"Choice",
+      "Choices":[
+        {
+          "Expression":"[productResult] == true",
+          "Next":"accountService"
+        },
+        {
+          "Expression":"[productResult] == false",
+          "Next":"CompensationTrigger"
+        }
+      ]
+    },
+    "accountService":{
+      "Type":"ServiceTask",
+      "Comment":"accountService",
+      "CompensateState":"compensateAccount",
+      "ServiceName": "com.zlennon.order.feign.AccountFeign",
+      "ServiceMethod": "reduceAccount",
+      "Input": [
+        "$.[productId]",
+        "$.[amount]"
+      ],
+      "Output":{
+        "accountResult":"$.#root"
+      },
+      "Status":{
+        "#root == true":"SU",
+        "#root == false":"FA",
+        "$Exception{java.lang.Throwable}":"UN"
+      },
+      "Catch":[
+        {
+          "Exceptions":["java.lang.Throwable"],
+          "Next":"CompensationTrigger"
+        }
+      ],
+      "Next":"accountChoice"
+    },
+    "accountChoice":{
+      "Comment":"accountChoice",
+      "Type":"Choice",
+      "Choices":[
+        {
+          "Expression":"[accountResult] == true",
+          "Next":"Succeed"
+        },
+        {
+          "Expression":"[accountResult] == false",
+          "Next":"CompensationTrigger"
+        }
+      ]
+    },
+    "compensateOrder":{
+      "Type":"ServiceTask",
+      "Comment":"compensateOrder",
+      "ServiceName":"orderSagaAction",
+      "ServiceMethod":"compensateOrder",
+      "Input":[
+        "$.[productId]",
+        "$.[quantity]",
+        "$.[customerId]"
+      ]
+    },
+    "compensateAccount":{
+      "Type":"ServiceTask",
+      "Comment":"compensateAccount",
+      "ServiceName":"com.zlennon.order.feign.AccountFeign",
+      "ServiceMethod":"compensateAccount",
+      "Input":[
+        "$.[productId]",
+        "$.[amount]"
+      ]
+    },
+    "compensateProduct":{
+      "Type":"ServiceTask",
+      "Comment":"compensateProduct",
+      "ServiceName":"com.zlennon.order.feign.ProductFeign",
+      "ServiceMethod":"compensateProduct",
+      "Input":[
+        "$.[productId]",
+        "$.[quantity]"
+      ]
+    },
+    "CompensationTrigger":{
+      "Type":"CompensationTrigger",
+      "Next":"Fail"
+    },
+    "Fail":{
+      "Comment":"Fail",
+      "ErrorCode":"PURCHASE_FAILED",
+      "Message":"purchase failed",
+      "Type":"Fail"
+    },
+    "Succeed":{
+      "Comment":"Succeed",
+      "Type":"Succeed"
+    }
+  }
+}

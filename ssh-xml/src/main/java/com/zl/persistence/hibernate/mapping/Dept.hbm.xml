@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+  "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+  "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="com.zl.dto.domain.Dept" table="dept">
+    <!--custom area begin-->
+    <!--custom area end-->
+    <id name="deptno" column="deptno" type="int">
+      <generator class="assigned" />
+    </id>
+    <property name="dname" column="dname" type="string" />
+    <property name="loc" column="loc" type="string" />
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,30 @@
+jasypt:
+  encryptor:
+    password: retail_salt
+    algorithm: PBEWithMD5AndTripleDES
+    iv-generator-classname: org.jasypt.iv.NoIvGenerator
+token: ENC(cz3ftn8IUOvtFlLs/y9z8urRI74Zz1DR7s849wxFQpGalraVvTDMSnil5xD8tjYsrEkYcv3T0WR/p8e4xQZBaw==)
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/chatgpt?serverTimezone=UTC&useSSL=false
+    username: root
+    password: 123456
+  jpa:
+    hibernate:
+      ddl-auto: update
+      show-sql: false
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+  cloud:
+    consul:
+      host: 127.0.0.1
+      port: 8500
+      discovery:
+        enabled: true
+        register: true
+        instance-id: ${spring.application.name}-${server.port}
+        service-name: chatgpt-api-service
+        health-check-path: /actuator/health
+        health-check-interval: 30s
+server:
+  port: 7999

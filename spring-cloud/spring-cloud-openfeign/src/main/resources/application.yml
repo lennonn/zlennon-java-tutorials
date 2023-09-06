@@ -1,0 +1,12 @@
+server:
+  port: 7100
+spring:
+  cloud:
+    service-registry:
+      enabled: false
+    consul:
+      host: 127.0.0.1
+      port: 8500
+      enabled: true
+  zipkin:
+    baseUrl: http://127.0.0.1:9411/

@@ -1,0 +1,7 @@
+[17:40:45:253] [WARN] - org.springframework.core.annotation.AnnotationTypeMapping.addConventionMappings(AnnotationTypeMapping.java:320) - Support for convention-based annotation attribute overrides is deprecated and will be removed in Spring Framework 6.1. Please annotate the following attributes in @org.springframework.retry.annotation.EnableRetry with appropriate @AliasFor declarations: [proxyTargetClass]
+[17:40:46:643] [INFO] - com.zlennon.retry.config.DefaultListenerSupport.open(DefaultListenerSupport.java:27) - onOpen
+[17:40:46:654] [INFO] - com.zlennon.retry.service.MyServiceImpl.templateRetryService(MyServiceImpl.java:52) - throw RuntimeException in method templateRetryService()
+[17:40:46:656] [INFO] - com.zlennon.retry.config.DefaultListenerSupport.onError(DefaultListenerSupport.java:21) - onError
+[17:40:48:666] [INFO] - com.zlennon.retry.service.MyServiceImpl.templateRetryService(MyServiceImpl.java:52) - throw RuntimeException in method templateRetryService()
+[17:40:48:667] [INFO] - com.zlennon.retry.config.DefaultListenerSupport.onError(DefaultListenerSupport.java:21) - onError
+[17:40:48:667] [INFO] - com.zlennon.retry.config.DefaultListenerSupport.close(DefaultListenerSupport.java:15) - onClose

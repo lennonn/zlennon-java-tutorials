@@ -1,0 +1,12 @@
+server:
+  port: 9008
+spring:
+  application:
+    name: spring-transaction
+  datasource:
+    url: jdbc:mysql://localhost:3306/transaction?useSSL=false
+    username: root
+    password: 123456
+  jpa:
+    database-platform: org.hibernate.dialect.MySQLDialect
+    hibernate.ddl-auto: update

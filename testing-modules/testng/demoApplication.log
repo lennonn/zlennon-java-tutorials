@@ -1,0 +1,64 @@
+2020-05-01 21:52:03 ERROR AllureLifecycle:457 - Could not start step: no test case running
+2022-12-30 17:12:15 DEBUG TestNG:82 - suiteXmlPath: "C:\Users\EDY\AppData\Local\JetBrains\IntelliJIdea2021.2\temp-testng-customsuite.xml"
+2022-12-30 17:12:17 DEBUG Graph:82 - [Graph] ADDING NODE Temp.test()[pri:0, instance:com.zl.Temp@591fd34d] -1333122083
+2022-12-30 17:12:17 DEBUG Graph:82 - [Graph] ================ SORTING
+2022-12-30 17:12:17 DEBUG Graph:82 - [Graph] =============== DONE SORTING
+2022-12-30 17:12:17 DEBUG Graph:82 - [Graph] ====== SORTED NODES
+2022-12-30 17:12:17 DEBUG Graph:82 - [Graph] ====== END SORTED NODES
+2022-12-30 17:12:17 INFO  Utils:112 - [TestNG] Running:
+  C:\Users\EDY\AppData\Local\JetBrains\IntelliJIdea2021.2\temp-testng-customsuite.xml
+
+2022-12-30 17:48:46 DEBUG TestNG:82 - suiteXmlPath: "C:\Users\EDY\AppData\Local\JetBrains\IntelliJIdea2021.2\temp-testng-customsuite.xml"
+2022-12-30 17:48:48 DEBUG Graph:82 - [Graph] ADDING NODE Temp.test()[pri:0, instance:com.zl.Temp@4303b7f0] -1704062848
+2022-12-30 17:48:48 DEBUG Graph:82 - [Graph] ================ SORTING
+2022-12-30 17:48:48 DEBUG Graph:82 - [Graph] =============== DONE SORTING
+2022-12-30 17:48:48 DEBUG Graph:82 - [Graph] ====== SORTED NODES
+2022-12-30 17:48:48 DEBUG Graph:82 - [Graph] ====== END SORTED NODES
+2022-12-30 17:48:48 INFO  Utils:112 - [TestNG] Running:
+  C:\Users\EDY\AppData\Local\JetBrains\IntelliJIdea2021.2\temp-testng-customsuite.xml
+
+2023-01-05 12:04:30 DEBUG TestNG:82 - suiteXmlPath: "C:\Users\EDY\AppData\Local\JetBrains\IntelliJIdea2021.2\temp-testng-customsuite.xml"
+2023-01-05 12:04:33 DEBUG Graph:82 - [Graph] ADDING NODE MatrixOperateTest.testMatrixOperate()[pri:0, instance:com.zl.math34.MatrixOperateTest@4642b71d] -133754096
+2023-01-05 12:04:33 DEBUG Graph:82 - [Graph] ================ SORTING
+2023-01-05 12:04:33 DEBUG Graph:82 - [Graph] =============== DONE SORTING
+2023-01-05 12:04:33 DEBUG Graph:82 - [Graph] ====== SORTED NODES
+2023-01-05 12:04:33 DEBUG Graph:82 - [Graph] ====== END SORTED NODES
+2023-01-05 12:04:33 INFO  Utils:112 - [TestNG] Running:
+  C:\Users\EDY\AppData\Local\JetBrains\IntelliJIdea2021.2\temp-testng-customsuite.xml
+
+2023-02-16 18:01:14 DEBUG TestNG:82 - suiteXmlPath: "C:\Users\EDY\AppData\Local\JetBrains\IntelliJIdea2021.2\temp-testng-customsuite.xml"
+2023-02-16 18:01:16 DEBUG Graph:82 - [Graph] ADDING NODE Temp.test()[pri:0, instance:com.zl.Temp@6579c3d9] -1125901207
+2023-02-16 18:01:16 DEBUG Graph:82 - [Graph] ================ SORTING
+2023-02-16 18:01:16 DEBUG Graph:82 - [Graph] =============== DONE SORTING
+2023-02-16 18:01:16 DEBUG Graph:82 - [Graph] ====== SORTED NODES
+2023-02-16 18:01:16 DEBUG Graph:82 - [Graph] ====== END SORTED NODES
+2023-02-16 18:01:16 INFO  Utils:112 - [TestNG] Running:
+  C:\Users\EDY\AppData\Local\JetBrains\IntelliJIdea2021.2\temp-testng-customsuite.xml
+
+2023-02-16 18:28:22 DEBUG TestNG:82 - suiteXmlPath: "C:\Users\EDY\AppData\Local\JetBrains\IntelliJIdea2021.2\temp-testng-customsuite.xml"
+2023-02-16 18:28:23 DEBUG Graph:82 - [Graph] ADDING NODE Temp.test()[pri:0, instance:com.zl.Temp@375b5b7f] -1899645937
+2023-02-16 18:28:23 DEBUG Graph:82 - [Graph] ================ SORTING
+2023-02-16 18:28:23 DEBUG Graph:82 - [Graph] =============== DONE SORTING
+2023-02-16 18:28:23 DEBUG Graph:82 - [Graph] ====== SORTED NODES
+2023-02-16 18:28:23 DEBUG Graph:82 - [Graph] ====== END SORTED NODES
+2023-02-16 18:28:23 INFO  Utils:112 - [TestNG] Running:
+  C:\Users\EDY\AppData\Local\JetBrains\IntelliJIdea2021.2\temp-testng-customsuite.xml
+
+2023-02-16 18:31:16 DEBUG TestNG:82 - suiteXmlPath: "C:\Users\EDY\AppData\Local\JetBrains\IntelliJIdea2021.2\temp-testng-customsuite.xml"
+2023-02-16 18:31:17 DEBUG Graph:82 - [Graph] ADDING NODE Temp.test()[pri:0, instance:com.zl.Temp@2adddc06] -2109197162
+2023-02-16 18:31:17 DEBUG Graph:82 - [Graph] ================ SORTING
+2023-02-16 18:31:17 DEBUG Graph:82 - [Graph] =============== DONE SORTING
+2023-02-16 18:31:17 DEBUG Graph:82 - [Graph] ====== SORTED NODES
+2023-02-16 18:31:17 DEBUG Graph:82 - [Graph] ====== END SORTED NODES
+2023-02-16 18:31:17 INFO  Utils:112 - [TestNG] Running:
+  C:\Users\EDY\AppData\Local\JetBrains\IntelliJIdea2021.2\temp-testng-customsuite.xml
+
+2023-02-16 18:32:01 DEBUG TestNG:82 - suiteXmlPath: "C:\Users\EDY\AppData\Local\JetBrains\IntelliJIdea2021.2\temp-testng-customsuite.xml"
+2023-02-16 18:32:02 DEBUG Graph:82 - [Graph] ADDING NODE Temp.test()[pri:0, instance:com.zl.Temp@6a74d228] -1042339144
+2023-02-16 18:32:02 DEBUG Graph:82 - [Graph] ================ SORTING
+2023-02-16 18:32:02 DEBUG Graph:82 - [Graph] =============== DONE SORTING
+2023-02-16 18:32:02 DEBUG Graph:82 - [Graph] ====== SORTED NODES
+2023-02-16 18:32:02 DEBUG Graph:82 - [Graph] ====== END SORTED NODES
+2023-02-16 18:32:02 INFO  Utils:112 - [TestNG] Running:
+  C:\Users\EDY\AppData\Local\JetBrains\IntelliJIdea2021.2\temp-testng-customsuite.xml
+

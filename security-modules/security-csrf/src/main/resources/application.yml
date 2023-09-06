@@ -1,0 +1,12 @@
+spring:
+  security:
+    user:
+      name: csrf
+      password: 111111
+  thymeleaf:
+    cache: false
+    prefix: classpath:/templates/
+    encoding: UTF-8
+    suffix: .html
+    mode: HTML5
+    enabled: true

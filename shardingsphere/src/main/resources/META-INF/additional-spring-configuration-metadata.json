@@ -1,0 +1,8 @@
+{
+  "properties": [
+    {
+      "name": "spring.shardingsphere.sharding.encrypt-rule.tables.req_res_items.columns.req_info.cipher-column",
+      "type": "java.lang.String",
+      "description": "Description for spring.shardingsphere.sharding.encrypt-rule.tables.req_res_items.columns.req_info.cipher-column."
+  }
+] }

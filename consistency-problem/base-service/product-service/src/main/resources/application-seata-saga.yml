@@ -1,0 +1,33 @@
+seata:
+  enabled: true
+  application-id: ${spring.application.name}
+  tx-service-group: default_tx_group
+  config:
+    consul:
+      key: seata.properties
+      server-addr: 127.0.0.1:8500
+    file:
+      name: file.conf
+    nacos:
+      server-addr: 127.0.0.1:8848
+      group: SEATA_GROUP
+      data-id: seataServer.properties
+      namespace:
+    type: nacos
+  registry:
+    type: nacos
+    file:
+      name: registry.conf
+    consul:
+      server-addr: 127.0.0.1:8500
+      cluster: default
+    nacos:
+      application: seata-server
+      server-addr: 127.0.0.1:8848
+      group: SEATA_GROUP
+      cluster: default
+      namespace:
+  service:
+    vgroup-mapping:
+      default_tx_group: seata-server
+    disable-global-transaction: false

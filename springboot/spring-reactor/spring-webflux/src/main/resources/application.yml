@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: spring-webflux-service
+  r2dbc:
+    url: r2dbcs:mysql://127.0.0.1:3306/webflux?useSSL=false
+    username: root
+    password: 123456
+server:
+  port: 9020

@@ -1,0 +1,30 @@
+spring:
+  shardingsphere:
+    datasource:
+      names: chatgpt0,chatgpt1
+      chatgpt0:
+        type: com.zaxxer.hikari.HikariDataSource
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        jdbc-url: jdbc:mysql://localhost:3306/chatgpt0?useUnicode=true&characterEncoding=utf-8
+        username: root
+        password: 123456
+      chatgpt1:
+        type: com.zaxxer.hikari.HikariDataSource
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        jdbc-url: jdbc:mysql://localhost:3306/chatgpt1?useUnicode=true&characterEncoding=utf-8
+        username: root
+        password: 123456
+
+    # Repository Configuration
+    sharding:
+      tables:
+        chatgpt:  # Table name of the repository
+          actual-data-nodes: chatgpt$->{0..1}.req_res_items    # Fragmented data node configuration, Grovvy expression, for testdb0, testdb1
+          # Repository Configuration
+          database-strategy:  # Repository Policy Configuration
+            inline:  # inline represents the row expression strategy, as well as other slicing strategies
+              sharding-column: type   # Tb_Sliced field of user table
+              algorithm-expression: chatgpt$->{type % 2}   # Fragmentation policy, user_id divides 2 moulds
+
+    props:
+      sql.show: true  # Console Print SQL

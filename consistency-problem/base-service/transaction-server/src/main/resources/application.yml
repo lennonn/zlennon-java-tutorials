@@ -1,0 +1,39 @@
+spring:
+  application:
+    name: transaction-server
+  datasource:
+    url: jdbc:mysql://localhost:3306/distributed_txn?useSSL=false
+    username: root
+    password: 123456
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: guest
+    password: guest
+  cloud:
+    consul:
+      host: 127.0.0.1
+      port: 8500
+      config:
+        enabled: false
+      discovery:
+        enabled: true
+        register: true
+        instance-id: ${spring.application.name}-${server.port}
+        health-check-path: /actuator/health
+        health-check-interval: 30s
+
+
+server:
+  port: 6004
+
+      
+springdoc:
+  swagger-ui.path: /swagger-ui.html
+
+logging:
+  level:
+    org.springframework.data: ERROR
+    com.netflix: ERROR
+  pattern:
+    console: '%d{yyyy-MM-dd HH:mm:ss:SSS} [S=${APP_NAME:-}] [T=%X{traceId}] %-5level %logger{36}.%L %msg%n'

@@ -1,0 +1,44 @@
+spring:
+  shardingsphere:
+    datasource:
+      names: chatgpt0
+      chatgpt0:
+        type: com.zaxxer.hikari.HikariDataSource
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        jdbc-url: jdbc:mysql://localhost:3306/chatgpt0?useUnicode=true&characterEncoding=utf-8
+        username: root
+        password: 123456
+
+    # Repository Configuration
+    sharding:
+      tables:
+        req_res_items:  # Table name of the repository
+          actual-data-nodes: chatgpt0.req_res_items$->{0..1}
+          # Repository Configuration
+          table-strategy:  # Repository Policy Configuration
+            inline:  # inline represents the row expression strategy, as well as other slicing strategies
+              sharding-column: type   # Tb_Sliced field of user table
+              algorithm-expression: req_res_items$->{type % 2}   # Fragmentation policy, user_id divides 2 mouldsx
+    encrypt:
+      encryptors:
+        my-encryptor:
+          props:
+            aes:
+             key:
+              value: 123456abc
+          type: aes
+      tables:
+        req_res_items:
+          columns:
+            req_info:
+              plainColumn: req_info
+              cipherColumn: req_info_encrypt # 加密列名称
+              #assistedQueryColumn: req_info_assist
+              encryptor: my-encryptor # 加密算法名称（名称不能有下划线）
+              # plain-column: mobile # 原文列名称
+    props:
+      sql.show: true  # Console Print SQL
+      query:
+        with:
+          cipher:
+            column: true #查询是否使用密文列

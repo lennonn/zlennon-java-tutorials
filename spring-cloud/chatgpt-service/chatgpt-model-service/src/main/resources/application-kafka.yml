@@ -1,0 +1,13 @@
+spring:
+  cloud:
+    stream:
+      kafka:
+        binder:
+          brokers: 127.0.0.1:9092
+      function:
+        definition: modelId;modelInfo
+      bindings:
+        modelId-in-0:
+          destination: model-id
+        modelInfo-out-0:
+          destination: modelInfo

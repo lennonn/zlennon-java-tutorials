@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<constant name="struts.devMode" value="true"></constant>
+	<include file="struts-default.xml"></include>
+	<package name="global-default" extends="struts-default">
+		<global-results>
+			<result name="error">/WEB-INF/jsp/common/errorPage.jsp</result>
+			<result name="404">/WEB-INF/jsp/common/404.jsp</result>
+			<result name="ognl">/WEB-INF/jsp/common/errorPage.jsp</result>
+		</global-results>
+		<global-exception-mappings>
+			<exception-mapping result="ognl" exception="ognl.OgnlException"></exception-mapping>
+			<exception-mapping result="error" exception="java.lang.Exception"></exception-mapping>
+		<exception-mapping result="404" exception="java.lang.NoSuchFieldException"></exception-mapping>
+		</global-exception-mappings>
+	</package>
+	<package name="saveOrUpdate" extends="global-default">
+
+		<action name="index">
+			<result>/index.jsp</result>
+		</action>
+		<action name="saveDept" class="com.zl.web.action.DeptAction"
+			method="saveDept">
+			<result name="saved">/WEB-INF/jsp/saveDept.jsp</result>
+		</action>
+	</package>
+	<package name="queryDept" extends="global-default" >
+		<action name="queryDeptSingle_index">
+			<result>/WEB-INF/jsp/queryDept.jsp</result>
+		</action>
+		<action name="queryDeptSingle" class="com.zl.web.action.DeptAction" method="queryDept">
+			<result name="querySuccess">/WEB-INF/jsp/queryDept.jsp</result>
+		</action>
+		<action name="queryDeptList" class="com.zl.web.action.DeptAction" method="queryDeptList">
+			<result name="queryListSuccess">/WEB-INF/jsp/queryDept.jsp</result>
+		</action>
+	</package>
+	<package name="wechat" extends="global-default">
+		<action name="wechat_index">
+			<result>/WEB-INF/jsp/wechat/wechat_index.jsp</result>
+		</action>
+	</package>
+	<package name="index" extends="global-default">
+		<action name="jsp_*">
+			<result>/WEB-INF/jsp/{1}.jsp</result>
+		</action>
+		<action name="jquery_*">
+			<result>/WEB-INF/jquery/{1}.html</result>
+		</action>
+		<action name="dom_htmldom_*">
+			<result>/WEB-INF/dom/htmldom/{1}.html</result>
+
+		</action>
+		<action name="js_*">
+			<result>/WEB-INF/js/{1}.html</result>
+		</action>
+	</package>
+</struts>

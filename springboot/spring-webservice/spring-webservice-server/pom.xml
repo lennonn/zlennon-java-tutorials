@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.zlennon</groupId>
+		<artifactId>spring-webservice</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+		<relativePath>../pom.xml</relativePath> <!-- lookup parent from repository -->
+	</parent>
+	<artifactId>spring-webservice-server</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>spring-webservice-server</name>
+	<description>spring-webservice-server</description>
+	<properties>
+		<java.version>17</java.version>
+	</properties>
+	<dependencies>
+		<dependency>
+			<groupId>jakarta.xml.bind</groupId>
+			<artifactId>jakarta.xml.bind-api</artifactId>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+			<groupId>org.codehaus.mojo</groupId>
+			<artifactId>jaxb2-maven-plugin</artifactId>
+			<version>3.1.0</version>
+			<executions>
+				<execution>
+					<id>xjc</id>
+					<goals>
+						<goal>xjc</goal>
+					</goals>
+				</execution>
+			</executions>
+			<configuration>
+				<sources>
+					<source>${project.basedir}/src/main/resources/countries.xsd</source>
+				</sources>
+				<packageName>com.zlennon.springwebserviceserver.client</packageName>
+			</configuration>
+			</plugin>
+		<!--	<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>jaxb2-maven-plugin</artifactId>
+				<version>2.5.0</version>
+				<executions>
+					<execution>
+						<id>xjc</id>
+						<goals>
+							<goal>xjc</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					&lt;!&ndash; 源文件地址 &ndash;&gt;
+					<sources>
+						<source>${project.basedir}/src/main/resources/countries.xsd</source>
+					</sources>
+					&lt;!&ndash; 生成代码目标包 &ndash;&gt;
+					<packageName>com.zlennon.springwebserviceserver.client</packageName>
+				</configuration>
+			</plugin>-->
+<!--
+			<plugin>
+				<groupId>org.jvnet.jaxb2.maven2</groupId>
+				<artifactId>maven-jaxb2-plugin</artifactId>
+				<version>0.13.3</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>generate</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<generatePackage>com.zlennon.springwebserviceserver.client</generatePackage>
+					<generateDirectory>${project.basedir}/src/main/java</generateDirectory>
+					<schemaDirectory>${project.basedir}/src/main/resources</schemaDirectory>
+					<schemaIncludes>
+						<include>*.wsdl</include>
+					</schemaIncludes>
+				</configuration>
+			</plugin>
+-->
+		</plugins>
+	</build>
+
+</project>

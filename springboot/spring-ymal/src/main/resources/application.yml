@@ -1,0 +1,30 @@
+link:
+  callback:
+    systems:
+      hzcar: http://sss
+map:
+  maps:
+    name: InjectMapFromYAML
+    url: http://injectmapfromyaml.dev
+    description: How To Inject a map from a YAML File in Spring Boot
+  users:
+    user1:
+      appId: YiBaoTong
+      password: 123456
+    user2:
+      appId: ZhiKe
+      password: 123456
+
+list:
+  include:
+    - /api/v1/token/api_token
+    - /api/v1/yibaotong/save
+
+  userlist:
+    - appId: YiBaoTong
+      password: 123456
+    - appId: ZhiKe
+      password: 123456
+
+language:
+  type: zh-cn

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<constant name="struts.convention.action.suffix" value="Controller"/>
+	<constant name="struts.convention.action.mapAllMatches" value="true"/>
+	<constant name="struts.convention.result.path" value="/WEB-INF/jsp"/>
+	<constant name="struts.convertion." value=""></constant>
+	<!-- <constant name="struts.convention.default.parent.package" value="rest-default"/>
+	<constant name="struts.mapper.class" value="rest" />
+    <constant name="struts.convention.package.locators" value="com.zl.web.action"/> -->
+	 <include file="struts-default.xml" />
+	<!--开发模式 -->
+	<constant name="struts.devMode" value="true"/>
+	<package name="userlogin" extends="struts-default">
+
+		<interceptors>
+			<interceptor name="loginInterceptor" class="com.zl.interceptor.LoginInterceptor">
+				<param name="excludeMethods ">login,register,prepareLogin,prepareRegister,logout,adminLogin,adminLogout</param>
+			</interceptor>
+		</interceptors>
+	</package>
+<!-- 	<constant name="struts.convention.classes.reload" value="true" /> -->
+	<!-- 设置上传文件的临时文件夹,默认使用jakarta.servlet.context.tempdir -->
+	<constant name="struts.multipart.saveDir " value="E:/struts.multipart.saveDir" />
+	<constant name="struts.multipart.maxSize" value="1073741824"></constant>
+	<!-- <package name="global-default" extends="struts-default">
+		<global-results>
+			<result name="error">/WEB-INF/jsp/common/errorPage.jsp</result>
+			<result name="404">/WEB-INF/jsp/common/404.jsp</result>
+			<result name="ognl">/WEB-INF/jsp/common/errorPage.jsp</result>
+		</global-results>
+		<global-exception-mappings>
+			<exception-mapping result="ognl" exception="ognl.OgnlException"></exception-mapping>
+			<exception-mapping result="error" exception="java.lang.Exception"></exception-mapping>
+			<exception-mapping result="404"
+				exception="java.lang.NoSuchFieldException"></exception-mapping>
+		</global-exception-mappings>
+	</package>
+	<package name="uploadFiles" extends="global-default">
+		<action name="uploadFile">
+			<result>/WEB-INF/jsp/upload/upload.jsp</result>
+		</action>
+		<action name="uploadSingle" method="uploadSingle"
+			class="com.zl.web.action.UploadAction">
+			<interceptor-ref name="fileUpload">
+				<param name="allowedTypes">text/plain,image/x-png,image/bmp,image/jpeg</param>
+				<param name="maximumSize">2097152</param>
+			</interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			<result name="success">/WEB-INF/jsp/common/success.jsp</result>
+		</action>
+	</package>
+	<package name="downloadFiles" extends="global-default">
+		<action name="downloadFile">
+			<result>/WEB-INF/jsp/download/download.jsp</result>
+		</action>
+		<action name="downloadSingle" class="com.zl.web.action.DownloadAction">
+			<param name="inputPath">/images/strutsdownload/error.jpg</param>
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream;charset=ISO8859-1</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${downloadFileName}"</param>
+				<param name="bufferSize">8192</param>
+			</result>
+		</action>
+	</package> -->
+</struts>
