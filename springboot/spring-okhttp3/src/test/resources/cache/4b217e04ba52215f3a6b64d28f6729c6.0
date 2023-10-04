@@ -1,0 +1,13 @@
+http://publicobject.com/helloworld.txt
+GET
+0
+HTTP/1.1 301 Moved Permanently
+8
+Server: nginx/1.10.3 (Ubuntu)
+Date: Thu, 28 Sep 2023 09:54:46 GMT
+Content-Type: text/html
+Content-Length: 194
+Connection: keep-alive
+Location: https://publicobject.com/helloworld.txt
+OkHttp-Sent-Millis: 1695894886773
+OkHttp-Received-Millis: 1695894886965
