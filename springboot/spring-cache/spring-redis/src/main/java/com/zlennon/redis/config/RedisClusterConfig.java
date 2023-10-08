@@ -2,14 +2,11 @@ package com.zlennon.redis.config;
 
 import org.springframework.boot.autoconfigure.cache.RedisCacheManagerBuilderCustomizer;
 import org.springframework.boot.autoconfigure.data.redis.RedisProperties;
-import org.springframework.cache.CacheManager;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 import org.springframework.data.redis.cache.RedisCacheConfiguration;
-import org.springframework.data.redis.cache.RedisCacheManager;
-import org.springframework.data.redis.cache.RedisCacheWriter;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.data.redis.connection.RedisStandaloneConfiguration;
 import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
@@ -23,31 +20,8 @@ import java.time.Duration;
 @Configuration
 @EnableRedisRepositories
 @EnableCaching
-@Profile("redis")
-public class RedisConfig {
-
-    @Bean
-    public JedisPoolConfig jedisPool(RedisProperties properties) {
-        JedisPoolConfig jedisPoolConfig = new JedisPoolConfig();
-        jedisPoolConfig.setMaxIdle(properties.getJedis().getPool().getMaxIdle());
-        jedisPoolConfig.setMaxWait(properties.getJedis().getPool().getMaxWait());
-        jedisPoolConfig.setMaxTotal(properties.getJedis().getPool().getMaxActive());
-        jedisPoolConfig.setMinIdle(properties.getJedis().getPool().getMinIdle());
-        return jedisPoolConfig;
-    }
-
-
-    @Bean
-    JedisConnectionFactory jedisConnectionFactory(JedisPoolConfig jedisPool,RedisProperties properties) {
-
-        RedisStandaloneConfiguration configuration = new RedisStandaloneConfiguration();
-        configuration.setPassword(properties.getPassword());
-        configuration.setHostName(properties.getHost());
-        configuration.setPort(properties.getPort());
-        return new JedisConnectionFactory(configuration) ;
-    }
-
-
+@Profile("cluster")
+public class RedisClusterConfig {
 
     @Bean
     public <K,V> RedisTemplate<K, V> redisTemplate(RedisConnectionFactory jedisConnectionFactory) {
