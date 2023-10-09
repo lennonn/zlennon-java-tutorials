@@ -18,11 +18,14 @@
             <scope>compile</scope>
         </dependency>
 
-<!--        <dependency>
-            <groupId>com.mxgraph</groupId>
-            <artifactId>mxgraphx-all</artifactId>
-            <version>4.2.1</version>
-        </dependency>-->
+      <dependency>
+          <groupId>com.mxgraph</groupId>
+          <artifactId>mxgraphx-all</artifactId>
+          <version>4.2.1</version>
+          <scope>system</scope>
+          <systemPath>${project.basedir}/src/main/resources/mxgraphx-all-4.2.1.jar</systemPath>
+        </dependency>
+
 
         <dependency>
             <groupId>junit</groupId>
