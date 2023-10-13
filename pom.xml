@@ -19,7 +19,8 @@
         <module>thinking-in-java4</module>
         <module>testing-modules</module>
 		<module>consistency-problem</module>
-	</modules>
+        <module>apache-projects/commons-io</module>
+    </modules>
     <parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
