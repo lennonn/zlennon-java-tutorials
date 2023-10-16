@@ -1,29 +1,49 @@
 package com.zlennon.io.bytes.inputstream;
 
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.SequenceInputStream;
+import java.io.*;
 
 public class PipedInputStreamTest {
-    public static void main(String[] args) {
-        try (
-                // 创建两个文件输入流
-                InputStream input1 = PipedInputStreamTest.class.getClassLoader().getResourceAsStream("seq1.txt");
-                InputStream input2 = PipedInputStreamTest.class.getClassLoader().getResourceAsStream("seq2.txt");
 
-                // 创建 SequenceInputStream，将两个输入流连接在一起
-                SequenceInputStream sequenceInputStream = new SequenceInputStream(input1, input2);
-        ) {
-            // 读取数据并打印到控制台
-            int data;
-            while ((data = sequenceInputStream.read()) != -1) {
-                System.out.print((char) data);
+        public static void main(String[] args) {
+            try (
+                    PipedInputStream pipedInputStream = new PipedInputStream();
+                    PipedOutputStream pipedOutputStream = new PipedOutputStream()
+            ) {
+                // 将输入流和输出流连接在一起
+                pipedInputStream.connect(pipedOutputStream);
+
+                // 创建并启动写入线程
+                Thread writerThread = new Thread(new Writer(pipedOutputStream));
+                writerThread.start();
+
+                // 在主线程中读取数据
+                int data;
+                while ((data = pipedInputStream.read()) != -1) {
+                    System.out.print((char) data);
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
             }
+        }
+    }
 
-        } catch (IOException e) {
-            e.printStackTrace();
+    class Writer implements Runnable {
+        private PipedOutputStream pipedOutputStream;
+
+        public Writer(PipedOutputStream pipedOutputStream) {
+            this.pipedOutputStream = pipedOutputStream;
         }
 
-    }
+        @Override
+        public void run() {
+            try {
+                // 向管道输出流写入数据
+                String message = "Hello, Pipe!";
+                pipedOutputStream.write(message.getBytes());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
     }
 

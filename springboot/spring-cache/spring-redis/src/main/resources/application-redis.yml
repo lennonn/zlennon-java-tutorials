@@ -2,7 +2,7 @@ spring:
   data:
     redis:
       host: 127.0.0.1 # Redis server host.'
-      password:  123456     # Login password of the redis server.
+      #password:  123456     # Login password of the redis server.
       port: 6379  # Redis server port.'
       jedis:
         pool:

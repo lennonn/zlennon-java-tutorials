@@ -1,0 +1,39 @@
+spring:
+  cloud:
+    consul:
+      host: 101.43.146.222
+      port: 8500
+      discovery:
+        enabled: true
+        register: true
+        heartbeat:
+          enabled: true
+        instance-id: ${spring.application.name}-${server.port}
+        health-check-path: /actuator/health
+        health-check-interval: 10s
+        prefer-ip-address: true
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+  autoconfigure:
+    exclude:
+      - org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration
+      - org.springframework.boot.autoconfigure.security.reactive.ReactiveSecurityAutoConfiguration
+      - org.springframework.boot.actuate.autoconfigure.security.reactive.ReactiveManagementWebSecurityAutoConfiguration
+language:
+  type: en
+secure:
+  iplist:
+    write-list: 127.0.0.1
+    black-list: 168.0.0.1
+security:
+  noFilter: "/login"
+jwt:
+  token:
+    expired: 30000
+    refresh:
+      expired: 60000
+logging:
+  level:
+    org.springframework: trace

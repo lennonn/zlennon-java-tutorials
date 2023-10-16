@@ -11,11 +11,12 @@ public class FilterInputStreamTest {
                 // 使用 FilterInputStream 包装文件输入流
                 FilterInputStream filterInputStream = new BufferedInputStream(inputStream);
         ) {
-            //跳过两字节
+
 
             if(filterInputStream.markSupported()) {
                 filterInputStream.mark(0);
             }
+            //跳过两字节
             long skippedBytes = filterInputStream.skip(2);
             // 读取数据并打印到控制台
             int data;

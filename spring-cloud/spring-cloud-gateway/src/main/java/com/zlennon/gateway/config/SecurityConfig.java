@@ -1,8 +1,10 @@
+/*
 
 package com.zlennon.gateway.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Profile;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityCustomizer;
 import org.springframework.security.config.annotation.web.reactive.EnableWebFluxSecurity;
 import org.springframework.security.config.web.server.ServerHttpSecurity;
@@ -15,6 +17,7 @@ import static org.springframework.security.config.Customizer.withDefaults;
 
 @EnableWebFluxSecurity
 @Configuration(proxyBeanMethods = false)
+@Profile("dev")
 public class SecurityConfig {
 
     @Bean
@@ -36,6 +39,7 @@ public class SecurityConfig {
 		return http.build();
 	}
 
+*/
 /*    @Bean
     public SecurityFilterChain securityFilterChain(ServerHttpSecurity http,
                                                    ClientRegistrationRepository clientRegistrationRepository) throws Exception {
@@ -52,7 +56,8 @@ public class SecurityConfig {
                 .logout(logout ->
                         logout.logoutSuccessHandler(oidcLogoutSuccessHandler(clientRegistrationRepository)));
         return http.build();
-    }*/
+    }*//*
+
 
 
     private ServerLogoutSuccessHandler oidcLogoutSuccessHandler(
@@ -69,3 +74,4 @@ public class SecurityConfig {
     }
 
 }
+*/

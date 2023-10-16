@@ -42,7 +42,7 @@ import java.util.List;
  * @author dream.lu
  */
 @Slf4j
-@Configuration(proxyBeanMethods = false)
+//@Configuration(proxyBeanMethods = false)
 @RequiredArgsConstructor
 public class GlobalResponseLogFilter implements GlobalFilter, Ordered {
 	private final WebEndpointProperties endpointProperties;

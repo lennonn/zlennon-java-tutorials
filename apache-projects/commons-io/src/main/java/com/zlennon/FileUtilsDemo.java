@@ -7,9 +7,7 @@ import org.apache.commons.io.FilenameUtils;
 import org.apache.commons.io.IOCase;
 import org.apache.commons.io.comparator.LastModifiedFileComparator;
 import org.apache.commons.io.comparator.PathFileComparator;
-import org.apache.commons.io.filefilter.AndFileFilter;
-import org.apache.commons.io.filefilter.SuffixFileFilter;
-import org.apache.commons.io.filefilter.WildcardFileFilter;
+import org.apache.commons.io.filefilter.*;
 import org.apache.commons.io.function.IOConsumer;
 import org.apache.commons.io.input.TeeInputStream;
 import org.apache.commons.io.monitor.FileAlterationListener;
@@ -23,6 +21,7 @@ import java.io.*;
 import java.net.URL;
 import java.nio.charset.Charset;
 import java.util.Arrays;
+import java.util.Collection;
 
 import static org.junit.Assert.assertEquals;
 
@@ -46,18 +45,23 @@ public class FileUtilsDemo {
         FileUtils.copyURLToFile(new URL(path), file1);
         log.info("test.txt content:{}",data);
         log.info("after use file still read:{}",file1.canRead());
+    }
 
-
+    @Test
+    public void testFilter(){
+        //filters
+        String path=file.getAbsolutePath();
         String fullPath = FilenameUtils.getFullPath(path);
-        String extension = FilenameUtils.getExtension(path);
-        String baseName = FilenameUtils.getBaseName(path);
+        File dir = FileUtils.getFile(fullPath);
 
-        log.info("fullPath:{},extension:{},baseName:{}",fullPath,extension,baseName);
+        String[] pngs = dir.list(new AndFileFilter(
+                new WildcardFileFilter("*test*", IOCase.INSENSITIVE),
+                new SuffixFileFilter("png")));
+        assertEquals(1,pngs.length);
+    }
 
-        long freeSpace = FileSystemUtils.freeSpaceKb("D://");
-        log.info("freeSpace(kb):{},mb:{},gb:{}",freeSpace,freeSpace/1024,freeSpace/1024/1024);
-
-        //input output
+    @Test
+    public void testInputOutput() throws IOException {
 
         String str = "Hello World.";
         ByteArrayInputStream inputStream = new ByteArrayInputStream(str.getBytes());
@@ -69,20 +73,21 @@ public class FileUtilsDemo {
         new TeeInputStream(inputStream, teeOutputStream, true)
                 .read(new byte[str.length()]);
 
-        log.info("outputStream1:{}", String.valueOf(outputStream1));
-        log.info("outputStream2:{}", String.valueOf(outputStream2));
+        log.info("outputStream1:{}", outputStream1);
+        log.info("outputStream2:{}", outputStream2);
+    }
 
-        //filters
-        String filterUrl="D:\\tmp";
+    @Test
+    public  void testFilenameUtils() throws IOException {
+        String path=file.getAbsolutePath();
+        String fullPath = FilenameUtils.getFullPath(path);
+        String extension = FilenameUtils.getExtension(path);
+        String baseName = FilenameUtils.getBaseName(path);
 
-        File dir = FileUtils.getFile(filterUrl);
+        log.info("fullPath:{},extension:{},baseName:{}",fullPath,extension,baseName);
 
-        String[] pngs = dir.list(new AndFileFilter(
-                new WildcardFileFilter("*nn*", IOCase.INSENSITIVE),
-                new SuffixFileFilter("png")));
-        assertEquals(2,pngs.length);
-
-
+        long freeSpace = FileSystemUtils.freeSpaceKb("D://");
+        log.info("freeSpace(kb):{},mb:{},gb:{}",freeSpace,freeSpace/1024,freeSpace/1024/1024);
     }
 
 
@@ -159,5 +164,26 @@ public class FileUtilsDemo {
         }
     }
 
+
+    @Test
+    public void testRename() throws IOException {
+        String url="D:\\IdeaProject\\zlennon-java-tutorials\\java-modules\\java-core\\src\\main\\java\\com\\zlennon\\nio\\sockets\\";
+        File directory = new File(url);
+
+        IOFileFilter javaFileFilter = new SuffixFileFilter(".java");
+        IOFileFilter dirFilter = TrueFileFilter.INSTANCE;
+
+        // Use FileUtils.listFiles to get all Java files recursively
+        Collection<File> javaFiles = FileUtils.listFiles(directory, javaFileFilter, dirFilter);
+        for (File javaFile : javaFiles) {
+            String dic =javaFile.getParent();
+            String name = javaFile.getName();
+            name=name.substring(0,name.indexOf("."));
+           String fileName=name+dic.substring(dic.lastIndexOf("\\")+1)+".java";
+            System.out.println(fileName);
+            javaFile.renameTo(new File(url+fileName));
+        }
+
+    }
 
 }
