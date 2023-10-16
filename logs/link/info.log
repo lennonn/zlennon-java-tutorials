@@ -1,0 +1,1017 @@
+[16:06:20:061] [INFO] - org.hibernate.validator.internal.util.Version.<clinit>(Version.java:21) - HV000001: Hibernate Validator 8.0.0.Final
+[16:06:21:198] [INFO] - org.springframework.boot.logging.DeferredLog.logTo(DeferredLog.java:250) - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[16:06:22:017] [INFO] - com.alibaba.nacos.plugin.auth.spi.client.ClientAuthPluginManager.init(ClientAuthPluginManager.java:56) - [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.impl.NacosClientAuthServiceImpl success.
+[16:06:22:021] [INFO] - com.alibaba.nacos.plugin.auth.spi.client.ClientAuthPluginManager.init(ClientAuthPluginManager.java:56) - [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.ram.RamClientAuthServiceImpl success.
+[16:06:23:080] [ERROR] - com.alibaba.cloud.nacos.client.NacosPropertySourceBuilder.loadNacosData(NacosPropertySourceBuilder.java:101) - get data from Nacos error,dataId:gateway-service 
+com.alibaba.nacos.api.exception.NacosException: group invalid
+	at com.alibaba.nacos.client.config.utils.ParamUtils.checkKeyParam(ParamUtils.java:105) ~[nacos-client-2.2.1.jar:?]
+	at com.alibaba.nacos.client.config.NacosConfigService.getConfigInner(NacosConfigService.java:158) ~[nacos-client-2.2.1.jar:?]
+	at com.alibaba.nacos.client.config.NacosConfigService.getConfig(NacosConfigService.java:96) ~[nacos-client-2.2.1.jar:?]
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceBuilder.loadNacosData(NacosPropertySourceBuilder.java:85) [spring-cloud-starter-alibaba-nacos-config-2022.0.0.0.jar:2022.0.0.0]
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceBuilder.build(NacosPropertySourceBuilder.java:73) [spring-cloud-starter-alibaba-nacos-config-2022.0.0.0.jar:2022.0.0.0]
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.loadNacosPropertySource(NacosPropertySourceLocator.java:199) [spring-cloud-starter-alibaba-nacos-config-2022.0.0.0.jar:2022.0.0.0]
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.loadNacosDataIfPresent(NacosPropertySourceLocator.java:186) [spring-cloud-starter-alibaba-nacos-config-2022.0.0.0.jar:2022.0.0.0]
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.loadApplicationConfiguration(NacosPropertySourceLocator.java:141) [spring-cloud-starter-alibaba-nacos-config-2022.0.0.0.jar:2022.0.0.0]
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.locate(NacosPropertySourceLocator.java:103) [spring-cloud-starter-alibaba-nacos-config-2022.0.0.0.jar:2022.0.0.0]
+	at org.springframework.cloud.bootstrap.config.PropertySourceLocator.locateCollection(PropertySourceLocator.java:50) [spring-cloud-context-4.0.3.jar:4.0.3]
+	at org.springframework.cloud.bootstrap.config.PropertySourceLocator.locateCollection(PropertySourceLocator.java:46) [spring-cloud-context-4.0.3.jar:4.0.3]
+	at org.springframework.cloud.bootstrap.config.PropertySourceBootstrapConfiguration.doInitialize(PropertySourceBootstrapConfiguration.java:121) [spring-cloud-context-4.0.3.jar:4.0.3]
+	at org.springframework.cloud.bootstrap.config.PropertySourceBootstrapConfiguration.initialize(PropertySourceBootstrapConfiguration.java:111) [spring-cloud-context-4.0.3.jar:4.0.3]
+	at org.springframework.boot.SpringApplication.applyInitializers(SpringApplication.java:607) [spring-boot-3.1.1.jar:3.1.1]
+	at org.springframework.boot.SpringApplication.prepareContext(SpringApplication.java:387) [spring-boot-3.1.1.jar:3.1.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:311) [spring-boot-3.1.1.jar:3.1.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306) [spring-boot-3.1.1.jar:3.1.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295) [spring-boot-3.1.1.jar:3.1.1]
+	at com.zlennon.gateway.SpringCloudGateWayApplication.main(SpringCloudGateWayApplication.java:15) [classes/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:568) ~[?:?]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) [spring-boot-devtools-3.1.1.jar:3.1.1]
+[16:06:23:111] [ERROR] - com.alibaba.cloud.nacos.client.NacosPropertySourceBuilder.loadNacosData(NacosPropertySourceBuilder.java:101) - get data from Nacos error,dataId:gateway-service.yml 
+com.alibaba.nacos.api.exception.NacosException: group invalid
+	at com.alibaba.nacos.client.config.utils.ParamUtils.checkKeyParam(ParamUtils.java:105) ~[nacos-client-2.2.1.jar:?]
+	at com.alibaba.nacos.client.config.NacosConfigService.getConfigInner(NacosConfigService.java:158) ~[nacos-client-2.2.1.jar:?]
+	at com.alibaba.nacos.client.config.NacosConfigService.getConfig(NacosConfigService.java:96) ~[nacos-client-2.2.1.jar:?]
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceBuilder.loadNacosData(NacosPropertySourceBuilder.java:85) [spring-cloud-starter-alibaba-nacos-config-2022.0.0.0.jar:2022.0.0.0]
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceBuilder.build(NacosPropertySourceBuilder.java:73) [spring-cloud-starter-alibaba-nacos-config-2022.0.0.0.jar:2022.0.0.0]
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.loadNacosPropertySource(NacosPropertySourceLocator.java:199) [spring-cloud-starter-alibaba-nacos-config-2022.0.0.0.jar:2022.0.0.0]
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.loadNacosDataIfPresent(NacosPropertySourceLocator.java:186) [spring-cloud-starter-alibaba-nacos-config-2022.0.0.0.jar:2022.0.0.0]
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.loadApplicationConfiguration(NacosPropertySourceLocator.java:144) [spring-cloud-starter-alibaba-nacos-config-2022.0.0.0.jar:2022.0.0.0]
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.locate(NacosPropertySourceLocator.java:103) [spring-cloud-starter-alibaba-nacos-config-2022.0.0.0.jar:2022.0.0.0]
+	at org.springframework.cloud.bootstrap.config.PropertySourceLocator.locateCollection(PropertySourceLocator.java:50) [spring-cloud-context-4.0.3.jar:4.0.3]
+	at org.springframework.cloud.bootstrap.config.PropertySourceLocator.locateCollection(PropertySourceLocator.java:46) [spring-cloud-context-4.0.3.jar:4.0.3]
+	at org.springframework.cloud.bootstrap.config.PropertySourceBootstrapConfiguration.doInitialize(PropertySourceBootstrapConfiguration.java:121) [spring-cloud-context-4.0.3.jar:4.0.3]
+	at org.springframework.cloud.bootstrap.config.PropertySourceBootstrapConfiguration.initialize(PropertySourceBootstrapConfiguration.java:111) [spring-cloud-context-4.0.3.jar:4.0.3]
+	at org.springframework.boot.SpringApplication.applyInitializers(SpringApplication.java:607) [spring-boot-3.1.1.jar:3.1.1]
+	at org.springframework.boot.SpringApplication.prepareContext(SpringApplication.java:387) [spring-boot-3.1.1.jar:3.1.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:311) [spring-boot-3.1.1.jar:3.1.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306) [spring-boot-3.1.1.jar:3.1.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295) [spring-boot-3.1.1.jar:3.1.1]
+	at com.zlennon.gateway.SpringCloudGateWayApplication.main(SpringCloudGateWayApplication.java:15) [classes/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:568) ~[?:?]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) [spring-boot-devtools-3.1.1.jar:3.1.1]
+[16:06:23:114] [ERROR] - com.alibaba.cloud.nacos.client.NacosPropertySourceBuilder.loadNacosData(NacosPropertySourceBuilder.java:101) - get data from Nacos error,dataId:gateway-service-nacos-routes.yml 
+com.alibaba.nacos.api.exception.NacosException: group invalid
+	at com.alibaba.nacos.client.config.utils.ParamUtils.checkKeyParam(ParamUtils.java:105) ~[nacos-client-2.2.1.jar:?]
+	at com.alibaba.nacos.client.config.NacosConfigService.getConfigInner(NacosConfigService.java:158) ~[nacos-client-2.2.1.jar:?]
+	at com.alibaba.nacos.client.config.NacosConfigService.getConfig(NacosConfigService.java:96) ~[nacos-client-2.2.1.jar:?]
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceBuilder.loadNacosData(NacosPropertySourceBuilder.java:85) [spring-cloud-starter-alibaba-nacos-config-2022.0.0.0.jar:2022.0.0.0]
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceBuilder.build(NacosPropertySourceBuilder.java:73) [spring-cloud-starter-alibaba-nacos-config-2022.0.0.0.jar:2022.0.0.0]
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.loadNacosPropertySource(NacosPropertySourceLocator.java:199) [spring-cloud-starter-alibaba-nacos-config-2022.0.0.0.jar:2022.0.0.0]
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.loadNacosDataIfPresent(NacosPropertySourceLocator.java:186) [spring-cloud-starter-alibaba-nacos-config-2022.0.0.0.jar:2022.0.0.0]
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.loadApplicationConfiguration(NacosPropertySourceLocator.java:149) [spring-cloud-starter-alibaba-nacos-config-2022.0.0.0.jar:2022.0.0.0]
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.locate(NacosPropertySourceLocator.java:103) [spring-cloud-starter-alibaba-nacos-config-2022.0.0.0.jar:2022.0.0.0]
+	at org.springframework.cloud.bootstrap.config.PropertySourceLocator.locateCollection(PropertySourceLocator.java:50) [spring-cloud-context-4.0.3.jar:4.0.3]
+	at org.springframework.cloud.bootstrap.config.PropertySourceLocator.locateCollection(PropertySourceLocator.java:46) [spring-cloud-context-4.0.3.jar:4.0.3]
+	at org.springframework.cloud.bootstrap.config.PropertySourceBootstrapConfiguration.doInitialize(PropertySourceBootstrapConfiguration.java:121) [spring-cloud-context-4.0.3.jar:4.0.3]
+	at org.springframework.cloud.bootstrap.config.PropertySourceBootstrapConfiguration.initialize(PropertySourceBootstrapConfiguration.java:111) [spring-cloud-context-4.0.3.jar:4.0.3]
+	at org.springframework.boot.SpringApplication.applyInitializers(SpringApplication.java:607) [spring-boot-3.1.1.jar:3.1.1]
+	at org.springframework.boot.SpringApplication.prepareContext(SpringApplication.java:387) [spring-boot-3.1.1.jar:3.1.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:311) [spring-boot-3.1.1.jar:3.1.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306) [spring-boot-3.1.1.jar:3.1.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295) [spring-boot-3.1.1.jar:3.1.1]
+	at com.zlennon.gateway.SpringCloudGateWayApplication.main(SpringCloudGateWayApplication.java:15) [classes/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:568) ~[?:?]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) [spring-boot-devtools-3.1.1.jar:3.1.1]
+[16:06:23:123] [INFO] - org.springframework.cloud.bootstrap.config.PropertySourceBootstrapConfiguration.doInitialize(PropertySourceBootstrapConfiguration.java:134) - Located property source: [BootstrapPropertySource {name='bootstrapProperties-gateway-service-nacos-routes.yml,${spring.profiles.active}'}, BootstrapPropertySource {name='bootstrapProperties-gateway-service.yml,${spring.profiles.active}'}, BootstrapPropertySource {name='bootstrapProperties-gateway-service,${spring.profiles.active}'}]
+[16:06:23:193] [INFO] - org.springframework.boot.SpringApplication.logStartupProfileInfo(SpringApplication.java:640) - The following 1 profile is active: "nacos-routes"
+[16:06:26:924] [INFO] - org.springframework.cloud.context.scope.GenericScope.setSerializationId(GenericScope.java:282) - BeanFactory id=a09f1633-8e3c-340f-a737-e1bd51c0ef3f
+[16:06:27:402] [INFO] - org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:108) - Tomcat initialized with port(s): 7999 (http)
+[16:06:27:418] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:173) - Initializing ProtocolHandler ["http-nio-7999"]
+[16:06:27:420] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:173) - Starting service [Tomcat]
+[16:06:27:421] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:173) - Starting Servlet engine: [Apache Tomcat/10.1.10]
+[16:07:04:658] [INFO] - org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator.lambda$initFactories$1(RouteDefinitionRouteLocator.java:89) - Loaded RoutePredicateFactory [After]
+[16:07:04:658] [INFO] - org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator.lambda$initFactories$1(RouteDefinitionRouteLocator.java:89) - Loaded RoutePredicateFactory [Before]
+[16:07:04:659] [INFO] - org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator.lambda$initFactories$1(RouteDefinitionRouteLocator.java:89) - Loaded RoutePredicateFactory [Between]
+[16:07:04:659] [INFO] - org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator.lambda$initFactories$1(RouteDefinitionRouteLocator.java:89) - Loaded RoutePredicateFactory [Cookie]
+[16:07:04:659] [INFO] - org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator.lambda$initFactories$1(RouteDefinitionRouteLocator.java:89) - Loaded RoutePredicateFactory [Header]
+[16:07:04:659] [INFO] - org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator.lambda$initFactories$1(RouteDefinitionRouteLocator.java:89) - Loaded RoutePredicateFactory [Host]
+[16:07:04:659] [INFO] - org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator.lambda$initFactories$1(RouteDefinitionRouteLocator.java:89) - Loaded RoutePredicateFactory [Method]
+[16:07:04:660] [INFO] - org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator.lambda$initFactories$1(RouteDefinitionRouteLocator.java:89) - Loaded RoutePredicateFactory [Path]
+[16:07:04:660] [INFO] - org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator.lambda$initFactories$1(RouteDefinitionRouteLocator.java:89) - Loaded RoutePredicateFactory [Query]
+[16:07:04:660] [INFO] - org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator.lambda$initFactories$1(RouteDefinitionRouteLocator.java:89) - Loaded RoutePredicateFactory [ReadBody]
+[16:07:04:660] [INFO] - org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator.lambda$initFactories$1(RouteDefinitionRouteLocator.java:89) - Loaded RoutePredicateFactory [RemoteAddr]
+[16:07:04:660] [INFO] - org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator.lambda$initFactories$1(RouteDefinitionRouteLocator.java:89) - Loaded RoutePredicateFactory [XForwardedRemoteAddr]
+[16:07:04:661] [INFO] - org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator.lambda$initFactories$1(RouteDefinitionRouteLocator.java:89) - Loaded RoutePredicateFactory [Weight]
+[16:07:04:661] [INFO] - org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator.lambda$initFactories$1(RouteDefinitionRouteLocator.java:89) - Loaded RoutePredicateFactory [CloudFoundryRouteService]
+[16:07:05:573] [INFO] - org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver.<init>(EndpointLinksResolver.java:58) - Exposing 1 endpoint(s) beneath base path '/actuator'
+[16:07:05:628] [INFO] - org.springframework.boot.autoconfigure.security.reactive.ReactiveUserDetailsServiceAutoConfiguration.getOrDeducePassword(ReactiveUserDetailsServiceAutoConfiguration.java:91) - 
+
+Using generated security password: 4c64b98b-ff7b-41dd-bccd-5088851d9238
+
+[16:07:06:121] [WARN] - org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration.checkTemplateLocationExists(ThymeleafAutoConfiguration.java:101) - Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+[16:07:06:588] [INFO] - org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer.startServer(OptionalLiveReloadServer.java:59) - LiveReload server is running on port 35729
+[16:07:06:760] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:173) - Starting ProtocolHandler ["http-nio-7999"]
+[16:07:06:808] [INFO] - org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start(TomcatWebServer.java:220) - Tomcat started on port(s): 7999 (http) with context path ''
+[16:07:07:490] [INFO] - com.alibaba.nacos.plugin.auth.spi.client.ClientAuthPluginManager.init(ClientAuthPluginManager.java:56) - [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.impl.NacosClientAuthServiceImpl success.
+[16:07:07:490] [INFO] - com.alibaba.nacos.plugin.auth.spi.client.ClientAuthPluginManager.init(ClientAuthPluginManager.java:56) - [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.ram.RamClientAuthServiceImpl success.
+[16:07:09:122] [INFO] - com.alibaba.cloud.nacos.registry.NacosServiceRegistry.register(NacosServiceRegistry.java:76) - nacos registry, nacos-routes gateway-service 172.19.147.134:7999 register finished
+[16:07:09:174] [INFO] - com.zlennon.gateway.dynamic.ConsulRouteChangeListener.init(ConsulRouteChangeListener.java:28) - null
+[16:07:09:175] [INFO] - com.zlennon.gateway.dynamic.DynamicRouteServiceListener.init(DynamicRouteServiceListener.java:44) - 开始进行网关路由配置初始化
+[16:07:09:178] [INFO] - com.alibaba.nacos.plugin.auth.spi.client.ClientAuthPluginManager.init(ClientAuthPluginManager.java:56) - [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.impl.NacosClientAuthServiceImpl success.
+[16:07:09:178] [INFO] - com.alibaba.nacos.plugin.auth.spi.client.ClientAuthPluginManager.init(ClientAuthPluginManager.java:56) - [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.ram.RamClientAuthServiceImpl success.
+[16:07:09:179] [INFO] - com.zlennon.gateway.dynamic.DynamicRouteServiceListener.init(DynamicRouteServiceListener.java:51) - 网关路由配置初始化，dataId：gateway-nacos-routes.json，group：nacos-routes
+[16:07:09:690] [INFO] - com.zlennon.gateway.dynamic.DynamicRouteServiceListener.init(DynamicRouteServiceListener.java:65) - 接收到网关路由初始化配置：
+{
+    "routes": [
+        {
+            "id": "dynamic-route1",
+            "uri": "http://example.com",
+            "predicates": [
+                {
+                    "name": "Path",
+                    "args": {
+                        "pattern": "/example/**"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "another-route1",
+            "uri": "http://another-service.com",
+            "predicates": [
+                {
+                    "name": "Path",
+                    "args": {
+                        "pattern": "/another/**"
+                    }
+                }
+            ]
+        }
+    ]
+}
+
+[16:07:09:927] [WARN] - org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:616) - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'scopedTarget.dynamicRouteServiceListener': Invocation of init method failed
+[16:07:09:942] [INFO] - com.alibaba.cloud.nacos.registry.NacosServiceRegistry.deregister(NacosServiceRegistry.java:95) - De-registering from Nacos Server now...
+[16:07:10:008] [INFO] - com.alibaba.cloud.nacos.registry.NacosServiceRegistry.deregister(NacosServiceRegistry.java:115) - De-registration finished.
+[16:07:10:397] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:173) - Pausing ProtocolHandler ["http-nio-7999"]
+[16:07:10:398] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:173) - Stopping service [Tomcat]
+[16:07:10:413] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:173) - Stopping ProtocolHandler ["http-nio-7999"]
+[16:07:10:417] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:173) - Destroying ProtocolHandler ["http-nio-7999"]
+[16:07:10:442] [INFO] - org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLogger.logMessage(ConditionEvaluationReportLogger.java:82) - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+[16:07:10:484] [ERROR] - org.springframework.boot.SpringApplication.reportFailure(SpringApplication.java:824) - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'scopedTarget.dynamicRouteServiceListener': Invocation of init method failed
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:196) ~[spring-beans-6.0.10.jar:6.0.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:419) ~[spring-beans-6.0.10.jar:6.0.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1762) ~[spring-beans-6.0.10.jar:6.0.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:598) ~[spring-beans-6.0.10.jar:6.0.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520) ~[spring-beans-6.0.10.jar:6.0.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$1(AbstractBeanFactory.java:365) ~[spring-beans-6.0.10.jar:6.0.10]
+	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.getBean(GenericScope.java:375) ~[spring-cloud-context-4.0.3.jar:4.0.3]
+	at org.springframework.cloud.context.scope.GenericScope.get(GenericScope.java:179) ~[spring-cloud-context-4.0.3.jar:4.0.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:362) ~[spring-beans-6.0.10.jar:6.0.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200) ~[spring-beans-6.0.10.jar:6.0.10]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1154) ~[spring-context-6.0.10.jar:6.0.10]
+	at org.springframework.cloud.context.scope.refresh.RefreshScope.eagerlyInitialize(RefreshScope.java:126) ~[spring-cloud-context-4.0.3.jar:4.0.3]
+	at org.springframework.cloud.context.scope.refresh.RefreshScope.start(RefreshScope.java:118) ~[spring-cloud-context-4.0.3.jar:4.0.3]
+	at org.springframework.cloud.context.scope.refresh.RefreshScope.onApplicationEvent(RefreshScope.java:113) ~[spring-cloud-context-4.0.3.jar:4.0.3]
+	at org.springframework.cloud.context.scope.refresh.RefreshScope.onApplicationEvent(RefreshScope.java:68) ~[spring-cloud-context-4.0.3.jar:4.0.3]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:172) ~[spring-context-6.0.10.jar:6.0.10]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:165) ~[spring-context-6.0.10.jar:6.0.10]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:143) ~[spring-context-6.0.10.jar:6.0.10]
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:437) ~[spring-context-6.0.10.jar:6.0.10]
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:370) ~[spring-context-6.0.10.jar:6.0.10]
+	at org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:960) ~[spring-context-6.0.10.jar:6.0.10]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:611) ~[spring-context-6.0.10.jar:6.0.10]
+	at org.springframework.boot.web.reactive.context.ReactiveWebServerApplicationContext.refresh(ReactiveWebServerApplicationContext.java:66) ~[spring-boot-3.1.1.jar:3.1.1]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734) [spring-boot-3.1.1.jar:3.1.1]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:436) [spring-boot-3.1.1.jar:3.1.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:312) [spring-boot-3.1.1.jar:3.1.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306) [spring-boot-3.1.1.jar:3.1.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295) [spring-boot-3.1.1.jar:3.1.1]
+	at com.zlennon.gateway.SpringCloudGateWayApplication.main(SpringCloudGateWayApplication.java:15) [classes/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:568) ~[?:?]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) [spring-boot-devtools-3.1.1.jar:3.1.1]
+Caused by: com.alibaba.fastjson2.JSONException: syntax error : {
+	at com.alibaba.fastjson2.JSONReader.readArray(JSONReader.java:1843) ~[fastjson2-2.0.23.jar:?]
+	at com.alibaba.fastjson2.JSON.parseArray(JSON.java:2016) ~[fastjson2-2.0.23.jar:?]
+	at com.zlennon.gateway.dynamic.DynamicRouteServiceListener.init(DynamicRouteServiceListener.java:66) ~[classes/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:568) ~[?:?]
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleElement.invoke(InitDestroyAnnotationBeanPostProcessor.java:425) ~[spring-beans-6.0.10.jar:6.0.10]
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeInitMethods(InitDestroyAnnotationBeanPostProcessor.java:369) ~[spring-beans-6.0.10.jar:6.0.10]
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:193) ~[spring-beans-6.0.10.jar:6.0.10]
+	... 33 more
+[16:07:10:490] [WARN] - com.alibaba.nacos.common.http.HttpClientBeanHolder.shutdown(HttpClientBeanHolder.java:102) - [HttpClientBeanHolder] Start destroying common HttpClient
+[16:07:10:491] [WARN] - com.alibaba.nacos.common.http.HttpClientBeanHolder.shutdown(HttpClientBeanHolder.java:111) - [HttpClientBeanHolder] Destruction of the end
+[16:07:10:492] [WARN] - com.alibaba.nacos.common.notify.NotifyCenter.shutdown(NotifyCenter.java:136) - [NotifyCenter] Start destroying Publisher
+[16:07:10:492] [WARN] - com.alibaba.nacos.common.notify.NotifyCenter.shutdown(NotifyCenter.java:153) - [NotifyCenter] Destruction of the end
+[16:09:11:759] [INFO] - org.hibernate.validator.internal.util.Version.<clinit>(Version.java:21) - HV000001: Hibernate Validator 8.0.0.Final
+[16:09:12:619] [INFO] - org.springframework.boot.logging.DeferredLog.logTo(DeferredLog.java:250) - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[16:09:13:342] [INFO] - com.alibaba.nacos.plugin.auth.spi.client.ClientAuthPluginManager.init(ClientAuthPluginManager.java:56) - [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.impl.NacosClientAuthServiceImpl success.
+[16:09:13:342] [INFO] - com.alibaba.nacos.plugin.auth.spi.client.ClientAuthPluginManager.init(ClientAuthPluginManager.java:56) - [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.ram.RamClientAuthServiceImpl success.
+[16:09:14:301] [ERROR] - com.alibaba.cloud.nacos.client.NacosPropertySourceBuilder.loadNacosData(NacosPropertySourceBuilder.java:101) - get data from Nacos error,dataId:gateway-service 
+com.alibaba.nacos.api.exception.NacosException: group invalid
+	at com.alibaba.nacos.client.config.utils.ParamUtils.checkKeyParam(ParamUtils.java:105) ~[nacos-client-2.2.1.jar:?]
+	at com.alibaba.nacos.client.config.NacosConfigService.getConfigInner(NacosConfigService.java:158) ~[nacos-client-2.2.1.jar:?]
+	at com.alibaba.nacos.client.config.NacosConfigService.getConfig(NacosConfigService.java:96) ~[nacos-client-2.2.1.jar:?]
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceBuilder.loadNacosData(NacosPropertySourceBuilder.java:85) [spring-cloud-starter-alibaba-nacos-config-2022.0.0.0.jar:2022.0.0.0]
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceBuilder.build(NacosPropertySourceBuilder.java:73) [spring-cloud-starter-alibaba-nacos-config-2022.0.0.0.jar:2022.0.0.0]
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.loadNacosPropertySource(NacosPropertySourceLocator.java:199) [spring-cloud-starter-alibaba-nacos-config-2022.0.0.0.jar:2022.0.0.0]
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.loadNacosDataIfPresent(NacosPropertySourceLocator.java:186) [spring-cloud-starter-alibaba-nacos-config-2022.0.0.0.jar:2022.0.0.0]
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.loadApplicationConfiguration(NacosPropertySourceLocator.java:141) [spring-cloud-starter-alibaba-nacos-config-2022.0.0.0.jar:2022.0.0.0]
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.locate(NacosPropertySourceLocator.java:103) [spring-cloud-starter-alibaba-nacos-config-2022.0.0.0.jar:2022.0.0.0]
+	at org.springframework.cloud.bootstrap.config.PropertySourceLocator.locateCollection(PropertySourceLocator.java:50) [spring-cloud-context-4.0.3.jar:4.0.3]
+	at org.springframework.cloud.bootstrap.config.PropertySourceLocator.locateCollection(PropertySourceLocator.java:46) [spring-cloud-context-4.0.3.jar:4.0.3]
+	at org.springframework.cloud.bootstrap.config.PropertySourceBootstrapConfiguration.doInitialize(PropertySourceBootstrapConfiguration.java:121) [spring-cloud-context-4.0.3.jar:4.0.3]
+	at org.springframework.cloud.bootstrap.config.PropertySourceBootstrapConfiguration.initialize(PropertySourceBootstrapConfiguration.java:111) [spring-cloud-context-4.0.3.jar:4.0.3]
+	at org.springframework.boot.SpringApplication.applyInitializers(SpringApplication.java:607) [spring-boot-3.1.1.jar:3.1.1]
+	at org.springframework.boot.SpringApplication.prepareContext(SpringApplication.java:387) [spring-boot-3.1.1.jar:3.1.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:311) [spring-boot-3.1.1.jar:3.1.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306) [spring-boot-3.1.1.jar:3.1.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295) [spring-boot-3.1.1.jar:3.1.1]
+	at com.zlennon.gateway.SpringCloudGateWayApplication.main(SpringCloudGateWayApplication.java:15) [classes/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:568) ~[?:?]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) [spring-boot-devtools-3.1.1.jar:3.1.1]
+[16:09:14:316] [ERROR] - com.alibaba.cloud.nacos.client.NacosPropertySourceBuilder.loadNacosData(NacosPropertySourceBuilder.java:101) - get data from Nacos error,dataId:gateway-service.yml 
+com.alibaba.nacos.api.exception.NacosException: group invalid
+	at com.alibaba.nacos.client.config.utils.ParamUtils.checkKeyParam(ParamUtils.java:105) ~[nacos-client-2.2.1.jar:?]
+	at com.alibaba.nacos.client.config.NacosConfigService.getConfigInner(NacosConfigService.java:158) ~[nacos-client-2.2.1.jar:?]
+	at com.alibaba.nacos.client.config.NacosConfigService.getConfig(NacosConfigService.java:96) ~[nacos-client-2.2.1.jar:?]
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceBuilder.loadNacosData(NacosPropertySourceBuilder.java:85) [spring-cloud-starter-alibaba-nacos-config-2022.0.0.0.jar:2022.0.0.0]
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceBuilder.build(NacosPropertySourceBuilder.java:73) [spring-cloud-starter-alibaba-nacos-config-2022.0.0.0.jar:2022.0.0.0]
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.loadNacosPropertySource(NacosPropertySourceLocator.java:199) [spring-cloud-starter-alibaba-nacos-config-2022.0.0.0.jar:2022.0.0.0]
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.loadNacosDataIfPresent(NacosPropertySourceLocator.java:186) [spring-cloud-starter-alibaba-nacos-config-2022.0.0.0.jar:2022.0.0.0]
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.loadApplicationConfiguration(NacosPropertySourceLocator.java:144) [spring-cloud-starter-alibaba-nacos-config-2022.0.0.0.jar:2022.0.0.0]
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.locate(NacosPropertySourceLocator.java:103) [spring-cloud-starter-alibaba-nacos-config-2022.0.0.0.jar:2022.0.0.0]
+	at org.springframework.cloud.bootstrap.config.PropertySourceLocator.locateCollection(PropertySourceLocator.java:50) [spring-cloud-context-4.0.3.jar:4.0.3]
+	at org.springframework.cloud.bootstrap.config.PropertySourceLocator.locateCollection(PropertySourceLocator.java:46) [spring-cloud-context-4.0.3.jar:4.0.3]
+	at org.springframework.cloud.bootstrap.config.PropertySourceBootstrapConfiguration.doInitialize(PropertySourceBootstrapConfiguration.java:121) [spring-cloud-context-4.0.3.jar:4.0.3]
+	at org.springframework.cloud.bootstrap.config.PropertySourceBootstrapConfiguration.initialize(PropertySourceBootstrapConfiguration.java:111) [spring-cloud-context-4.0.3.jar:4.0.3]
+	at org.springframework.boot.SpringApplication.applyInitializers(SpringApplication.java:607) [spring-boot-3.1.1.jar:3.1.1]
+	at org.springframework.boot.SpringApplication.prepareContext(SpringApplication.java:387) [spring-boot-3.1.1.jar:3.1.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:311) [spring-boot-3.1.1.jar:3.1.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306) [spring-boot-3.1.1.jar:3.1.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295) [spring-boot-3.1.1.jar:3.1.1]
+	at com.zlennon.gateway.SpringCloudGateWayApplication.main(SpringCloudGateWayApplication.java:15) [classes/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:568) ~[?:?]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) [spring-boot-devtools-3.1.1.jar:3.1.1]
+[16:09:14:320] [ERROR] - com.alibaba.cloud.nacos.client.NacosPropertySourceBuilder.loadNacosData(NacosPropertySourceBuilder.java:101) - get data from Nacos error,dataId:gateway-service-nacos-routes.yml 
+com.alibaba.nacos.api.exception.NacosException: group invalid
+	at com.alibaba.nacos.client.config.utils.ParamUtils.checkKeyParam(ParamUtils.java:105) ~[nacos-client-2.2.1.jar:?]
+	at com.alibaba.nacos.client.config.NacosConfigService.getConfigInner(NacosConfigService.java:158) ~[nacos-client-2.2.1.jar:?]
+	at com.alibaba.nacos.client.config.NacosConfigService.getConfig(NacosConfigService.java:96) ~[nacos-client-2.2.1.jar:?]
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceBuilder.loadNacosData(NacosPropertySourceBuilder.java:85) [spring-cloud-starter-alibaba-nacos-config-2022.0.0.0.jar:2022.0.0.0]
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceBuilder.build(NacosPropertySourceBuilder.java:73) [spring-cloud-starter-alibaba-nacos-config-2022.0.0.0.jar:2022.0.0.0]
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.loadNacosPropertySource(NacosPropertySourceLocator.java:199) [spring-cloud-starter-alibaba-nacos-config-2022.0.0.0.jar:2022.0.0.0]
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.loadNacosDataIfPresent(NacosPropertySourceLocator.java:186) [spring-cloud-starter-alibaba-nacos-config-2022.0.0.0.jar:2022.0.0.0]
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.loadApplicationConfiguration(NacosPropertySourceLocator.java:149) [spring-cloud-starter-alibaba-nacos-config-2022.0.0.0.jar:2022.0.0.0]
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.locate(NacosPropertySourceLocator.java:103) [spring-cloud-starter-alibaba-nacos-config-2022.0.0.0.jar:2022.0.0.0]
+	at org.springframework.cloud.bootstrap.config.PropertySourceLocator.locateCollection(PropertySourceLocator.java:50) [spring-cloud-context-4.0.3.jar:4.0.3]
+	at org.springframework.cloud.bootstrap.config.PropertySourceLocator.locateCollection(PropertySourceLocator.java:46) [spring-cloud-context-4.0.3.jar:4.0.3]
+	at org.springframework.cloud.bootstrap.config.PropertySourceBootstrapConfiguration.doInitialize(PropertySourceBootstrapConfiguration.java:121) [spring-cloud-context-4.0.3.jar:4.0.3]
+	at org.springframework.cloud.bootstrap.config.PropertySourceBootstrapConfiguration.initialize(PropertySourceBootstrapConfiguration.java:111) [spring-cloud-context-4.0.3.jar:4.0.3]
+	at org.springframework.boot.SpringApplication.applyInitializers(SpringApplication.java:607) [spring-boot-3.1.1.jar:3.1.1]
+	at org.springframework.boot.SpringApplication.prepareContext(SpringApplication.java:387) [spring-boot-3.1.1.jar:3.1.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:311) [spring-boot-3.1.1.jar:3.1.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306) [spring-boot-3.1.1.jar:3.1.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295) [spring-boot-3.1.1.jar:3.1.1]
+	at com.zlennon.gateway.SpringCloudGateWayApplication.main(SpringCloudGateWayApplication.java:15) [classes/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:568) ~[?:?]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) [spring-boot-devtools-3.1.1.jar:3.1.1]
+[16:09:14:327] [INFO] - org.springframework.cloud.bootstrap.config.PropertySourceBootstrapConfiguration.doInitialize(PropertySourceBootstrapConfiguration.java:134) - Located property source: [BootstrapPropertySource {name='bootstrapProperties-gateway-service-nacos-routes.yml,${spring.profiles.active}'}, BootstrapPropertySource {name='bootstrapProperties-gateway-service.yml,${spring.profiles.active}'}, BootstrapPropertySource {name='bootstrapProperties-gateway-service,${spring.profiles.active}'}]
+[16:09:14:386] [INFO] - org.springframework.boot.SpringApplication.logStartupProfileInfo(SpringApplication.java:640) - The following 1 profile is active: "nacos-routes"
+[16:09:17:751] [INFO] - org.springframework.cloud.context.scope.GenericScope.setSerializationId(GenericScope.java:282) - BeanFactory id=a09f1633-8e3c-340f-a737-e1bd51c0ef3f
+[16:09:18:459] [INFO] - org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:108) - Tomcat initialized with port(s): 7999 (http)
+[16:09:18:490] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:173) - Initializing ProtocolHandler ["http-nio-7999"]
+[16:09:18:494] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:173) - Starting service [Tomcat]
+[16:09:18:496] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:173) - Starting Servlet engine: [Apache Tomcat/10.1.10]
+[16:09:20:586] [INFO] - org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator.lambda$initFactories$1(RouteDefinitionRouteLocator.java:89) - Loaded RoutePredicateFactory [After]
+[16:09:20:586] [INFO] - org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator.lambda$initFactories$1(RouteDefinitionRouteLocator.java:89) - Loaded RoutePredicateFactory [Before]
+[16:09:20:587] [INFO] - org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator.lambda$initFactories$1(RouteDefinitionRouteLocator.java:89) - Loaded RoutePredicateFactory [Between]
+[16:09:20:587] [INFO] - org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator.lambda$initFactories$1(RouteDefinitionRouteLocator.java:89) - Loaded RoutePredicateFactory [Cookie]
+[16:09:20:587] [INFO] - org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator.lambda$initFactories$1(RouteDefinitionRouteLocator.java:89) - Loaded RoutePredicateFactory [Header]
+[16:09:20:587] [INFO] - org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator.lambda$initFactories$1(RouteDefinitionRouteLocator.java:89) - Loaded RoutePredicateFactory [Host]
+[16:09:20:588] [INFO] - org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator.lambda$initFactories$1(RouteDefinitionRouteLocator.java:89) - Loaded RoutePredicateFactory [Method]
+[16:09:20:588] [INFO] - org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator.lambda$initFactories$1(RouteDefinitionRouteLocator.java:89) - Loaded RoutePredicateFactory [Path]
+[16:09:20:588] [INFO] - org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator.lambda$initFactories$1(RouteDefinitionRouteLocator.java:89) - Loaded RoutePredicateFactory [Query]
+[16:09:20:589] [INFO] - org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator.lambda$initFactories$1(RouteDefinitionRouteLocator.java:89) - Loaded RoutePredicateFactory [ReadBody]
+[16:09:20:589] [INFO] - org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator.lambda$initFactories$1(RouteDefinitionRouteLocator.java:89) - Loaded RoutePredicateFactory [RemoteAddr]
+[16:09:20:589] [INFO] - org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator.lambda$initFactories$1(RouteDefinitionRouteLocator.java:89) - Loaded RoutePredicateFactory [XForwardedRemoteAddr]
+[16:09:20:589] [INFO] - org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator.lambda$initFactories$1(RouteDefinitionRouteLocator.java:89) - Loaded RoutePredicateFactory [Weight]
+[16:09:20:590] [INFO] - org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator.lambda$initFactories$1(RouteDefinitionRouteLocator.java:89) - Loaded RoutePredicateFactory [CloudFoundryRouteService]
+[16:09:21:637] [INFO] - org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver.<init>(EndpointLinksResolver.java:58) - Exposing 1 endpoint(s) beneath base path '/actuator'
+[16:09:21:702] [INFO] - org.springframework.boot.autoconfigure.security.reactive.ReactiveUserDetailsServiceAutoConfiguration.getOrDeducePassword(ReactiveUserDetailsServiceAutoConfiguration.java:91) - 
+
+Using generated security password: c2ba8624-5fdd-4da7-95a0-894b0646f08f
+
+[16:09:22:158] [WARN] - org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration.checkTemplateLocationExists(ThymeleafAutoConfiguration.java:101) - Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+[16:09:22:585] [INFO] - org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer.startServer(OptionalLiveReloadServer.java:59) - LiveReload server is running on port 35729
+[16:09:22:806] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:173) - Starting ProtocolHandler ["http-nio-7999"]
+[16:09:22:868] [INFO] - org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start(TomcatWebServer.java:220) - Tomcat started on port(s): 7999 (http) with context path ''
+[16:09:23:397] [INFO] - com.alibaba.nacos.plugin.auth.spi.client.ClientAuthPluginManager.init(ClientAuthPluginManager.java:56) - [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.impl.NacosClientAuthServiceImpl success.
+[16:09:23:398] [INFO] - com.alibaba.nacos.plugin.auth.spi.client.ClientAuthPluginManager.init(ClientAuthPluginManager.java:56) - [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.ram.RamClientAuthServiceImpl success.
+[16:09:25:133] [INFO] - com.alibaba.cloud.nacos.registry.NacosServiceRegistry.register(NacosServiceRegistry.java:76) - nacos registry, nacos-routes gateway-service 172.19.147.134:7999 register finished
+[16:09:25:208] [INFO] - com.zlennon.gateway.dynamic.ConsulRouteChangeListener.init(ConsulRouteChangeListener.java:28) - null
+[16:09:25:209] [INFO] - com.zlennon.gateway.dynamic.DynamicRouteServiceListener.init(DynamicRouteServiceListener.java:44) - 开始进行网关路由配置初始化
+[16:09:25:212] [INFO] - com.alibaba.nacos.plugin.auth.spi.client.ClientAuthPluginManager.init(ClientAuthPluginManager.java:56) - [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.impl.NacosClientAuthServiceImpl success.
+[16:09:25:213] [INFO] - com.alibaba.nacos.plugin.auth.spi.client.ClientAuthPluginManager.init(ClientAuthPluginManager.java:56) - [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.ram.RamClientAuthServiceImpl success.
+[16:09:25:213] [INFO] - com.zlennon.gateway.dynamic.DynamicRouteServiceListener.init(DynamicRouteServiceListener.java:51) - 网关路由配置初始化，dataId：gateway-nacos-routes.json，group：nacos-routes
+[16:09:25:631] [INFO] - com.zlennon.gateway.dynamic.DynamicRouteServiceListener.init(DynamicRouteServiceListener.java:65) - 接收到网关路由初始化配置：
+[
+        {
+            "id": "dynamic-route1",
+            "uri": "http://example.com",
+            "predicates": [
+                {
+                    "name": "Path",
+                    "args": {
+                        "pattern": "/example/**"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "another-route1",
+            "uri": "http://another-service.com",
+            "predicates": [
+                {
+                    "name": "Path",
+                    "args": {
+                        "pattern": "/another/**"
+                    }
+                }
+            ]
+        }
+]
+
+[16:09:25:820] [INFO] - com.zlennon.gateway.dynamic.DynamicRouteServiceListener.nachosListener(DynamicRouteServiceListener.java:78) - 接收到网关路由更新配置：
+[
+        {
+            "id": "dynamic-route1",
+            "uri": "http://example.com",
+            "predicates": [
+                {
+                    "name": "Path",
+                    "args": {
+                        "pattern": "/example/**"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "another-route1",
+            "uri": "http://another-service.com",
+            "predicates": [
+                {
+                    "name": "Path",
+                    "args": {
+                        "pattern": "/another/**"
+                    }
+                }
+            ]
+        }
+]
+
+[16:09:25:988] [INFO] - com.zlennon.gateway.dynamic.DynamicRouteService.update(DynamicRouteService.java:62) - Loaded Route: dynamic-route1
+[16:09:25:997] [INFO] - com.zlennon.gateway.dynamic.DynamicRouteServiceListener.init(DynamicRouteServiceListener.java:68) - 网关路由配置初始化完成
+[16:09:25:998] [INFO] - com.zlennon.gateway.dynamic.DynamicRouteService.update(DynamicRouteService.java:62) - Loaded Route: another-route1
+[16:09:26:036] [INFO] - org.springframework.boot.StartupInfoLogger.logStarted(StartupInfoLogger.java:57) - Started SpringCloudGateWayApplication in 15.733 seconds (process running for 19.668)
+[16:09:26:046] [INFO] - com.alibaba.cloud.nacos.refresh.NacosContextRefresher.registerNacosListener(NacosContextRefresher.java:129) - [Nacos Config] Listening config: dataId=gateway-service-nacos-routes.yml, group=${spring.profiles.active}
+[16:09:26:047] [INFO] - com.alibaba.cloud.nacos.refresh.NacosContextRefresher.registerNacosListener(NacosContextRefresher.java:129) - [Nacos Config] Listening config: dataId=gateway-service, group=${spring.profiles.active}
+[16:09:26:049] [INFO] - com.alibaba.cloud.nacos.refresh.NacosContextRefresher.registerNacosListener(NacosContextRefresher.java:129) - [Nacos Config] Listening config: dataId=gateway-service.yml, group=${spring.profiles.active}
+[16:12:17:737] [WARN] - com.alibaba.nacos.common.notify.NotifyCenter.shutdown(NotifyCenter.java:136) - [NotifyCenter] Start destroying Publisher
+[16:12:17:739] [WARN] - com.alibaba.nacos.common.notify.NotifyCenter.shutdown(NotifyCenter.java:153) - [NotifyCenter] Destruction of the end
+[16:12:17:740] [WARN] - com.alibaba.nacos.common.http.HttpClientBeanHolder.shutdown(HttpClientBeanHolder.java:102) - [HttpClientBeanHolder] Start destroying common HttpClient
+[16:12:17:741] [WARN] - com.alibaba.nacos.common.http.HttpClientBeanHolder.shutdown(HttpClientBeanHolder.java:111) - [HttpClientBeanHolder] Destruction of the end
+[16:12:18:138] [INFO] - com.alibaba.cloud.nacos.registry.NacosServiceRegistry.deregister(NacosServiceRegistry.java:95) - De-registering from Nacos Server now...
+[16:12:18:276] [INFO] - com.alibaba.cloud.nacos.registry.NacosServiceRegistry.deregister(NacosServiceRegistry.java:115) - De-registration finished.
+[16:12:35:618] [INFO] - org.hibernate.validator.internal.util.Version.<clinit>(Version.java:21) - HV000001: Hibernate Validator 8.0.0.Final
+[16:12:36:801] [INFO] - org.springframework.boot.logging.DeferredLog.logTo(DeferredLog.java:250) - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[16:12:37:830] [INFO] - com.alibaba.nacos.plugin.auth.spi.client.ClientAuthPluginManager.init(ClientAuthPluginManager.java:56) - [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.impl.NacosClientAuthServiceImpl success.
+[16:12:37:831] [INFO] - com.alibaba.nacos.plugin.auth.spi.client.ClientAuthPluginManager.init(ClientAuthPluginManager.java:56) - [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.ram.RamClientAuthServiceImpl success.
+[16:12:38:837] [ERROR] - com.alibaba.cloud.nacos.client.NacosPropertySourceBuilder.loadNacosData(NacosPropertySourceBuilder.java:101) - get data from Nacos error,dataId:gateway-service 
+com.alibaba.nacos.api.exception.NacosException: group invalid
+	at com.alibaba.nacos.client.config.utils.ParamUtils.checkKeyParam(ParamUtils.java:105) ~[nacos-client-2.2.1.jar:?]
+	at com.alibaba.nacos.client.config.NacosConfigService.getConfigInner(NacosConfigService.java:158) ~[nacos-client-2.2.1.jar:?]
+	at com.alibaba.nacos.client.config.NacosConfigService.getConfig(NacosConfigService.java:96) ~[nacos-client-2.2.1.jar:?]
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceBuilder.loadNacosData(NacosPropertySourceBuilder.java:85) [spring-cloud-starter-alibaba-nacos-config-2022.0.0.0.jar:2022.0.0.0]
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceBuilder.build(NacosPropertySourceBuilder.java:73) [spring-cloud-starter-alibaba-nacos-config-2022.0.0.0.jar:2022.0.0.0]
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.loadNacosPropertySource(NacosPropertySourceLocator.java:199) [spring-cloud-starter-alibaba-nacos-config-2022.0.0.0.jar:2022.0.0.0]
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.loadNacosDataIfPresent(NacosPropertySourceLocator.java:186) [spring-cloud-starter-alibaba-nacos-config-2022.0.0.0.jar:2022.0.0.0]
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.loadApplicationConfiguration(NacosPropertySourceLocator.java:141) [spring-cloud-starter-alibaba-nacos-config-2022.0.0.0.jar:2022.0.0.0]
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.locate(NacosPropertySourceLocator.java:103) [spring-cloud-starter-alibaba-nacos-config-2022.0.0.0.jar:2022.0.0.0]
+	at org.springframework.cloud.bootstrap.config.PropertySourceLocator.locateCollection(PropertySourceLocator.java:50) [spring-cloud-context-4.0.3.jar:4.0.3]
+	at org.springframework.cloud.bootstrap.config.PropertySourceLocator.locateCollection(PropertySourceLocator.java:46) [spring-cloud-context-4.0.3.jar:4.0.3]
+	at org.springframework.cloud.bootstrap.config.PropertySourceBootstrapConfiguration.doInitialize(PropertySourceBootstrapConfiguration.java:121) [spring-cloud-context-4.0.3.jar:4.0.3]
+	at org.springframework.cloud.bootstrap.config.PropertySourceBootstrapConfiguration.initialize(PropertySourceBootstrapConfiguration.java:111) [spring-cloud-context-4.0.3.jar:4.0.3]
+	at org.springframework.boot.SpringApplication.applyInitializers(SpringApplication.java:607) [spring-boot-3.1.1.jar:3.1.1]
+	at org.springframework.boot.SpringApplication.prepareContext(SpringApplication.java:387) [spring-boot-3.1.1.jar:3.1.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:311) [spring-boot-3.1.1.jar:3.1.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306) [spring-boot-3.1.1.jar:3.1.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295) [spring-boot-3.1.1.jar:3.1.1]
+	at com.zlennon.gateway.SpringCloudGateWayApplication.main(SpringCloudGateWayApplication.java:15) [classes/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:568) ~[?:?]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) [spring-boot-devtools-3.1.1.jar:3.1.1]
+[16:12:38:853] [ERROR] - com.alibaba.cloud.nacos.client.NacosPropertySourceBuilder.loadNacosData(NacosPropertySourceBuilder.java:101) - get data from Nacos error,dataId:gateway-service.yml 
+com.alibaba.nacos.api.exception.NacosException: group invalid
+	at com.alibaba.nacos.client.config.utils.ParamUtils.checkKeyParam(ParamUtils.java:105) ~[nacos-client-2.2.1.jar:?]
+	at com.alibaba.nacos.client.config.NacosConfigService.getConfigInner(NacosConfigService.java:158) ~[nacos-client-2.2.1.jar:?]
+	at com.alibaba.nacos.client.config.NacosConfigService.getConfig(NacosConfigService.java:96) ~[nacos-client-2.2.1.jar:?]
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceBuilder.loadNacosData(NacosPropertySourceBuilder.java:85) [spring-cloud-starter-alibaba-nacos-config-2022.0.0.0.jar:2022.0.0.0]
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceBuilder.build(NacosPropertySourceBuilder.java:73) [spring-cloud-starter-alibaba-nacos-config-2022.0.0.0.jar:2022.0.0.0]
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.loadNacosPropertySource(NacosPropertySourceLocator.java:199) [spring-cloud-starter-alibaba-nacos-config-2022.0.0.0.jar:2022.0.0.0]
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.loadNacosDataIfPresent(NacosPropertySourceLocator.java:186) [spring-cloud-starter-alibaba-nacos-config-2022.0.0.0.jar:2022.0.0.0]
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.loadApplicationConfiguration(NacosPropertySourceLocator.java:144) [spring-cloud-starter-alibaba-nacos-config-2022.0.0.0.jar:2022.0.0.0]
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.locate(NacosPropertySourceLocator.java:103) [spring-cloud-starter-alibaba-nacos-config-2022.0.0.0.jar:2022.0.0.0]
+	at org.springframework.cloud.bootstrap.config.PropertySourceLocator.locateCollection(PropertySourceLocator.java:50) [spring-cloud-context-4.0.3.jar:4.0.3]
+	at org.springframework.cloud.bootstrap.config.PropertySourceLocator.locateCollection(PropertySourceLocator.java:46) [spring-cloud-context-4.0.3.jar:4.0.3]
+	at org.springframework.cloud.bootstrap.config.PropertySourceBootstrapConfiguration.doInitialize(PropertySourceBootstrapConfiguration.java:121) [spring-cloud-context-4.0.3.jar:4.0.3]
+	at org.springframework.cloud.bootstrap.config.PropertySourceBootstrapConfiguration.initialize(PropertySourceBootstrapConfiguration.java:111) [spring-cloud-context-4.0.3.jar:4.0.3]
+	at org.springframework.boot.SpringApplication.applyInitializers(SpringApplication.java:607) [spring-boot-3.1.1.jar:3.1.1]
+	at org.springframework.boot.SpringApplication.prepareContext(SpringApplication.java:387) [spring-boot-3.1.1.jar:3.1.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:311) [spring-boot-3.1.1.jar:3.1.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306) [spring-boot-3.1.1.jar:3.1.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295) [spring-boot-3.1.1.jar:3.1.1]
+	at com.zlennon.gateway.SpringCloudGateWayApplication.main(SpringCloudGateWayApplication.java:15) [classes/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:568) ~[?:?]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) [spring-boot-devtools-3.1.1.jar:3.1.1]
+[16:12:38:858] [ERROR] - com.alibaba.cloud.nacos.client.NacosPropertySourceBuilder.loadNacosData(NacosPropertySourceBuilder.java:101) - get data from Nacos error,dataId:gateway-service-nacos-routes.yml 
+com.alibaba.nacos.api.exception.NacosException: group invalid
+	at com.alibaba.nacos.client.config.utils.ParamUtils.checkKeyParam(ParamUtils.java:105) ~[nacos-client-2.2.1.jar:?]
+	at com.alibaba.nacos.client.config.NacosConfigService.getConfigInner(NacosConfigService.java:158) ~[nacos-client-2.2.1.jar:?]
+	at com.alibaba.nacos.client.config.NacosConfigService.getConfig(NacosConfigService.java:96) ~[nacos-client-2.2.1.jar:?]
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceBuilder.loadNacosData(NacosPropertySourceBuilder.java:85) [spring-cloud-starter-alibaba-nacos-config-2022.0.0.0.jar:2022.0.0.0]
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceBuilder.build(NacosPropertySourceBuilder.java:73) [spring-cloud-starter-alibaba-nacos-config-2022.0.0.0.jar:2022.0.0.0]
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.loadNacosPropertySource(NacosPropertySourceLocator.java:199) [spring-cloud-starter-alibaba-nacos-config-2022.0.0.0.jar:2022.0.0.0]
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.loadNacosDataIfPresent(NacosPropertySourceLocator.java:186) [spring-cloud-starter-alibaba-nacos-config-2022.0.0.0.jar:2022.0.0.0]
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.loadApplicationConfiguration(NacosPropertySourceLocator.java:149) [spring-cloud-starter-alibaba-nacos-config-2022.0.0.0.jar:2022.0.0.0]
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.locate(NacosPropertySourceLocator.java:103) [spring-cloud-starter-alibaba-nacos-config-2022.0.0.0.jar:2022.0.0.0]
+	at org.springframework.cloud.bootstrap.config.PropertySourceLocator.locateCollection(PropertySourceLocator.java:50) [spring-cloud-context-4.0.3.jar:4.0.3]
+	at org.springframework.cloud.bootstrap.config.PropertySourceLocator.locateCollection(PropertySourceLocator.java:46) [spring-cloud-context-4.0.3.jar:4.0.3]
+	at org.springframework.cloud.bootstrap.config.PropertySourceBootstrapConfiguration.doInitialize(PropertySourceBootstrapConfiguration.java:121) [spring-cloud-context-4.0.3.jar:4.0.3]
+	at org.springframework.cloud.bootstrap.config.PropertySourceBootstrapConfiguration.initialize(PropertySourceBootstrapConfiguration.java:111) [spring-cloud-context-4.0.3.jar:4.0.3]
+	at org.springframework.boot.SpringApplication.applyInitializers(SpringApplication.java:607) [spring-boot-3.1.1.jar:3.1.1]
+	at org.springframework.boot.SpringApplication.prepareContext(SpringApplication.java:387) [spring-boot-3.1.1.jar:3.1.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:311) [spring-boot-3.1.1.jar:3.1.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306) [spring-boot-3.1.1.jar:3.1.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295) [spring-boot-3.1.1.jar:3.1.1]
+	at com.zlennon.gateway.SpringCloudGateWayApplication.main(SpringCloudGateWayApplication.java:15) [classes/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:568) ~[?:?]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) [spring-boot-devtools-3.1.1.jar:3.1.1]
+[16:12:38:863] [INFO] - org.springframework.cloud.bootstrap.config.PropertySourceBootstrapConfiguration.doInitialize(PropertySourceBootstrapConfiguration.java:134) - Located property source: [BootstrapPropertySource {name='bootstrapProperties-gateway-service-nacos-routes.yml,${spring.profiles.active}'}, BootstrapPropertySource {name='bootstrapProperties-gateway-service.yml,${spring.profiles.active}'}, BootstrapPropertySource {name='bootstrapProperties-gateway-service,${spring.profiles.active}'}]
+[16:12:38:933] [INFO] - org.springframework.boot.SpringApplication.logStartupProfileInfo(SpringApplication.java:640) - The following 1 profile is active: "nacos-routes"
+[16:12:43:340] [INFO] - org.springframework.cloud.context.scope.GenericScope.setSerializationId(GenericScope.java:282) - BeanFactory id=a09f1633-8e3c-340f-a737-e1bd51c0ef3f
+[16:12:44:340] [INFO] - org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:108) - Tomcat initialized with port(s): 7999 (http)
+[16:12:44:372] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:173) - Initializing ProtocolHandler ["http-nio-7999"]
+[16:12:44:379] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:173) - Starting service [Tomcat]
+[16:12:44:380] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:173) - Starting Servlet engine: [Apache Tomcat/10.1.10]
+[16:12:47:262] [INFO] - org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator.lambda$initFactories$1(RouteDefinitionRouteLocator.java:89) - Loaded RoutePredicateFactory [After]
+[16:12:47:263] [INFO] - org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator.lambda$initFactories$1(RouteDefinitionRouteLocator.java:89) - Loaded RoutePredicateFactory [Before]
+[16:12:47:263] [INFO] - org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator.lambda$initFactories$1(RouteDefinitionRouteLocator.java:89) - Loaded RoutePredicateFactory [Between]
+[16:12:47:264] [INFO] - org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator.lambda$initFactories$1(RouteDefinitionRouteLocator.java:89) - Loaded RoutePredicateFactory [Cookie]
+[16:12:47:264] [INFO] - org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator.lambda$initFactories$1(RouteDefinitionRouteLocator.java:89) - Loaded RoutePredicateFactory [Header]
+[16:12:47:265] [INFO] - org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator.lambda$initFactories$1(RouteDefinitionRouteLocator.java:89) - Loaded RoutePredicateFactory [Host]
+[16:12:47:265] [INFO] - org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator.lambda$initFactories$1(RouteDefinitionRouteLocator.java:89) - Loaded RoutePredicateFactory [Method]
+[16:12:47:265] [INFO] - org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator.lambda$initFactories$1(RouteDefinitionRouteLocator.java:89) - Loaded RoutePredicateFactory [Path]
+[16:12:47:266] [INFO] - org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator.lambda$initFactories$1(RouteDefinitionRouteLocator.java:89) - Loaded RoutePredicateFactory [Query]
+[16:12:47:266] [INFO] - org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator.lambda$initFactories$1(RouteDefinitionRouteLocator.java:89) - Loaded RoutePredicateFactory [ReadBody]
+[16:12:47:267] [INFO] - org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator.lambda$initFactories$1(RouteDefinitionRouteLocator.java:89) - Loaded RoutePredicateFactory [RemoteAddr]
+[16:12:47:267] [INFO] - org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator.lambda$initFactories$1(RouteDefinitionRouteLocator.java:89) - Loaded RoutePredicateFactory [XForwardedRemoteAddr]
+[16:12:47:267] [INFO] - org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator.lambda$initFactories$1(RouteDefinitionRouteLocator.java:89) - Loaded RoutePredicateFactory [Weight]
+[16:12:47:268] [INFO] - org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator.lambda$initFactories$1(RouteDefinitionRouteLocator.java:89) - Loaded RoutePredicateFactory [CloudFoundryRouteService]
+[16:12:48:736] [INFO] - org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver.<init>(EndpointLinksResolver.java:58) - Exposing 1 endpoint(s) beneath base path '/actuator'
+[16:12:48:839] [INFO] - org.springframework.boot.autoconfigure.security.reactive.ReactiveUserDetailsServiceAutoConfiguration.getOrDeducePassword(ReactiveUserDetailsServiceAutoConfiguration.java:91) - 
+
+Using generated security password: 7faadb25-73fa-4484-af22-1d1785eff6f1
+
+[16:12:49:570] [WARN] - org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration.checkTemplateLocationExists(ThymeleafAutoConfiguration.java:101) - Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+[16:12:50:091] [INFO] - org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer.startServer(OptionalLiveReloadServer.java:59) - LiveReload server is running on port 35729
+[16:12:50:221] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:173) - Starting ProtocolHandler ["http-nio-7999"]
+[16:12:50:254] [INFO] - org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start(TomcatWebServer.java:220) - Tomcat started on port(s): 7999 (http) with context path ''
+[16:12:50:782] [INFO] - com.alibaba.nacos.plugin.auth.spi.client.ClientAuthPluginManager.init(ClientAuthPluginManager.java:56) - [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.impl.NacosClientAuthServiceImpl success.
+[16:12:50:782] [INFO] - com.alibaba.nacos.plugin.auth.spi.client.ClientAuthPluginManager.init(ClientAuthPluginManager.java:56) - [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.ram.RamClientAuthServiceImpl success.
+[16:12:52:884] [INFO] - com.alibaba.cloud.nacos.registry.NacosServiceRegistry.register(NacosServiceRegistry.java:76) - nacos registry, nacos-routes gateway-service 172.19.147.134:7999 register finished
+[16:12:53:063] [INFO] - com.zlennon.gateway.dynamic.ConsulRouteChangeListener.init(ConsulRouteChangeListener.java:28) - null
+[16:12:53:065] [INFO] - com.zlennon.gateway.dynamic.DynamicRouteServiceListener.init(DynamicRouteServiceListener.java:44) - 开始进行网关路由配置初始化
+[16:12:53:069] [INFO] - com.alibaba.nacos.plugin.auth.spi.client.ClientAuthPluginManager.init(ClientAuthPluginManager.java:56) - [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.impl.NacosClientAuthServiceImpl success.
+[16:12:53:070] [INFO] - com.alibaba.nacos.plugin.auth.spi.client.ClientAuthPluginManager.init(ClientAuthPluginManager.java:56) - [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.ram.RamClientAuthServiceImpl success.
+[16:12:53:071] [INFO] - com.zlennon.gateway.dynamic.DynamicRouteServiceListener.init(DynamicRouteServiceListener.java:51) - 网关路由配置初始化，dataId：gateway-nacos-routes.json，group：nacos-routes
+[16:12:53:492] [INFO] - com.zlennon.gateway.dynamic.DynamicRouteServiceListener.init(DynamicRouteServiceListener.java:65) - 接收到网关路由初始化配置：
+[
+        {
+            "id": "dynamic-route1",
+            "uri": "http://example.com",
+            "predicates": [
+                {
+                    "name": "Path",
+                    "args": {
+                        "pattern": "/example/**"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "another-route1",
+            "uri": "http://another-service.com",
+            "predicates": [
+                {
+                    "name": "Path",
+                    "args": {
+                        "pattern": "/another/**"
+                    }
+                }
+            ]
+        }
+]
+
+[16:12:54:037] [INFO] - com.zlennon.gateway.dynamic.DynamicRouteServiceListener.init(DynamicRouteServiceListener.java:68) - 网关路由配置初始化完成
+[16:12:54:066] [INFO] - org.springframework.boot.StartupInfoLogger.logStarted(StartupInfoLogger.java:57) - Started SpringCloudGateWayApplication in 20.061 seconds (process running for 24.583)
+[16:12:54:081] [INFO] - com.alibaba.cloud.nacos.refresh.NacosContextRefresher.registerNacosListener(NacosContextRefresher.java:129) - [Nacos Config] Listening config: dataId=gateway-service-nacos-routes.yml, group=${spring.profiles.active}
+[16:12:54:083] [INFO] - com.alibaba.cloud.nacos.refresh.NacosContextRefresher.registerNacosListener(NacosContextRefresher.java:129) - [Nacos Config] Listening config: dataId=gateway-service, group=${spring.profiles.active}
+[16:12:54:084] [INFO] - com.alibaba.cloud.nacos.refresh.NacosContextRefresher.registerNacosListener(NacosContextRefresher.java:129) - [Nacos Config] Listening config: dataId=gateway-service.yml, group=${spring.profiles.active}
+[16:30:29:199] [INFO] - com.zlennon.gateway.dynamic.DynamicRouteServiceListener.nachosListener(DynamicRouteServiceListener.java:78) - 接收到网关路由更新配置：
+[
+        {
+            "id": "dynamic-route11",
+            "uri": "http://example1.com",
+            "predicates": [
+                {
+                    "name": "Path",
+                    "args": {
+                        "pattern": "/example/**"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "another-route1",
+            "uri": "http://another-service.com",
+            "predicates": [
+                {
+                    "name": "Path",
+                    "args": {
+                        "pattern": "/another/**"
+                    }
+                }
+            ]
+        }
+]
+
+[16:30:29:225] [INFO] - com.zlennon.gateway.dynamic.DynamicRouteService.update(DynamicRouteService.java:62) - Loaded Route: dynamic-route11
+[16:30:29:229] [INFO] - com.zlennon.gateway.dynamic.DynamicRouteService.update(DynamicRouteService.java:62) - Loaded Route: another-route1
+[16:32:06:635] [INFO] - com.zlennon.gateway.dynamic.DynamicRouteServiceListener.nachosListener(DynamicRouteServiceListener.java:78) - 接收到网关路由更新配置：
+[
+        {
+            "id": "dynamic-route11",
+            "uri": "http://example1.com",
+            "predicates": [
+                {
+                    "name": "Path",
+                    "args": {
+                        "pattern": "/ddexample/**"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "another-route1",
+            "uri": "http://another-service.com",
+            "predicates": [
+                {
+                    "name": "Path",
+                    "args": {
+                        "pattern": "/another/**"
+                    }
+                }
+            ]
+        }
+]
+
+[16:32:06:741] [INFO] - com.zlennon.gateway.dynamic.DynamicRouteService.update(DynamicRouteService.java:62) - Loaded Route: dynamic-route11
+[16:32:06:807] [INFO] - com.zlennon.gateway.dynamic.DynamicRouteService.update(DynamicRouteService.java:62) - Loaded Route: another-route1
+[17:42:05:686] [WARN] - com.alibaba.nacos.common.notify.NotifyCenter.shutdown(NotifyCenter.java:136) - [NotifyCenter] Start destroying Publisher
+[17:42:05:687] [WARN] - com.alibaba.nacos.common.notify.NotifyCenter.shutdown(NotifyCenter.java:153) - [NotifyCenter] Destruction of the end
+[17:42:05:688] [WARN] - com.alibaba.nacos.common.http.HttpClientBeanHolder.shutdown(HttpClientBeanHolder.java:102) - [HttpClientBeanHolder] Start destroying common HttpClient
+[17:42:05:689] [WARN] - com.alibaba.nacos.common.http.HttpClientBeanHolder.shutdown(HttpClientBeanHolder.java:111) - [HttpClientBeanHolder] Destruction of the end
+[17:42:05:767] [INFO] - com.alibaba.cloud.nacos.registry.NacosServiceRegistry.deregister(NacosServiceRegistry.java:95) - De-registering from Nacos Server now...
+[17:42:05:785] [INFO] - com.alibaba.cloud.nacos.registry.NacosServiceRegistry.deregister(NacosServiceRegistry.java:115) - De-registration finished.
+[17:42:24:593] [INFO] - org.hibernate.validator.internal.util.Version.<clinit>(Version.java:21) - HV000001: Hibernate Validator 8.0.0.Final
+[17:42:26:337] [INFO] - org.springframework.boot.logging.DeferredLog.logTo(DeferredLog.java:250) - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[17:42:28:669] [INFO] - com.alibaba.nacos.plugin.auth.spi.client.ClientAuthPluginManager.init(ClientAuthPluginManager.java:56) - [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.impl.NacosClientAuthServiceImpl success.
+[17:42:28:669] [INFO] - com.alibaba.nacos.plugin.auth.spi.client.ClientAuthPluginManager.init(ClientAuthPluginManager.java:56) - [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.ram.RamClientAuthServiceImpl success.
+[17:42:30:888] [ERROR] - com.alibaba.cloud.nacos.client.NacosPropertySourceBuilder.loadNacosData(NacosPropertySourceBuilder.java:101) - get data from Nacos error,dataId:gateway-service 
+com.alibaba.nacos.api.exception.NacosException: group invalid
+	at com.alibaba.nacos.client.config.utils.ParamUtils.checkKeyParam(ParamUtils.java:105) ~[nacos-client-2.2.1.jar:?]
+	at com.alibaba.nacos.client.config.NacosConfigService.getConfigInner(NacosConfigService.java:158) ~[nacos-client-2.2.1.jar:?]
+	at com.alibaba.nacos.client.config.NacosConfigService.getConfig(NacosConfigService.java:96) ~[nacos-client-2.2.1.jar:?]
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceBuilder.loadNacosData(NacosPropertySourceBuilder.java:85) [spring-cloud-starter-alibaba-nacos-config-2022.0.0.0.jar:2022.0.0.0]
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceBuilder.build(NacosPropertySourceBuilder.java:73) [spring-cloud-starter-alibaba-nacos-config-2022.0.0.0.jar:2022.0.0.0]
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.loadNacosPropertySource(NacosPropertySourceLocator.java:199) [spring-cloud-starter-alibaba-nacos-config-2022.0.0.0.jar:2022.0.0.0]
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.loadNacosDataIfPresent(NacosPropertySourceLocator.java:186) [spring-cloud-starter-alibaba-nacos-config-2022.0.0.0.jar:2022.0.0.0]
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.loadApplicationConfiguration(NacosPropertySourceLocator.java:141) [spring-cloud-starter-alibaba-nacos-config-2022.0.0.0.jar:2022.0.0.0]
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.locate(NacosPropertySourceLocator.java:103) [spring-cloud-starter-alibaba-nacos-config-2022.0.0.0.jar:2022.0.0.0]
+	at org.springframework.cloud.bootstrap.config.PropertySourceLocator.locateCollection(PropertySourceLocator.java:50) [spring-cloud-context-4.0.3.jar:4.0.3]
+	at org.springframework.cloud.bootstrap.config.PropertySourceLocator.locateCollection(PropertySourceLocator.java:46) [spring-cloud-context-4.0.3.jar:4.0.3]
+	at org.springframework.cloud.bootstrap.config.PropertySourceBootstrapConfiguration.doInitialize(PropertySourceBootstrapConfiguration.java:121) [spring-cloud-context-4.0.3.jar:4.0.3]
+	at org.springframework.cloud.bootstrap.config.PropertySourceBootstrapConfiguration.initialize(PropertySourceBootstrapConfiguration.java:111) [spring-cloud-context-4.0.3.jar:4.0.3]
+	at org.springframework.boot.SpringApplication.applyInitializers(SpringApplication.java:607) [spring-boot-3.1.1.jar:3.1.1]
+	at org.springframework.boot.SpringApplication.prepareContext(SpringApplication.java:387) [spring-boot-3.1.1.jar:3.1.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:311) [spring-boot-3.1.1.jar:3.1.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306) [spring-boot-3.1.1.jar:3.1.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295) [spring-boot-3.1.1.jar:3.1.1]
+	at com.zlennon.gateway.SpringCloudGateWayApplication.main(SpringCloudGateWayApplication.java:15) [classes/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:568) ~[?:?]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) [spring-boot-devtools-3.1.1.jar:3.1.1]
+[17:42:31:058] [ERROR] - com.alibaba.cloud.nacos.client.NacosPropertySourceBuilder.loadNacosData(NacosPropertySourceBuilder.java:101) - get data from Nacos error,dataId:gateway-service.yml 
+com.alibaba.nacos.api.exception.NacosException: group invalid
+	at com.alibaba.nacos.client.config.utils.ParamUtils.checkKeyParam(ParamUtils.java:105) ~[nacos-client-2.2.1.jar:?]
+	at com.alibaba.nacos.client.config.NacosConfigService.getConfigInner(NacosConfigService.java:158) ~[nacos-client-2.2.1.jar:?]
+	at com.alibaba.nacos.client.config.NacosConfigService.getConfig(NacosConfigService.java:96) ~[nacos-client-2.2.1.jar:?]
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceBuilder.loadNacosData(NacosPropertySourceBuilder.java:85) [spring-cloud-starter-alibaba-nacos-config-2022.0.0.0.jar:2022.0.0.0]
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceBuilder.build(NacosPropertySourceBuilder.java:73) [spring-cloud-starter-alibaba-nacos-config-2022.0.0.0.jar:2022.0.0.0]
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.loadNacosPropertySource(NacosPropertySourceLocator.java:199) [spring-cloud-starter-alibaba-nacos-config-2022.0.0.0.jar:2022.0.0.0]
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.loadNacosDataIfPresent(NacosPropertySourceLocator.java:186) [spring-cloud-starter-alibaba-nacos-config-2022.0.0.0.jar:2022.0.0.0]
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.loadApplicationConfiguration(NacosPropertySourceLocator.java:144) [spring-cloud-starter-alibaba-nacos-config-2022.0.0.0.jar:2022.0.0.0]
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.locate(NacosPropertySourceLocator.java:103) [spring-cloud-starter-alibaba-nacos-config-2022.0.0.0.jar:2022.0.0.0]
+	at org.springframework.cloud.bootstrap.config.PropertySourceLocator.locateCollection(PropertySourceLocator.java:50) [spring-cloud-context-4.0.3.jar:4.0.3]
+	at org.springframework.cloud.bootstrap.config.PropertySourceLocator.locateCollection(PropertySourceLocator.java:46) [spring-cloud-context-4.0.3.jar:4.0.3]
+	at org.springframework.cloud.bootstrap.config.PropertySourceBootstrapConfiguration.doInitialize(PropertySourceBootstrapConfiguration.java:121) [spring-cloud-context-4.0.3.jar:4.0.3]
+	at org.springframework.cloud.bootstrap.config.PropertySourceBootstrapConfiguration.initialize(PropertySourceBootstrapConfiguration.java:111) [spring-cloud-context-4.0.3.jar:4.0.3]
+	at org.springframework.boot.SpringApplication.applyInitializers(SpringApplication.java:607) [spring-boot-3.1.1.jar:3.1.1]
+	at org.springframework.boot.SpringApplication.prepareContext(SpringApplication.java:387) [spring-boot-3.1.1.jar:3.1.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:311) [spring-boot-3.1.1.jar:3.1.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306) [spring-boot-3.1.1.jar:3.1.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295) [spring-boot-3.1.1.jar:3.1.1]
+	at com.zlennon.gateway.SpringCloudGateWayApplication.main(SpringCloudGateWayApplication.java:15) [classes/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:568) ~[?:?]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) [spring-boot-devtools-3.1.1.jar:3.1.1]
+[17:42:31:062] [ERROR] - com.alibaba.cloud.nacos.client.NacosPropertySourceBuilder.loadNacosData(NacosPropertySourceBuilder.java:101) - get data from Nacos error,dataId:gateway-service-nacos-routes.yml 
+com.alibaba.nacos.api.exception.NacosException: group invalid
+	at com.alibaba.nacos.client.config.utils.ParamUtils.checkKeyParam(ParamUtils.java:105) ~[nacos-client-2.2.1.jar:?]
+	at com.alibaba.nacos.client.config.NacosConfigService.getConfigInner(NacosConfigService.java:158) ~[nacos-client-2.2.1.jar:?]
+	at com.alibaba.nacos.client.config.NacosConfigService.getConfig(NacosConfigService.java:96) ~[nacos-client-2.2.1.jar:?]
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceBuilder.loadNacosData(NacosPropertySourceBuilder.java:85) [spring-cloud-starter-alibaba-nacos-config-2022.0.0.0.jar:2022.0.0.0]
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceBuilder.build(NacosPropertySourceBuilder.java:73) [spring-cloud-starter-alibaba-nacos-config-2022.0.0.0.jar:2022.0.0.0]
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.loadNacosPropertySource(NacosPropertySourceLocator.java:199) [spring-cloud-starter-alibaba-nacos-config-2022.0.0.0.jar:2022.0.0.0]
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.loadNacosDataIfPresent(NacosPropertySourceLocator.java:186) [spring-cloud-starter-alibaba-nacos-config-2022.0.0.0.jar:2022.0.0.0]
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.loadApplicationConfiguration(NacosPropertySourceLocator.java:149) [spring-cloud-starter-alibaba-nacos-config-2022.0.0.0.jar:2022.0.0.0]
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.locate(NacosPropertySourceLocator.java:103) [spring-cloud-starter-alibaba-nacos-config-2022.0.0.0.jar:2022.0.0.0]
+	at org.springframework.cloud.bootstrap.config.PropertySourceLocator.locateCollection(PropertySourceLocator.java:50) [spring-cloud-context-4.0.3.jar:4.0.3]
+	at org.springframework.cloud.bootstrap.config.PropertySourceLocator.locateCollection(PropertySourceLocator.java:46) [spring-cloud-context-4.0.3.jar:4.0.3]
+	at org.springframework.cloud.bootstrap.config.PropertySourceBootstrapConfiguration.doInitialize(PropertySourceBootstrapConfiguration.java:121) [spring-cloud-context-4.0.3.jar:4.0.3]
+	at org.springframework.cloud.bootstrap.config.PropertySourceBootstrapConfiguration.initialize(PropertySourceBootstrapConfiguration.java:111) [spring-cloud-context-4.0.3.jar:4.0.3]
+	at org.springframework.boot.SpringApplication.applyInitializers(SpringApplication.java:607) [spring-boot-3.1.1.jar:3.1.1]
+	at org.springframework.boot.SpringApplication.prepareContext(SpringApplication.java:387) [spring-boot-3.1.1.jar:3.1.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:311) [spring-boot-3.1.1.jar:3.1.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306) [spring-boot-3.1.1.jar:3.1.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295) [spring-boot-3.1.1.jar:3.1.1]
+	at com.zlennon.gateway.SpringCloudGateWayApplication.main(SpringCloudGateWayApplication.java:15) [classes/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:568) ~[?:?]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) [spring-boot-devtools-3.1.1.jar:3.1.1]
+[17:42:31:066] [INFO] - org.springframework.cloud.bootstrap.config.PropertySourceBootstrapConfiguration.doInitialize(PropertySourceBootstrapConfiguration.java:134) - Located property source: [BootstrapPropertySource {name='bootstrapProperties-gateway-service-nacos-routes.yml,${spring.profiles.active}'}, BootstrapPropertySource {name='bootstrapProperties-gateway-service.yml,${spring.profiles.active}'}, BootstrapPropertySource {name='bootstrapProperties-gateway-service,${spring.profiles.active}'}]
+[17:42:31:184] [INFO] - org.springframework.boot.SpringApplication.logStartupProfileInfo(SpringApplication.java:640) - The following 1 profile is active: "nacos-routes"
+[17:42:35:822] [INFO] - org.springframework.cloud.context.scope.GenericScope.setSerializationId(GenericScope.java:282) - BeanFactory id=a09f1633-8e3c-340f-a737-e1bd51c0ef3f
+[17:42:36:860] [INFO] - org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:108) - Tomcat initialized with port(s): 7999 (http)
+[17:42:36:906] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:173) - Initializing ProtocolHandler ["http-nio-7999"]
+[17:42:36:915] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:173) - Starting service [Tomcat]
+[17:42:36:919] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:173) - Starting Servlet engine: [Apache Tomcat/10.1.10]
+[22:25:08:541] [WARN] - com.alibaba.nacos.common.http.HttpClientBeanHolder.shutdown(HttpClientBeanHolder.java:102) - [HttpClientBeanHolder] Start destroying common HttpClient
+[22:25:08:549] [WARN] - com.alibaba.nacos.common.http.HttpClientBeanHolder.shutdown(HttpClientBeanHolder.java:111) - [HttpClientBeanHolder] Destruction of the end
+[22:25:09:530] [INFO] - org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator.lambda$initFactories$1(RouteDefinitionRouteLocator.java:89) - Loaded RoutePredicateFactory [After]
+[22:25:09:531] [INFO] - org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator.lambda$initFactories$1(RouteDefinitionRouteLocator.java:89) - Loaded RoutePredicateFactory [Before]
+[22:25:09:531] [INFO] - org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator.lambda$initFactories$1(RouteDefinitionRouteLocator.java:89) - Loaded RoutePredicateFactory [Between]
+[22:25:09:531] [INFO] - org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator.lambda$initFactories$1(RouteDefinitionRouteLocator.java:89) - Loaded RoutePredicateFactory [Cookie]
+[22:25:09:532] [INFO] - org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator.lambda$initFactories$1(RouteDefinitionRouteLocator.java:89) - Loaded RoutePredicateFactory [Header]
+[22:25:09:532] [INFO] - org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator.lambda$initFactories$1(RouteDefinitionRouteLocator.java:89) - Loaded RoutePredicateFactory [Host]
+[22:25:09:533] [INFO] - org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator.lambda$initFactories$1(RouteDefinitionRouteLocator.java:89) - Loaded RoutePredicateFactory [Method]
+[22:25:09:533] [INFO] - org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator.lambda$initFactories$1(RouteDefinitionRouteLocator.java:89) - Loaded RoutePredicateFactory [Path]
+[22:25:09:534] [INFO] - org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator.lambda$initFactories$1(RouteDefinitionRouteLocator.java:89) - Loaded RoutePredicateFactory [Query]
+[22:25:09:536] [INFO] - org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator.lambda$initFactories$1(RouteDefinitionRouteLocator.java:89) - Loaded RoutePredicateFactory [ReadBody]
+[22:25:09:537] [INFO] - org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator.lambda$initFactories$1(RouteDefinitionRouteLocator.java:89) - Loaded RoutePredicateFactory [RemoteAddr]
+[22:25:09:537] [INFO] - org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator.lambda$initFactories$1(RouteDefinitionRouteLocator.java:89) - Loaded RoutePredicateFactory [XForwardedRemoteAddr]
+[22:25:09:538] [INFO] - org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator.lambda$initFactories$1(RouteDefinitionRouteLocator.java:89) - Loaded RoutePredicateFactory [Weight]
+[22:25:09:538] [INFO] - org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator.lambda$initFactories$1(RouteDefinitionRouteLocator.java:89) - Loaded RoutePredicateFactory [CloudFoundryRouteService]
+[22:25:10:522] [INFO] - org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver.<init>(EndpointLinksResolver.java:58) - Exposing 1 endpoint(s) beneath base path '/actuator'
+[22:25:10:577] [INFO] - org.springframework.boot.autoconfigure.security.reactive.ReactiveUserDetailsServiceAutoConfiguration.getOrDeducePassword(ReactiveUserDetailsServiceAutoConfiguration.java:91) - 
+
+Using generated security password: 5aeaa2c2-96a5-4a15-b719-3ea7bb2ad090
+
+[22:25:10:926] [WARN] - org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration.checkTemplateLocationExists(ThymeleafAutoConfiguration.java:101) - Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+[22:25:11:270] [INFO] - org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer.startServer(OptionalLiveReloadServer.java:59) - LiveReload server is running on port 35729
+[22:25:11:498] [INFO] - org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start(TomcatWebServer.java:220) - Tomcat started on port(s): 7999 (http) with context path ''
+[22:25:11:833] [WARN] - org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:616) - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+[22:52:28:172] [INFO] - org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator.lambda$initFactories$1(RouteDefinitionRouteLocator.java:89) - Loaded RoutePredicateFactory [After]
+[22:52:28:177] [INFO] - org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator.lambda$initFactories$1(RouteDefinitionRouteLocator.java:89) - Loaded RoutePredicateFactory [Before]
+[22:52:28:180] [INFO] - org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator.lambda$initFactories$1(RouteDefinitionRouteLocator.java:89) - Loaded RoutePredicateFactory [Between]
+[22:52:28:184] [INFO] - org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator.lambda$initFactories$1(RouteDefinitionRouteLocator.java:89) - Loaded RoutePredicateFactory [Cookie]
+[22:52:28:188] [INFO] - org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator.lambda$initFactories$1(RouteDefinitionRouteLocator.java:89) - Loaded RoutePredicateFactory [Header]
+[22:52:28:191] [INFO] - org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator.lambda$initFactories$1(RouteDefinitionRouteLocator.java:89) - Loaded RoutePredicateFactory [Host]
+[22:52:28:194] [INFO] - org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator.lambda$initFactories$1(RouteDefinitionRouteLocator.java:89) - Loaded RoutePredicateFactory [Method]
+[22:52:28:201] [INFO] - org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator.lambda$initFactories$1(RouteDefinitionRouteLocator.java:89) - Loaded RoutePredicateFactory [Path]
+[22:52:28:204] [INFO] - org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator.lambda$initFactories$1(RouteDefinitionRouteLocator.java:89) - Loaded RoutePredicateFactory [Query]
+[22:52:28:208] [INFO] - org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator.lambda$initFactories$1(RouteDefinitionRouteLocator.java:89) - Loaded RoutePredicateFactory [ReadBody]
+[22:52:28:212] [INFO] - org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator.lambda$initFactories$1(RouteDefinitionRouteLocator.java:89) - Loaded RoutePredicateFactory [RemoteAddr]
+[22:52:28:215] [INFO] - org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator.lambda$initFactories$1(RouteDefinitionRouteLocator.java:89) - Loaded RoutePredicateFactory [XForwardedRemoteAddr]
+[22:52:28:218] [INFO] - org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator.lambda$initFactories$1(RouteDefinitionRouteLocator.java:89) - Loaded RoutePredicateFactory [Weight]
+[22:52:28:221] [INFO] - org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator.lambda$initFactories$1(RouteDefinitionRouteLocator.java:89) - Loaded RoutePredicateFactory [CloudFoundryRouteService]
+[22:52:54:274] [INFO] - org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver.<init>(EndpointLinksResolver.java:58) - Exposing 1 endpoint(s) beneath base path '/actuator'
+[22:53:52:871] [WARN] - org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration.checkTemplateLocationExists(ThymeleafAutoConfiguration.java:101) - Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+[22:53:53:371] [INFO] - org.springframework.core.log.LogAccessor.info(LogAccessor.java:174) - Channel 'application-1.springCloudBusInput' has 1 subscriber(s).
+[22:53:53:962] [INFO] - org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer.startServer(OptionalLiveReloadServer.java:59) - LiveReload server is running on port 35729
+[22:53:54:093] [WARN] - org.springframework.cloud.loadbalancer.config.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger.afterPropertiesSet(LoadBalancerCacheAutoConfiguration.java:94) - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+[22:53:54:569] [INFO] - org.springframework.integration.monitor.IntegrationMBeanExporter.registerChannel(IntegrationMBeanExporter.java:649) - Registering MessageChannel errorChannel
+[22:53:54:620] [INFO] - org.springframework.integration.monitor.IntegrationMBeanExporter.registerChannel(IntegrationMBeanExporter.java:649) - Registering MessageChannel springCloudBusInput
+[22:53:54:638] [INFO] - org.springframework.integration.monitor.IntegrationMBeanExporter.registerChannel(IntegrationMBeanExporter.java:649) - Registering MessageChannel nullChannel
+[22:53:54:648] [INFO] - org.springframework.integration.monitor.IntegrationMBeanExporter.registerHandler(IntegrationMBeanExporter.java:671) - Registering MessageHandler _org.springframework.integration.errorLogger
+[22:53:54:673] [INFO] - org.springframework.core.log.LogAccessor.info(LogAccessor.java:174) - Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+[22:53:54:673] [INFO] - org.springframework.core.log.LogAccessor.info(LogAccessor.java:174) - Channel 'application-1.errorChannel' has 1 subscriber(s).
+[22:53:54:674] [INFO] - org.springframework.core.log.LogAccessor.info(LogAccessor.java:292) - started bean '_org.springframework.integration.errorLogger'
+[22:53:54:745] [INFO] - org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start(TomcatWebServer.java:220) - Tomcat started on port(s): 7999 (http) with context path ''
+[22:53:55:632] [INFO] - org.springframework.cloud.stream.binder.DefaultBinderFactory.getBinderInstance(DefaultBinderFactory.java:314) - Creating binder: consul
+[22:53:55:632] [INFO] - org.springframework.cloud.stream.binder.DefaultBinderFactory.getBinderInstance(DefaultBinderFactory.java:329) - Constructing binder child context for consul
+[22:53:55:749] [WARN] - org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:616) - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'inputBindingLifecycle'
+[22:53:55:751] [INFO] - org.springframework.core.log.LogAccessor.info(LogAccessor.java:174) - Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+[22:53:55:752] [INFO] - org.springframework.core.log.LogAccessor.info(LogAccessor.java:174) - Channel 'application-1.errorChannel' has 0 subscriber(s).
+[22:53:55:755] [INFO] - org.springframework.core.log.LogAccessor.info(LogAccessor.java:292) - stopped bean '_org.springframework.integration.errorLogger'
+[23:05:35:388] [INFO] - org.hibernate.validator.internal.util.Version.<clinit>(Version.java:21) - HV000001: Hibernate Validator 8.0.0.Final
+[23:05:36:870] [INFO] - org.springframework.boot.logging.DeferredLog.logTo(DeferredLog.java:250) - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[23:05:38:027] [INFO] - com.alibaba.nacos.plugin.auth.spi.client.ClientAuthPluginManager.init(ClientAuthPluginManager.java:56) - [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.impl.NacosClientAuthServiceImpl success.
+[23:05:38:028] [INFO] - com.alibaba.nacos.plugin.auth.spi.client.ClientAuthPluginManager.init(ClientAuthPluginManager.java:56) - [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.ram.RamClientAuthServiceImpl success.
+[23:05:39:408] [ERROR] - com.alibaba.cloud.nacos.client.NacosPropertySourceBuilder.loadNacosData(NacosPropertySourceBuilder.java:101) - get data from Nacos error,dataId:gateway-service 
+com.alibaba.nacos.api.exception.NacosException: group invalid
+	at com.alibaba.nacos.client.config.utils.ParamUtils.checkKeyParam(ParamUtils.java:105) ~[nacos-client-2.2.1.jar:?]
+	at com.alibaba.nacos.client.config.NacosConfigService.getConfigInner(NacosConfigService.java:158) ~[nacos-client-2.2.1.jar:?]
+	at com.alibaba.nacos.client.config.NacosConfigService.getConfig(NacosConfigService.java:96) ~[nacos-client-2.2.1.jar:?]
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceBuilder.loadNacosData(NacosPropertySourceBuilder.java:85) [spring-cloud-starter-alibaba-nacos-config-2022.0.0.0.jar:2022.0.0.0]
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceBuilder.build(NacosPropertySourceBuilder.java:73) [spring-cloud-starter-alibaba-nacos-config-2022.0.0.0.jar:2022.0.0.0]
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.loadNacosPropertySource(NacosPropertySourceLocator.java:199) [spring-cloud-starter-alibaba-nacos-config-2022.0.0.0.jar:2022.0.0.0]
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.loadNacosDataIfPresent(NacosPropertySourceLocator.java:186) [spring-cloud-starter-alibaba-nacos-config-2022.0.0.0.jar:2022.0.0.0]
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.loadApplicationConfiguration(NacosPropertySourceLocator.java:141) [spring-cloud-starter-alibaba-nacos-config-2022.0.0.0.jar:2022.0.0.0]
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.locate(NacosPropertySourceLocator.java:103) [spring-cloud-starter-alibaba-nacos-config-2022.0.0.0.jar:2022.0.0.0]
+	at org.springframework.cloud.bootstrap.config.PropertySourceLocator.locateCollection(PropertySourceLocator.java:50) [spring-cloud-context-4.0.3.jar:4.0.3]
+	at org.springframework.cloud.bootstrap.config.PropertySourceLocator.locateCollection(PropertySourceLocator.java:46) [spring-cloud-context-4.0.3.jar:4.0.3]
+	at org.springframework.cloud.bootstrap.config.PropertySourceBootstrapConfiguration.doInitialize(PropertySourceBootstrapConfiguration.java:121) [spring-cloud-context-4.0.3.jar:4.0.3]
+	at org.springframework.cloud.bootstrap.config.PropertySourceBootstrapConfiguration.initialize(PropertySourceBootstrapConfiguration.java:111) [spring-cloud-context-4.0.3.jar:4.0.3]
+	at org.springframework.boot.SpringApplication.applyInitializers(SpringApplication.java:607) [spring-boot-3.1.1.jar:3.1.1]
+	at org.springframework.boot.SpringApplication.prepareContext(SpringApplication.java:387) [spring-boot-3.1.1.jar:3.1.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:311) [spring-boot-3.1.1.jar:3.1.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306) [spring-boot-3.1.1.jar:3.1.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295) [spring-boot-3.1.1.jar:3.1.1]
+	at com.zlennon.gateway.SpringCloudGateWayApplication.main(SpringCloudGateWayApplication.java:15) [classes/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:568) ~[?:?]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) [spring-boot-devtools-3.1.1.jar:3.1.1]
+[23:05:39:442] [ERROR] - com.alibaba.cloud.nacos.client.NacosPropertySourceBuilder.loadNacosData(NacosPropertySourceBuilder.java:101) - get data from Nacos error,dataId:gateway-service.yml 
+com.alibaba.nacos.api.exception.NacosException: group invalid
+	at com.alibaba.nacos.client.config.utils.ParamUtils.checkKeyParam(ParamUtils.java:105) ~[nacos-client-2.2.1.jar:?]
+	at com.alibaba.nacos.client.config.NacosConfigService.getConfigInner(NacosConfigService.java:158) ~[nacos-client-2.2.1.jar:?]
+	at com.alibaba.nacos.client.config.NacosConfigService.getConfig(NacosConfigService.java:96) ~[nacos-client-2.2.1.jar:?]
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceBuilder.loadNacosData(NacosPropertySourceBuilder.java:85) [spring-cloud-starter-alibaba-nacos-config-2022.0.0.0.jar:2022.0.0.0]
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceBuilder.build(NacosPropertySourceBuilder.java:73) [spring-cloud-starter-alibaba-nacos-config-2022.0.0.0.jar:2022.0.0.0]
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.loadNacosPropertySource(NacosPropertySourceLocator.java:199) [spring-cloud-starter-alibaba-nacos-config-2022.0.0.0.jar:2022.0.0.0]
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.loadNacosDataIfPresent(NacosPropertySourceLocator.java:186) [spring-cloud-starter-alibaba-nacos-config-2022.0.0.0.jar:2022.0.0.0]
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.loadApplicationConfiguration(NacosPropertySourceLocator.java:144) [spring-cloud-starter-alibaba-nacos-config-2022.0.0.0.jar:2022.0.0.0]
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.locate(NacosPropertySourceLocator.java:103) [spring-cloud-starter-alibaba-nacos-config-2022.0.0.0.jar:2022.0.0.0]
+	at org.springframework.cloud.bootstrap.config.PropertySourceLocator.locateCollection(PropertySourceLocator.java:50) [spring-cloud-context-4.0.3.jar:4.0.3]
+	at org.springframework.cloud.bootstrap.config.PropertySourceLocator.locateCollection(PropertySourceLocator.java:46) [spring-cloud-context-4.0.3.jar:4.0.3]
+	at org.springframework.cloud.bootstrap.config.PropertySourceBootstrapConfiguration.doInitialize(PropertySourceBootstrapConfiguration.java:121) [spring-cloud-context-4.0.3.jar:4.0.3]
+	at org.springframework.cloud.bootstrap.config.PropertySourceBootstrapConfiguration.initialize(PropertySourceBootstrapConfiguration.java:111) [spring-cloud-context-4.0.3.jar:4.0.3]
+	at org.springframework.boot.SpringApplication.applyInitializers(SpringApplication.java:607) [spring-boot-3.1.1.jar:3.1.1]
+	at org.springframework.boot.SpringApplication.prepareContext(SpringApplication.java:387) [spring-boot-3.1.1.jar:3.1.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:311) [spring-boot-3.1.1.jar:3.1.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306) [spring-boot-3.1.1.jar:3.1.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295) [spring-boot-3.1.1.jar:3.1.1]
+	at com.zlennon.gateway.SpringCloudGateWayApplication.main(SpringCloudGateWayApplication.java:15) [classes/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:568) ~[?:?]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) [spring-boot-devtools-3.1.1.jar:3.1.1]
+[23:05:39:447] [ERROR] - com.alibaba.cloud.nacos.client.NacosPropertySourceBuilder.loadNacosData(NacosPropertySourceBuilder.java:101) - get data from Nacos error,dataId:gateway-service-nacos-routes.yml 
+com.alibaba.nacos.api.exception.NacosException: group invalid
+	at com.alibaba.nacos.client.config.utils.ParamUtils.checkKeyParam(ParamUtils.java:105) ~[nacos-client-2.2.1.jar:?]
+	at com.alibaba.nacos.client.config.NacosConfigService.getConfigInner(NacosConfigService.java:158) ~[nacos-client-2.2.1.jar:?]
+	at com.alibaba.nacos.client.config.NacosConfigService.getConfig(NacosConfigService.java:96) ~[nacos-client-2.2.1.jar:?]
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceBuilder.loadNacosData(NacosPropertySourceBuilder.java:85) [spring-cloud-starter-alibaba-nacos-config-2022.0.0.0.jar:2022.0.0.0]
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceBuilder.build(NacosPropertySourceBuilder.java:73) [spring-cloud-starter-alibaba-nacos-config-2022.0.0.0.jar:2022.0.0.0]
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.loadNacosPropertySource(NacosPropertySourceLocator.java:199) [spring-cloud-starter-alibaba-nacos-config-2022.0.0.0.jar:2022.0.0.0]
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.loadNacosDataIfPresent(NacosPropertySourceLocator.java:186) [spring-cloud-starter-alibaba-nacos-config-2022.0.0.0.jar:2022.0.0.0]
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.loadApplicationConfiguration(NacosPropertySourceLocator.java:149) [spring-cloud-starter-alibaba-nacos-config-2022.0.0.0.jar:2022.0.0.0]
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.locate(NacosPropertySourceLocator.java:103) [spring-cloud-starter-alibaba-nacos-config-2022.0.0.0.jar:2022.0.0.0]
+	at org.springframework.cloud.bootstrap.config.PropertySourceLocator.locateCollection(PropertySourceLocator.java:50) [spring-cloud-context-4.0.3.jar:4.0.3]
+	at org.springframework.cloud.bootstrap.config.PropertySourceLocator.locateCollection(PropertySourceLocator.java:46) [spring-cloud-context-4.0.3.jar:4.0.3]
+	at org.springframework.cloud.bootstrap.config.PropertySourceBootstrapConfiguration.doInitialize(PropertySourceBootstrapConfiguration.java:121) [spring-cloud-context-4.0.3.jar:4.0.3]
+	at org.springframework.cloud.bootstrap.config.PropertySourceBootstrapConfiguration.initialize(PropertySourceBootstrapConfiguration.java:111) [spring-cloud-context-4.0.3.jar:4.0.3]
+	at org.springframework.boot.SpringApplication.applyInitializers(SpringApplication.java:607) [spring-boot-3.1.1.jar:3.1.1]
+	at org.springframework.boot.SpringApplication.prepareContext(SpringApplication.java:387) [spring-boot-3.1.1.jar:3.1.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:311) [spring-boot-3.1.1.jar:3.1.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306) [spring-boot-3.1.1.jar:3.1.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295) [spring-boot-3.1.1.jar:3.1.1]
+	at com.zlennon.gateway.SpringCloudGateWayApplication.main(SpringCloudGateWayApplication.java:15) [classes/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:568) ~[?:?]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) [spring-boot-devtools-3.1.1.jar:3.1.1]
+[23:05:39:462] [INFO] - org.springframework.cloud.bootstrap.config.PropertySourceBootstrapConfiguration.doInitialize(PropertySourceBootstrapConfiguration.java:134) - Located property source: [BootstrapPropertySource {name='bootstrapProperties-gateway-service-nacos-routes.yml,${spring.profiles.active}'}, BootstrapPropertySource {name='bootstrapProperties-gateway-service.yml,${spring.profiles.active}'}, BootstrapPropertySource {name='bootstrapProperties-gateway-service,${spring.profiles.active}'}]
+[23:05:39:567] [INFO] - org.springframework.boot.SpringApplication.logStartupProfileInfo(SpringApplication.java:640) - The following 1 profile is active: "nacos-routes"
+[23:05:43:740] [INFO] - org.springframework.cloud.context.scope.GenericScope.setSerializationId(GenericScope.java:282) - BeanFactory id=a19e1754-4d24-3080-890b-8cfd4299c3f3
+[23:05:44:575] [INFO] - org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:108) - Tomcat initialized with port(s): 7999 (http)
+[23:05:44:604] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:173) - Initializing ProtocolHandler ["http-nio-7999"]
+[23:05:44:610] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:173) - Starting service [Tomcat]
+[23:05:44:611] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:173) - Starting Servlet engine: [Apache Tomcat/10.1.10]
+[23:06:14:879] [INFO] - org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator.lambda$initFactories$1(RouteDefinitionRouteLocator.java:89) - Loaded RoutePredicateFactory [After]
+[23:06:14:883] [INFO] - org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator.lambda$initFactories$1(RouteDefinitionRouteLocator.java:89) - Loaded RoutePredicateFactory [Before]
+[23:06:14:886] [INFO] - org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator.lambda$initFactories$1(RouteDefinitionRouteLocator.java:89) - Loaded RoutePredicateFactory [Between]
+[23:06:14:889] [INFO] - org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator.lambda$initFactories$1(RouteDefinitionRouteLocator.java:89) - Loaded RoutePredicateFactory [Cookie]
+[23:06:14:891] [INFO] - org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator.lambda$initFactories$1(RouteDefinitionRouteLocator.java:89) - Loaded RoutePredicateFactory [Header]
+[23:06:14:894] [INFO] - org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator.lambda$initFactories$1(RouteDefinitionRouteLocator.java:89) - Loaded RoutePredicateFactory [Host]
+[23:06:14:897] [INFO] - org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator.lambda$initFactories$1(RouteDefinitionRouteLocator.java:89) - Loaded RoutePredicateFactory [Method]
+[23:06:14:901] [INFO] - org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator.lambda$initFactories$1(RouteDefinitionRouteLocator.java:89) - Loaded RoutePredicateFactory [Path]
+[23:06:14:904] [INFO] - org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator.lambda$initFactories$1(RouteDefinitionRouteLocator.java:89) - Loaded RoutePredicateFactory [Query]
+[23:06:14:906] [INFO] - org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator.lambda$initFactories$1(RouteDefinitionRouteLocator.java:89) - Loaded RoutePredicateFactory [ReadBody]
+[23:06:14:909] [INFO] - org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator.lambda$initFactories$1(RouteDefinitionRouteLocator.java:89) - Loaded RoutePredicateFactory [RemoteAddr]
+[23:06:14:917] [INFO] - org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator.lambda$initFactories$1(RouteDefinitionRouteLocator.java:89) - Loaded RoutePredicateFactory [XForwardedRemoteAddr]
+[23:06:14:920] [INFO] - org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator.lambda$initFactories$1(RouteDefinitionRouteLocator.java:89) - Loaded RoutePredicateFactory [Weight]
+[23:06:14:923] [INFO] - org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator.lambda$initFactories$1(RouteDefinitionRouteLocator.java:89) - Loaded RoutePredicateFactory [CloudFoundryRouteService]
+[23:06:27:274] [INFO] - org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver.<init>(EndpointLinksResolver.java:58) - Exposing 1 endpoint(s) beneath base path '/actuator'
+[23:08:03:835] [INFO] - org.springframework.boot.autoconfigure.security.reactive.ReactiveUserDetailsServiceAutoConfiguration.getOrDeducePassword(ReactiveUserDetailsServiceAutoConfiguration.java:91) - 
+
+Using generated security password: ccb9cb24-4bbd-4ea4-b9a6-0e7309af2449
+
+[23:08:05:314] [WARN] - org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration.checkTemplateLocationExists(ThymeleafAutoConfiguration.java:101) - Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+[23:08:05:955] [INFO] - org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer.startServer(OptionalLiveReloadServer.java:59) - LiveReload server is running on port 35729
+[23:08:06:113] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:173) - Starting ProtocolHandler ["http-nio-7999"]
+[23:08:06:158] [INFO] - org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start(TomcatWebServer.java:220) - Tomcat started on port(s): 7999 (http) with context path ''
+[23:08:13:188] [INFO] - com.alibaba.nacos.plugin.auth.spi.client.ClientAuthPluginManager.init(ClientAuthPluginManager.java:56) - [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.impl.NacosClientAuthServiceImpl success.
+[23:08:13:189] [INFO] - com.alibaba.nacos.plugin.auth.spi.client.ClientAuthPluginManager.init(ClientAuthPluginManager.java:56) - [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.ram.RamClientAuthServiceImpl success.
+[23:08:20:021] [INFO] - com.alibaba.cloud.nacos.registry.NacosServiceRegistry.register(NacosServiceRegistry.java:76) - nacos registry, nacos-routes gateway-service 192.168.3.2:7999 register finished
+[23:08:20:184] [INFO] - com.zlennon.gateway.dynamic.ConsulRouteChangeListener.init(ConsulRouteChangeListener.java:28) - null
+[23:08:20:185] [INFO] - com.zlennon.gateway.dynamic.DynamicRouteServiceListener.init(DynamicRouteServiceListener.java:44) - 开始进行网关路由配置初始化
+[23:08:20:196] [INFO] - com.alibaba.nacos.plugin.auth.spi.client.ClientAuthPluginManager.init(ClientAuthPluginManager.java:56) - [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.impl.NacosClientAuthServiceImpl success.
+[23:08:20:196] [INFO] - com.alibaba.nacos.plugin.auth.spi.client.ClientAuthPluginManager.init(ClientAuthPluginManager.java:56) - [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.ram.RamClientAuthServiceImpl success.
+[23:08:20:197] [INFO] - com.zlennon.gateway.dynamic.DynamicRouteServiceListener.init(DynamicRouteServiceListener.java:51) - 网关路由配置初始化，dataId：gateway-nacos-routes.json，group：nacos-routes
+[23:08:20:631] [INFO] - com.zlennon.gateway.dynamic.DynamicRouteServiceListener.init(DynamicRouteServiceListener.java:65) - 接收到网关路由初始化配置：
+[
+        {
+            "id": "dynamic-route11",
+            "uri": "http://example1.com",
+            "predicates": [
+                {
+                    "name": "Path",
+                    "args": {
+                        "pattern": "/ddexample/**"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "another-route1",
+            "uri": "http://another-service.com",
+            "predicates": [
+                {
+                    "name": "Path",
+                    "args": {
+                        "pattern": "/another/**"
+                    }
+                }
+            ]
+        }
+]
+
+[23:08:21:191] [INFO] - com.zlennon.gateway.dynamic.DynamicRouteServiceListener.init(DynamicRouteServiceListener.java:68) - 网关路由配置初始化完成
+[23:08:21:265] [INFO] - org.springframework.boot.StartupInfoLogger.logStarted(StartupInfoLogger.java:57) - Started SpringCloudGateWayApplication in 168.781 seconds (process running for 173.251)
+[23:08:21:318] [INFO] - com.alibaba.cloud.nacos.refresh.NacosContextRefresher.registerNacosListener(NacosContextRefresher.java:129) - [Nacos Config] Listening config: dataId=gateway-service-nacos-routes.yml, group=${spring.profiles.active}
+[23:08:21:323] [INFO] - com.alibaba.cloud.nacos.refresh.NacosContextRefresher.registerNacosListener(NacosContextRefresher.java:129) - [Nacos Config] Listening config: dataId=gateway-service, group=${spring.profiles.active}
+[23:08:21:326] [INFO] - com.alibaba.cloud.nacos.refresh.NacosContextRefresher.registerNacosListener(NacosContextRefresher.java:129) - [Nacos Config] Listening config: dataId=gateway-service.yml, group=${spring.profiles.active}
+[23:15:32:547] [WARN] - com.alibaba.nacos.common.http.HttpClientBeanHolder.shutdown(HttpClientBeanHolder.java:102) - [HttpClientBeanHolder] Start destroying common HttpClient
+[23:15:32:547] [WARN] - com.alibaba.nacos.common.notify.NotifyCenter.shutdown(NotifyCenter.java:136) - [NotifyCenter] Start destroying Publisher
+[23:15:32:548] [WARN] - com.alibaba.nacos.common.notify.NotifyCenter.shutdown(NotifyCenter.java:153) - [NotifyCenter] Destruction of the end
+[23:15:32:549] [WARN] - com.alibaba.nacos.common.http.HttpClientBeanHolder.shutdown(HttpClientBeanHolder.java:111) - [HttpClientBeanHolder] Destruction of the end
+[23:15:32:635] [INFO] - com.alibaba.cloud.nacos.registry.NacosServiceRegistry.deregister(NacosServiceRegistry.java:95) - De-registering from Nacos Server now...
+[23:15:32:652] [INFO] - com.alibaba.cloud.nacos.registry.NacosServiceRegistry.deregister(NacosServiceRegistry.java:115) - De-registration finished.
+[23:16:33:059] [INFO] - org.hibernate.validator.internal.util.Version.<clinit>(Version.java:21) - HV000001: Hibernate Validator 8.0.0.Final
+[23:16:33:950] [INFO] - org.springframework.boot.logging.DeferredLog.logTo(DeferredLog.java:250) - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[23:16:34:703] [INFO] - com.alibaba.nacos.plugin.auth.spi.client.ClientAuthPluginManager.init(ClientAuthPluginManager.java:56) - [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.impl.NacosClientAuthServiceImpl success.
+[23:16:34:703] [INFO] - com.alibaba.nacos.plugin.auth.spi.client.ClientAuthPluginManager.init(ClientAuthPluginManager.java:56) - [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.ram.RamClientAuthServiceImpl success.
+[23:16:35:568] [ERROR] - com.alibaba.cloud.nacos.client.NacosPropertySourceBuilder.loadNacosData(NacosPropertySourceBuilder.java:101) - get data from Nacos error,dataId:gateway-service 
+com.alibaba.nacos.api.exception.NacosException: group invalid
+	at com.alibaba.nacos.client.config.utils.ParamUtils.checkKeyParam(ParamUtils.java:105) ~[nacos-client-2.2.1.jar:?]
+	at com.alibaba.nacos.client.config.NacosConfigService.getConfigInner(NacosConfigService.java:158) ~[nacos-client-2.2.1.jar:?]
+	at com.alibaba.nacos.client.config.NacosConfigService.getConfig(NacosConfigService.java:96) ~[nacos-client-2.2.1.jar:?]
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceBuilder.loadNacosData(NacosPropertySourceBuilder.java:85) [spring-cloud-starter-alibaba-nacos-config-2022.0.0.0.jar:2022.0.0.0]
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceBuilder.build(NacosPropertySourceBuilder.java:73) [spring-cloud-starter-alibaba-nacos-config-2022.0.0.0.jar:2022.0.0.0]
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.loadNacosPropertySource(NacosPropertySourceLocator.java:199) [spring-cloud-starter-alibaba-nacos-config-2022.0.0.0.jar:2022.0.0.0]
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.loadNacosDataIfPresent(NacosPropertySourceLocator.java:186) [spring-cloud-starter-alibaba-nacos-config-2022.0.0.0.jar:2022.0.0.0]
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.loadApplicationConfiguration(NacosPropertySourceLocator.java:141) [spring-cloud-starter-alibaba-nacos-config-2022.0.0.0.jar:2022.0.0.0]
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.locate(NacosPropertySourceLocator.java:103) [spring-cloud-starter-alibaba-nacos-config-2022.0.0.0.jar:2022.0.0.0]
+	at org.springframework.cloud.bootstrap.config.PropertySourceLocator.locateCollection(PropertySourceLocator.java:50) [spring-cloud-context-4.0.3.jar:4.0.3]
+	at org.springframework.cloud.bootstrap.config.PropertySourceLocator.locateCollection(PropertySourceLocator.java:46) [spring-cloud-context-4.0.3.jar:4.0.3]
+	at org.springframework.cloud.bootstrap.config.PropertySourceBootstrapConfiguration.doInitialize(PropertySourceBootstrapConfiguration.java:121) [spring-cloud-context-4.0.3.jar:4.0.3]
+	at org.springframework.cloud.bootstrap.config.PropertySourceBootstrapConfiguration.initialize(PropertySourceBootstrapConfiguration.java:111) [spring-cloud-context-4.0.3.jar:4.0.3]
+	at org.springframework.boot.SpringApplication.applyInitializers(SpringApplication.java:607) [spring-boot-3.1.1.jar:3.1.1]
+	at org.springframework.boot.SpringApplication.prepareContext(SpringApplication.java:387) [spring-boot-3.1.1.jar:3.1.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:311) [spring-boot-3.1.1.jar:3.1.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306) [spring-boot-3.1.1.jar:3.1.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295) [spring-boot-3.1.1.jar:3.1.1]
+	at com.zlennon.gateway.SpringCloudGateWayApplication.main(SpringCloudGateWayApplication.java:15) [classes/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:568) ~[?:?]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) [spring-boot-devtools-3.1.1.jar:3.1.1]
+[23:16:35:583] [ERROR] - com.alibaba.cloud.nacos.client.NacosPropertySourceBuilder.loadNacosData(NacosPropertySourceBuilder.java:101) - get data from Nacos error,dataId:gateway-service.yml 
+com.alibaba.nacos.api.exception.NacosException: group invalid
+	at com.alibaba.nacos.client.config.utils.ParamUtils.checkKeyParam(ParamUtils.java:105) ~[nacos-client-2.2.1.jar:?]
+	at com.alibaba.nacos.client.config.NacosConfigService.getConfigInner(NacosConfigService.java:158) ~[nacos-client-2.2.1.jar:?]
+	at com.alibaba.nacos.client.config.NacosConfigService.getConfig(NacosConfigService.java:96) ~[nacos-client-2.2.1.jar:?]
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceBuilder.loadNacosData(NacosPropertySourceBuilder.java:85) [spring-cloud-starter-alibaba-nacos-config-2022.0.0.0.jar:2022.0.0.0]
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceBuilder.build(NacosPropertySourceBuilder.java:73) [spring-cloud-starter-alibaba-nacos-config-2022.0.0.0.jar:2022.0.0.0]
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.loadNacosPropertySource(NacosPropertySourceLocator.java:199) [spring-cloud-starter-alibaba-nacos-config-2022.0.0.0.jar:2022.0.0.0]
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.loadNacosDataIfPresent(NacosPropertySourceLocator.java:186) [spring-cloud-starter-alibaba-nacos-config-2022.0.0.0.jar:2022.0.0.0]
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.loadApplicationConfiguration(NacosPropertySourceLocator.java:144) [spring-cloud-starter-alibaba-nacos-config-2022.0.0.0.jar:2022.0.0.0]
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.locate(NacosPropertySourceLocator.java:103) [spring-cloud-starter-alibaba-nacos-config-2022.0.0.0.jar:2022.0.0.0]
+	at org.springframework.cloud.bootstrap.config.PropertySourceLocator.locateCollection(PropertySourceLocator.java:50) [spring-cloud-context-4.0.3.jar:4.0.3]
+	at org.springframework.cloud.bootstrap.config.PropertySourceLocator.locateCollection(PropertySourceLocator.java:46) [spring-cloud-context-4.0.3.jar:4.0.3]
+	at org.springframework.cloud.bootstrap.config.PropertySourceBootstrapConfiguration.doInitialize(PropertySourceBootstrapConfiguration.java:121) [spring-cloud-context-4.0.3.jar:4.0.3]
+	at org.springframework.cloud.bootstrap.config.PropertySourceBootstrapConfiguration.initialize(PropertySourceBootstrapConfiguration.java:111) [spring-cloud-context-4.0.3.jar:4.0.3]
+	at org.springframework.boot.SpringApplication.applyInitializers(SpringApplication.java:607) [spring-boot-3.1.1.jar:3.1.1]
+	at org.springframework.boot.SpringApplication.prepareContext(SpringApplication.java:387) [spring-boot-3.1.1.jar:3.1.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:311) [spring-boot-3.1.1.jar:3.1.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306) [spring-boot-3.1.1.jar:3.1.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295) [spring-boot-3.1.1.jar:3.1.1]
+	at com.zlennon.gateway.SpringCloudGateWayApplication.main(SpringCloudGateWayApplication.java:15) [classes/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:568) ~[?:?]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) [spring-boot-devtools-3.1.1.jar:3.1.1]
+[23:16:35:586] [ERROR] - com.alibaba.cloud.nacos.client.NacosPropertySourceBuilder.loadNacosData(NacosPropertySourceBuilder.java:101) - get data from Nacos error,dataId:gateway-service-nacos-routes.yml 
+com.alibaba.nacos.api.exception.NacosException: group invalid
+	at com.alibaba.nacos.client.config.utils.ParamUtils.checkKeyParam(ParamUtils.java:105) ~[nacos-client-2.2.1.jar:?]
+	at com.alibaba.nacos.client.config.NacosConfigService.getConfigInner(NacosConfigService.java:158) ~[nacos-client-2.2.1.jar:?]
+	at com.alibaba.nacos.client.config.NacosConfigService.getConfig(NacosConfigService.java:96) ~[nacos-client-2.2.1.jar:?]
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceBuilder.loadNacosData(NacosPropertySourceBuilder.java:85) [spring-cloud-starter-alibaba-nacos-config-2022.0.0.0.jar:2022.0.0.0]
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceBuilder.build(NacosPropertySourceBuilder.java:73) [spring-cloud-starter-alibaba-nacos-config-2022.0.0.0.jar:2022.0.0.0]
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.loadNacosPropertySource(NacosPropertySourceLocator.java:199) [spring-cloud-starter-alibaba-nacos-config-2022.0.0.0.jar:2022.0.0.0]
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.loadNacosDataIfPresent(NacosPropertySourceLocator.java:186) [spring-cloud-starter-alibaba-nacos-config-2022.0.0.0.jar:2022.0.0.0]
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.loadApplicationConfiguration(NacosPropertySourceLocator.java:149) [spring-cloud-starter-alibaba-nacos-config-2022.0.0.0.jar:2022.0.0.0]
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.locate(NacosPropertySourceLocator.java:103) [spring-cloud-starter-alibaba-nacos-config-2022.0.0.0.jar:2022.0.0.0]
+	at org.springframework.cloud.bootstrap.config.PropertySourceLocator.locateCollection(PropertySourceLocator.java:50) [spring-cloud-context-4.0.3.jar:4.0.3]
+	at org.springframework.cloud.bootstrap.config.PropertySourceLocator.locateCollection(PropertySourceLocator.java:46) [spring-cloud-context-4.0.3.jar:4.0.3]
+	at org.springframework.cloud.bootstrap.config.PropertySourceBootstrapConfiguration.doInitialize(PropertySourceBootstrapConfiguration.java:121) [spring-cloud-context-4.0.3.jar:4.0.3]
+	at org.springframework.cloud.bootstrap.config.PropertySourceBootstrapConfiguration.initialize(PropertySourceBootstrapConfiguration.java:111) [spring-cloud-context-4.0.3.jar:4.0.3]
+	at org.springframework.boot.SpringApplication.applyInitializers(SpringApplication.java:607) [spring-boot-3.1.1.jar:3.1.1]
+	at org.springframework.boot.SpringApplication.prepareContext(SpringApplication.java:387) [spring-boot-3.1.1.jar:3.1.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:311) [spring-boot-3.1.1.jar:3.1.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306) [spring-boot-3.1.1.jar:3.1.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295) [spring-boot-3.1.1.jar:3.1.1]
+	at com.zlennon.gateway.SpringCloudGateWayApplication.main(SpringCloudGateWayApplication.java:15) [classes/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:568) ~[?:?]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) [spring-boot-devtools-3.1.1.jar:3.1.1]
+[23:16:35:593] [INFO] - org.springframework.cloud.bootstrap.config.PropertySourceBootstrapConfiguration.doInitialize(PropertySourceBootstrapConfiguration.java:134) - Located property source: [BootstrapPropertySource {name='bootstrapProperties-gateway-service-nacos-routes.yml,${spring.profiles.active}'}, BootstrapPropertySource {name='bootstrapProperties-gateway-service.yml,${spring.profiles.active}'}, BootstrapPropertySource {name='bootstrapProperties-gateway-service,${spring.profiles.active}'}]
+[23:16:35:693] [INFO] - org.springframework.boot.SpringApplication.logStartupProfileInfo(SpringApplication.java:640) - The following 1 profile is active: "nacos-routes"
+[23:16:38:951] [INFO] - org.springframework.cloud.context.scope.GenericScope.setSerializationId(GenericScope.java:282) - BeanFactory id=a19e1754-4d24-3080-890b-8cfd4299c3f3
+[23:23:48:963] [INFO] - org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:108) - Tomcat initialized with port(s): 7999 (http)
+[23:23:49:000] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:173) - Initializing ProtocolHandler ["http-nio-7999"]
+[23:23:49:006] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:173) - Starting service [Tomcat]
+[23:23:49:009] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:173) - Starting Servlet engine: [Apache Tomcat/10.1.10]
+[23:23:58:394] [WARN] - com.alibaba.nacos.common.http.HttpClientBeanHolder.shutdown(HttpClientBeanHolder.java:102) - [HttpClientBeanHolder] Start destroying common HttpClient
+[23:23:58:396] [WARN] - com.alibaba.nacos.common.http.HttpClientBeanHolder.shutdown(HttpClientBeanHolder.java:111) - [HttpClientBeanHolder] Destruction of the end

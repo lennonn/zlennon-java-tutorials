@@ -42,7 +42,7 @@
             <!-- 设置控制台只输出INFO及以上级别的信息(onMatch),其他的直接拒绝(onMismatch) -->
           <!-- <ThresholdFilter level="INFO" onMatch="ACCEPT" onMismatch="DENY"/>-->
             <!--输出日志的格式-->
-            <CustomPatternLayout pattern="${log_pattern}"/>
+            <PatternLayout pattern="${log_pattern}"/>
         </console>
 
         <!-- 所有的日志信息会打印到此文件中，append=false每次启动程序会自动清空 -->
@@ -60,7 +60,6 @@
             <!--控制台只输出level及以上级别的信息（onMatch），其他的直接拒绝（onMismatch）-->
            <ThresholdFilter level="INFO" onMatch="ACCEPT" onMismatch="DENY"/>
             <!-- 写入日志文件的模板 -->
-            <CustomPatternLayout pattern="${log_pattern}"/>
             <Policies>
                 <TimeBasedTriggeringPolicy/>
                 <SizeBasedTriggeringPolicy size="${file_max_size}"/>
@@ -72,7 +71,6 @@
         <RollingFile name="RollingFileWarn" fileName="${file_path}/log4j2-debug.log"
                      filePattern="${file_path}/${backup_folder}/warn${backup_file_suffix}">
             <ThresholdFilter level="DEBUG" onMatch="ACCEPT" onMismatch="DENY"/>
-            <CustomPatternLayout pattern="${log_pattern}"/>
             <Policies>
                 <TimeBasedTriggeringPolicy/>
                 <SizeBasedTriggeringPolicy size="${file_max_size}"/>
@@ -82,7 +80,6 @@
         <RollingFile name="RollingFileDebug" fileName="${file_path}/log4j2-warn.log"
                      filePattern="${file_path}/${backup_folder}/warn${backup_file_suffix}">
             <ThresholdFilter level="WARN" onMatch="ACCEPT" onMismatch="DENY"/>
-            <CustomPatternLayout pattern="${log_pattern}"/>
             <Policies>
                 <TimeBasedTriggeringPolicy/>
                 <SizeBasedTriggeringPolicy size="${file_max_size}"/>
@@ -92,7 +89,6 @@
         <RollingFile name="RollingFileError" fileName="${file_path}/log4j2-error.log"
                      filePattern="${file_path}/${backup_folder}/error${backup_file_suffix}">
             <ThresholdFilter level="ERROR" onMatch="ACCEPT" onMismatch="DENY"/>
-            <CustomPatternLayout pattern="${log_pattern}"/>
             <Policies>
                 <TimeBasedTriggeringPolicy/>
                 <SizeBasedTriggeringPolicy size="${file_max_size}"/>

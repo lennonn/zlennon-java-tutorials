@@ -3,6 +3,7 @@ package com.zlennon.gateway.config;
 import com.zlennon.gateway.filter.EncryptDecryptFilter;
 import com.zlennon.gateway.filter.WhitelistFilter;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.cloud.gateway.route.RouteLocator;
 import org.springframework.cloud.gateway.route.builder.RouteLocatorBuilder;
 import org.springframework.context.MessageSource;
@@ -30,11 +31,11 @@ public class RouteLocatorConfig {
     public RouteLocator customRouteLocator(RouteLocatorBuilder builder) {
         return builder.routes()
                 .route("path_route", r -> r.path("/test/*")
-                        .uri("https://www.zlennon.com"))
-                .route("chatgpt", r -> r.path("/**")
-                        .filters(f -> f.tokenRelay())
+                        .uri("http://127.0.0.1:5006/okhttp/asyncGetRequest"))
+/*                .route("chatgpt", r -> r.path("/**")
+                       // .filters(f -> f.tokenRelay())
                         .uri("lb://chatgpt-model-service")
-                )
+                )*/
 
                 .route("demoi18n", r -> r.path("/demoi18n/**")
                         //.uri("lb://chatgpt-model-service"))
@@ -45,6 +46,13 @@ public class RouteLocatorConfig {
                         .uri("http://whitelist.com"))
                 .build();
     }
+
+    @Bean
+    @RefreshScope
+    public RouteLocator routeDefinitionLocator(RouteLocatorBuilder builder) {
+        return builder.routes().build();
+    }
+
 
 /*    @Bean
     public RouterFunction<ServerResponse> personRoutes() {

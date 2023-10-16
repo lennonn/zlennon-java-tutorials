@@ -115,9 +115,7 @@ public class SnowflakeIdFactory {
         Set<Long> setTow = new HashSet<>();
         long start = System.currentTimeMillis();
         for (int i = 0; i < n; i++) {
-            long l = idWorker.nextId();
-            log.info("{}",l);
-            setOne.add(l);//加入set
+            setOne.add(idWorker.nextId());//加入set
         }
         long end1 = System.currentTimeMillis() - start;
         log.info("第一批ID预计生成{}个,实际生成{}个<<<<*>>>>共耗时:{}",n,setOne.size(),end1);

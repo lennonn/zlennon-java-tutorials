@@ -6,14 +6,14 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.redis.core.RedisTemplate;
 
-@SpringBootApplication(scanBasePackages = "com.zlennon.**.**")
+@SpringBootApplication
 public class SpringRedisApplication  implements CommandLineRunner {
 
 	@Autowired
 	RedisTemplate redisTemplate;
 
 	@Autowired
-	IdWorderComponent worderComponent;
+	IdWorderComponent idWorderComponent;
 
 	public static void main(String[] args) {
 		SpringApplication.run(SpringRedisApplication.class, args);
@@ -21,9 +21,13 @@ public class SpringRedisApplication  implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
+		for (int i = 0; i <10 ; i++) {
+
+			System.out.println(idWorderComponent.nextStringId());;
+		}
 		redisTemplate.opsForValue().set("test","1");
-		redisTemplate.opsForHash().put("hashKey","key1","test redis");
-		redisTemplate.opsForHash().put("hashKey","key2","object");
-		worderComponent.nextStringId();
+		redisTemplate.opsForHash().put("hashKey","user1","user1");
+		redisTemplate.opsForHash().put("hashKey","user2","user2");
+		System.out.println(redisTemplate.opsForHash().get("hashKey","user2"));
 	}
 }

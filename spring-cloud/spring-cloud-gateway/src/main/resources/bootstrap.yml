@@ -1,7 +1,37 @@
 spring:
   cloud:
-    consul:
-      host: 127.0.0.1
-      port: 8500
+    nacos:
+      discovery:
+        server-addr: 101.43.146.222:8848 #服务注册中心地址
+        group: ${spring.profiles.active}
+        namespace: ${spring.profiles.active}
       config:
-        enabled: false
+        server-addr: 101.43.146.222:8848 #配置中心地址
+        file-extension: yml #指定yaml格式的配置
+        group: ${spring.profiles.active}
+        namespace: ${spring.profiles.active}
+    consul:
+      enabled: false
+      host: 101.43.146.222
+      port: 8500
+      discovery:
+        enabled: true
+        register: true
+        heartbeat:
+          enabled: true
+        instance-id: ${spring.application.name}-${server.port}
+        health-check-path: /actuator/health
+        health-check-interval: 10s
+        prefer-ip-address: true
+      config:
+        enabled: false #开启配置中心，默认是true
+        default-context: gateway #应用文件夹，默认值 application
+        profile-separator: ',' # 环境分隔符，默认值 ","
+        format: yaml #配置格式，默认 key-value，其他可选：yaml/files/properties
+        data-key: route #配置 key 值，value 对应整个配置文件
+        #以上配置后，我们的配置文件在consul中的完整的key为 springcloud/application,dev/route
+        prefixes: springcloud
+        watch:
+          enabled: true #启用配置自动刷新
+          delay: 100000 # 刷新频率，单位：毫秒
+          wait-time: 1200
