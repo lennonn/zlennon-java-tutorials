@@ -11,6 +11,7 @@
         <module>java-8-datatime</module>
         <module>java-temp</module>
         <module>java-tools</module>
+		<module>java-sdk</module>
     </modules>
     <parent>
 		<groupId>com.zlennon</groupId>

@@ -14,6 +14,13 @@
     <version>0.0.1-SNAPSHOT</version>
     <name>base-service</name>
     <description>base-service</description>
+    <modules>
+        <module>account-service</module>
+        <module>order-service</module>
+        <module>product-service</module>
+        <module>transaction-server</module>
+        <module>transactional-core</module>
+    </modules>
     <properties>
         <java.version>17</java.version>
         <spring-cloud.version>2022.0.0</spring-cloud.version>
