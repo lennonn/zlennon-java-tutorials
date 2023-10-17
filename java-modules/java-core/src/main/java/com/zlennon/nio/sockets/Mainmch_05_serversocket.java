@@ -59,7 +59,6 @@ public class Mainmch_05_serversocket {
 
                     while (keys.hasNext()) {
                         SelectionKey key = (SelectionKey) keys.next();
-
                         //prevent the same key from coming up again
                         keys.remove();
 

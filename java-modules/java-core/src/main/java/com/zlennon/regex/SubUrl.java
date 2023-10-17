@@ -1,4 +1,4 @@
-package com.zlennon.string.regex;
+package com.zlennon.regex;
 
 import java.util.ArrayList;
 import java.util.List;
