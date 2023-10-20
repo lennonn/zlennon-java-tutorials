@@ -23,7 +23,7 @@ import java.time.Duration;
 @EnableRedisRepositories
 @EnableCaching
 public class RedisConfig {
-
+/*
     @Bean
     public JedisPoolConfig jedisPool(RedisProperties properties) {
         JedisPoolConfig jedisPoolConfig = new JedisPoolConfig();
@@ -43,7 +43,7 @@ public class RedisConfig {
         configuration.setHostName(properties.getHost());
         configuration.setPort(properties.getPort());
         return new JedisConnectionFactory(configuration) ;
-    }
+    }*/
 
 
 

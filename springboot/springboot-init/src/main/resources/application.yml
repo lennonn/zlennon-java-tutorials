@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: springboot-init
+  datasource:
+    url: jdbc:mysql://localhost:3306/zlennon?useSSL=false
+    username: root
+    password: 123456

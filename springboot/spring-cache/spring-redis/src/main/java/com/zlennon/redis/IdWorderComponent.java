@@ -28,7 +28,7 @@ public class IdWorderComponent {
 		Object result = "";
 		try {
 			DefaultRedisScript<String> redisScript = new DefaultRedisScript<>();
-			redisScript.setScriptSource(new ResourceScriptSource(new ClassPathResource("lua/id.lua")));
+			redisScript.setScriptSource(new ResourceScriptSource(new ClassPathResource("lua/test.lua")));
 			redisScript.setResultType(String.class);
 
 			result = redisTemplate.execute(redisScript, keyList, argsone);

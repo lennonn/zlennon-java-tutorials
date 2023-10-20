@@ -11,3 +11,6 @@ spring:
     active: nacos-routes
   application:
     name: gateway-service
+logging:
+  level:
+    org.springframework: trace

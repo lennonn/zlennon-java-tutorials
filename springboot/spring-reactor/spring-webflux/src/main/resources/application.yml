@@ -7,3 +7,12 @@ spring:
     password: 123456
 server:
   port: 9020
+
+logging:
+  level:
+    com.alibaba: debug
+    org.springframework: debug
+    org.springframework.cloud.gateway: debug
+    org.springframework.cloud.loadbalancer: debug
+    org.springframework.web.reactive: debug
+
