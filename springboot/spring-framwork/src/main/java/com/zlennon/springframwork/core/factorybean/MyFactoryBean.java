@@ -6,6 +6,8 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class MyFactoryBean implements FactoryBean {
+
+     private String initProperties="sfsdsdf";
     @Override
     public Object getObject() throws Exception {
         Car car = new Car();
@@ -18,4 +20,5 @@ public class MyFactoryBean implements FactoryBean {
     public Class<?> getObjectType() {
         return null;
     }
+
 }

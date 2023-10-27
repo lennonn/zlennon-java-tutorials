@@ -23,10 +23,10 @@ public class TestController {
      *
      * 测试使用 user.register.success
      */
-    @GetMapping("demo")
+/*    @GetMapping("demo")
     public Mono<String> get(String code) {
 
         return Mono.just(messageSource.getMessage(code, new Object[]{
         }, LocaleContextHolder.getLocale()));
-    }
+    }*/
 }

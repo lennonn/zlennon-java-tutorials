@@ -2,9 +2,7 @@ package com.zlennon.reactorcore.create;
 
 import com.zlennon.reactorcore.MyEventListener;
 import com.zlennon.reactorcore.MyEventProcessor;
-import com.zlennon.reactorcore.MyMessageListener;
 import com.zlennon.reactorcore.MyMessageProcessor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
@@ -102,6 +100,11 @@ public class FluxMonoCreator {
                 }
             });
         });
+    }
+
+    public Flux<String> fluxFromIterable(){
+        List<String> eles = List.of("A", "B", "C", "D");
+        return  Flux.fromIterable(eles);
     }
 
     public Flux<String> createFluxAlphabet(){

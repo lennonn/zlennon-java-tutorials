@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: chatgpt-model-service
+  datasource:
+    url: jdbc:mysql://localhost:3306/chatgpt?serverTimezone=UTC&useSSL=false
+    username: root
+    password: 123456
+  jpa:
+    hibernate:
+      ddl-auto: update
+      show-sql: false
+  autoconfigure:
+    exclude:
+      - org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration
+      - org.springframework.boot.actuate.autoconfigure.security.servlet.ManagementWebSecurityAutoConfiguration
+      - org.springframework.boot.autoconfigure.security.oauth2.resource.servlet.OAuth2ResourceServerAutoConfiguration
+server:
+  port: 7888

@@ -2,7 +2,7 @@ spring:
   application:
     name: chatgpt-model-service
   datasource:
-    url: jdbc:mysql://localhost:3306/chatgpt?serverTimezone=UTC&useSSL=false&&allowPublicKeyRetrieval=true
+    url: jdbc:mysql://localhost:3306/chatgpt?serverTimezone=UTC&useSSL=false&allowPublicKeyRetrieval=true
     username: root
     password: 123456
   jpa:
@@ -10,30 +10,7 @@ spring:
       ddl-auto: update
       show-sql: false
     database: mysql
-  rabbitmq:
-    host: 127.0.0.1
-    port: 5672
-    username: guest
-    password: guest
-  #zipkin:
-  #  baseUrl: http://127.0.0.1:9411/
   profiles:
-    active: rabbit
-  security:
-    oauth2:
-      resourceserver:
-        jwt:
-          issuer-uri: http://localhost:8500
-  cloud:
-    consul:
-      host: 127.0.0.1
-      port: 8500
-      discovery:
-        enabled: true
-        register: true
-        instance-id: ${spring.application.name}-${server.port}
-        service-name: chatgpt-model-service
-        health-check-path: /actuator/health
-        health-check-interval: 30s
+    active: dev
 server:
   port: 7888
