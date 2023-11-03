@@ -29,6 +29,7 @@ public class BeanInitOrder implements InitializingBean, BeanPostProcessor, BeanF
 
     public BeanInitOrder() {
         this.name = "constructor";
+        System.out.println("constructor==>>"+ this.name);
     }
 
     private
@@ -37,15 +38,15 @@ public class BeanInitOrder implements InitializingBean, BeanPostProcessor, BeanF
     void init(){
         name="PostConstruct";
         id="init";
-        System.out.println("init==>>"+ System.currentTimeMillis());
+        System.out.println("init==>>"+ this.name);
 
     }
 
 
-    @Bean(initMethod = "initCar")
+/*    @Bean(initMethod = "initCar")
     public Car initCar() {
         return new Car();
-    }
+    }*/
 
     @Override
     public void afterPropertiesSet() throws Exception {
@@ -56,21 +57,17 @@ public class BeanInitOrder implements InitializingBean, BeanPostProcessor, BeanF
 
     @Override
     public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
-        if(beanName.equals("car")) {
-           // MyFactoryBean myFactoryBean =(MyFactoryBean)bean;
-            System.out.println("postProcessBeforeInitialization==>>" + System.currentTimeMillis() + "beanName==>> " + this.name);
-            return bean;
-        }
+
+            this.name="postProcessBeforeInitialization";
+            System.out.println("postProcessBeforeInitialization==>>" + System.currentTimeMillis() + "beanName==>> " + beanName);
+
         return bean;
     }
 
     @Override
     public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
-        if(beanName.equals("car")) {
-            //MyFactoryBean myFactoryBean =(MyFactoryBean)bean;
-            System.out.println("postProcessAfterInitialization==>>" + System.currentTimeMillis() + "beanName==>> " + this.name);
-            return bean;
-        }
+           // this.name="postProcessAfterInitialization";
+           // System.out.println("postProcessAfterInitialization==>>" + System.currentTimeMillis() + "beanName==>> " + this.name);
         return bean;
     }
 

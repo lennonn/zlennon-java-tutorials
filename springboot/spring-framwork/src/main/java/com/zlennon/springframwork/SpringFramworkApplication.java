@@ -18,8 +18,8 @@ public class SpringFramworkApplication  implements CommandLineRunner {
 		System.out.println(car.toString());*/
 		BeanInitOrder beanInitOrder = applicationContext.getBean("beanInitOrder", BeanInitOrder.class);
 		System.out.println(beanInitOrder.toString());
-		Car car = applicationContext.getBean("initCar", Car.class);
-		System.out.println(car.toString());
+		//Car car = applicationContext.getBean("initCar", Car.class);
+		//System.out.println(car.toString());
 
 	}
 
