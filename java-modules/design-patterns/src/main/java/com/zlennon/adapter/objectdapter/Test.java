@@ -3,7 +3,8 @@
  */
 package com.zlennon.adapter.objectdapter;
 
-import com.zl.instances.designpattern.adapter.classadapter.DrawRcetangle;
+
+import com.zlennon.adapter.classadapter.DrawRcetangle;
 
 /**
  * @author zlennon
