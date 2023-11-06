@@ -1,4 +1,2 @@
 server:
-  instance:
-    id: 2
-  port: 8081
+  port: 7900

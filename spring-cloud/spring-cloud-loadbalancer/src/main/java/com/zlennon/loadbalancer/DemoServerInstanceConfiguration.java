@@ -8,6 +8,6 @@ import org.springframework.context.annotation.Configuration;
 public class DemoServerInstanceConfiguration {
     @Bean
     ServiceInstanceListSupplier serviceInstanceListSupplier() {
-        return new DemoInstanceSupplier("example-service");
+        return new DemoInstanceSupplier("instance-server");
     }
 }

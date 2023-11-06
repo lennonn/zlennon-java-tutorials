@@ -9,9 +9,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import java.io.*;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
+import java.util.List;
 import java.util.stream.Stream;
-
-import static org.hamcrest.Matchers.lessThan;
 
 public class GuavaIOTest {
 
@@ -31,7 +30,7 @@ public class GuavaIOTest {
     }
 
     @Test
-    public void useByteStreams() throws IOException {
+    public OutputStream useByteStreams() throws IOException {
         InputStream inputStream = new FileInputStream(useByteSink());
         OutputStream outputStream = new FileOutputStream("byte-streams.txt");
 
@@ -39,17 +38,43 @@ public class GuavaIOTest {
         assertThat(new String(byteArray)).isEqualTo("guava");
         //使用copy方法
         ByteStreams.copy(inputStream,outputStream);
+
+        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+        byteArrayOutputStream.write(byteArray);
+        return byteArrayOutputStream;
+
     }
 
     @Test
     public void useCharStreams() throws IOException {
         InputStream inputStream = new FileInputStream(useByteSink());
         OutputStream outputStream = new FileOutputStream("char-streams.txt");
+        List<String> strings = CharStreams.readLines(new InputStreamReader(inputStream));
+        assertThat(strings.size()).isEqualTo(1);
+        StringReader stringReader = new StringReader("zlennon");
+        CharStreams.skipFully(stringReader,2);
+        char[] chars = new char[5];
+        stringReader.read(chars);
+        assertThat(chars[0]).isEqualTo('e');
+        String world = CharStreams.readLines(new FileReader("lines.txt"), new LineProcessor<>() {
 
-/*        byte[] byteArray = CharStreams;
-        assertThat(new String(byteArray)).isEqualTo("guava");
-        //使用copy方法
-        ByteStreams.copy(inputStream,outputStream);*/
+            StringBuilder sb = new StringBuilder();
+            @Override
+            public boolean processLine(String line) throws IOException {
+                if (line.equals("dddd")){
+                    sb.append(line);
+                    return false;
+                }
+                return true;
+            }
+
+            @Override
+            public String getResult() {
+                return sb.toString();
+            }
+        });
+        assertThat(world).isEqualTo("dddd");
+
     }
 
     @Test
@@ -79,6 +104,8 @@ public class GuavaIOTest {
             if(!Files.isDirectory().test(file)) {
 
                 String fileExtension = Files.getFileExtension(file.getName());
+                String nameWithoutExtension = Files.getNameWithoutExtension(file.getAbsolutePath());
+                assertThat(fileExtension).isEqualTo("log");
                 try {
                     Files.copy(file, new File("new-" + file.getName()));
                 } catch (IOException e) {
@@ -90,4 +117,26 @@ public class GuavaIOTest {
         Files.write("Files".getBytes(),new File("files.txt"));
 
     }
+
+    @Test
+    public void useCountingStream() throws IOException {
+        CountingInputStream cis = new CountingInputStream(new FileInputStream(new File("byte-sink.txt")));
+        cis.read(new byte[1024],0,5);
+        assertThat(cis.getCount()).isEqualTo(5);
+
+        CountingOutputStream cos = new CountingOutputStream(new BufferedOutputStream(useByteStreams()));
+        cos.write(new byte[1024],0,5);
+        assertThat(cos.getCount()).isEqualTo(5);
+    }
+
+
+    @Test
+    public void useReader() throws IOException {
+        LineReader lineReader =new LineReader( Files.newReader(new File("lines.txt"),Charset.defaultCharset()));
+        String line = lineReader.readLine();
+        assertThat(line).isEqualTo("aaaa");
+    }
+
+
+
 }

@@ -16,6 +16,11 @@ spring:
       discovery:
         locator:
           enabled: true
+      routes:
+      - id: path_route
+        uri: https://www.zlennon.com
+        predicates:
+        - Path=/test/*
   autoconfigure:
     exclude:
       - org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration

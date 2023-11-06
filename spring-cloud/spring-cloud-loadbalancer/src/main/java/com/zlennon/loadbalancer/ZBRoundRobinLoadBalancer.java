@@ -11,7 +11,9 @@ import org.springframework.cloud.loadbalancer.core.SelectedInstanceCallback;
 import org.springframework.cloud.loadbalancer.core.ServiceInstanceListSupplier;
 import reactor.core.publisher.Mono;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Random;
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -21,6 +23,7 @@ public class ZBRoundRobinLoadBalancer implements ReactorServiceInstanceLoadBalan
     final AtomicInteger position;
     final String serviceId;
     ObjectProvider<ServiceInstanceListSupplier> serviceInstanceListSupplierProvider;
+    private Map<String, Object> instanceSession = new HashMap<>();
 
     public ZBRoundRobinLoadBalancer(ObjectProvider<ServiceInstanceListSupplier> serviceInstanceListSupplierProvider, String serviceId) {
         this(serviceInstanceListSupplierProvider, serviceId, (new Random()).nextInt(1000));
@@ -34,16 +37,16 @@ public class ZBRoundRobinLoadBalancer implements ReactorServiceInstanceLoadBalan
     }
 
     public Mono<Response<ServiceInstance>> choose(Request request) {
-        ServiceInstanceListSupplier supplier = (ServiceInstanceListSupplier)this.serviceInstanceListSupplierProvider.getIfAvailable(NoopServiceInstanceListSupplier::new);
+        ServiceInstanceListSupplier supplier = this.serviceInstanceListSupplierProvider.getIfAvailable(NoopServiceInstanceListSupplier::new);
         return supplier.get(request).next().map((serviceInstances) -> {
-            return this.processInstanceResponse(supplier, serviceInstances,request);
+            return this.processInstanceResponse(supplier, serviceInstances, request);
         });
     }
 
     private Response<ServiceInstance> processInstanceResponse(ServiceInstanceListSupplier supplier, List<ServiceInstance> serviceInstances, Request request) {
-        Response<ServiceInstance> serviceInstanceResponse = this.getInstanceResponse(serviceInstances,request);
+        Response<ServiceInstance> serviceInstanceResponse = this.getInstanceResponse(serviceInstances, request);
         if (supplier instanceof SelectedInstanceCallback && serviceInstanceResponse.hasServer()) {
-            ((SelectedInstanceCallback)supplier).selectedServiceInstance((ServiceInstance)serviceInstanceResponse.getServer());
+            ((SelectedInstanceCallback) supplier).selectedServiceInstance(serviceInstanceResponse.getServer());
         }
 
         return serviceInstanceResponse;
@@ -54,20 +57,25 @@ public class ZBRoundRobinLoadBalancer implements ReactorServiceInstanceLoadBalan
             if (log.isWarnEnabled()) {
                 log.warn("No servers available for service: " + this.serviceId);
             }
-
             return new EmptyResponse();
         } else {
-            int pos = this.position.incrementAndGet() & 2147483647;
             DefaultRequestContext requestContext = (DefaultRequestContext) request.getContext();
             RequestData clientRequest = (RequestData) requestContext.getClientRequest();
             String sessionId = (String) clientRequest.getAttributes().get("sessionId");
-            ServiceInstance                 instance = (ServiceInstance) instances.get(pos % instances.size());
+            ServiceInstance instance = null;
+            if (sessionId == null) {
+                int pos = this.position.incrementAndGet() & 2147483647;
+                instance = instances.get(pos % instances.size());
+                return new DefaultResponse(instance);
+            } else {
+                if (instanceSession.get(sessionId) != null) {
+                    instance = instances.stream().filter(f -> f.getInstanceId().equals(instanceSession.get(sessionId))).findFirst().get();
+                } else {
+                    instance= instances.get(this.position.incrementAndGet()%instances.size());
+                    instanceSession.put(sessionId, instance.getInstanceId());
 
-/*            if(instanceSession.get(sessionId) != null) {
-                instance = instances.stream().filter(f -> f.getInstanceId().equals(instanceSession.get(sessionId))).findFirst().get();
-            }else {
-                instanceSession.put(sessionId, instance.getInstanceId());
-            }*/
+                }
+            }
             return new DefaultResponse(instance);
         }
     }

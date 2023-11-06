@@ -1,3 +1,4 @@
+/*
 package com.zlennon.datastructure.btree;
 
 import com.mxgraph.swing.mxGraphComponent;
@@ -14,10 +15,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 
+*/
 /**
  * Class BTreeRenderer
  * @author tnguyen
- */
+ *//*
+
 public class BTreeRenderer extends JFrame
 {
     public final static int APP_WIDTH       =   1140;
@@ -340,12 +343,14 @@ public class BTreeRenderer extends JFrame
         getContentPane().add(graphComponent);
         graphComponent.getGraphControl().addMouseListener(new MouseAdapter() {
             public void mouseReleased(MouseEvent e) {
-                /*
+                */
+/*
                 Object cell = graphComponent.getCellAt(e.getX(), e.getY());
                 if (cell != null) {
                     println("cell=" + mGraph.getLabel(cell));
                 }
-                */
+                *//*
+
             }
         });
     }
@@ -445,10 +450,12 @@ public class BTreeRenderer extends JFrame
 
 
 
-    /**
+    */
+/**
      * Main Entry
      * @param args 
-     */
+     *//*
+
     public static void main(String[] args) {
         BTreeRenderer frame = new BTreeRenderer();
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -459,9 +466,11 @@ public class BTreeRenderer extends JFrame
     }
 
 
-    /**
+    */
+/**
      * Inner class: KeyData
-     */
+     *//*
+
     class KeyData {
         String mKeys = null;
         int mKeyNum = 0;
@@ -473,9 +482,11 @@ public class BTreeRenderer extends JFrame
     }
 
 
-    /**
+    */
+/**
      * Inner class to implement BTree iterator
-     */
+     *//*
+
     class BTIteratorImpl<K extends Comparable, V> implements BTIteratorIF<K, V> {
         private StringBuilder mBuf = new StringBuilder();
 
@@ -486,12 +497,15 @@ public class BTreeRenderer extends JFrame
                 .append("  |  value = ")
                 .append(value);
             println(mBuf.toString());
-            /*
+            */
+/*
             if (key.compareTo(30) == 0) {
                 return false;
             }
-            */
+            *//*
+
             return true;
         }
     }
 }
+*/

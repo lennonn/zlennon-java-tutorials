@@ -59,10 +59,9 @@ public class LoggingExample {
     public static void addLogBridgeToSlf4j() throws IOException {
         Logger logger = Logger.getLogger(LoggingExample.class.getName());
 
-        SLF4JBridgeHandler  fileHandler = new SLF4JBridgeHandler();
-
         // 将处理程序添加到Logger
-        logger.addHandler(fileHandler);
+        SLF4JBridgeHandler.install();
+
         logger.info("logging bridge to slf4j");
 
     }

@@ -13,4 +13,4 @@ spring:
     name: gateway-service
 logging:
   level:
-    org.springframework: trace
+    org.springframework: debug

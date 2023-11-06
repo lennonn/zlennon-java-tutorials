@@ -8,11 +8,10 @@ import org.springframework.boot.actuate.autoconfigure.endpoint.web.WebEndpointPr
 import org.springframework.cloud.gateway.filter.GatewayFilterChain;
 import org.springframework.cloud.gateway.filter.GlobalFilter;
 import org.springframework.cloud.gateway.support.ServerWebExchangeUtils;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.core.Ordered;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.server.reactive.ServerHttpRequest;
-import org.springframework.security.core.context.SecurityContextHolder;
+//import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.server.ServerWebExchange;
 import org.springframework.web.util.UriComponentsBuilder;
@@ -47,7 +46,7 @@ public class GlobalRequestLogFilter implements GlobalFilter, Ordered {
 		// 打印请求路径
 		String path = request.getPath().pathWithinApplication().value();
 		// 忽略 endpoint 请求
-		SecurityContextHolder.getContext().getAuthentication();
+		//SecurityContextHolder.getContext().getAuthentication();
 		String endpointBasePath = endpointProperties.getBasePath();
 		if (StringUtils.isNotBlank(endpointBasePath) && path.startsWith(endpointBasePath)) {
 			return chain.filter(exchange);

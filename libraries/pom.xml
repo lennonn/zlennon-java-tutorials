@@ -13,6 +13,7 @@
     <modules>
         <module>json-modules</module>
         <module>xml-parse</module>
+        <module>guava</module>
     </modules>
     <modelVersion>4.0.0</modelVersion>
 

@@ -43,6 +43,7 @@
 		<module>ftp-module</module>
 		<module>file-convert</module>
 		<module>captcha</module>
+		<module>springboot-init</module>
 	</modules>
 
 	<properties>

@@ -23,7 +23,7 @@ class DemoInstanceSupplier implements ServiceInstanceListSupplier {
     @Override
     public Flux<List<ServiceInstance>> get() {
         return Flux.just(Arrays
-                .asList(new DefaultServiceInstance(serviceId + "1", serviceId, "localhost", 8080, false),
-                        new DefaultServiceInstance(serviceId + "2", serviceId, "localhost", 8081, false)));
+                .asList(new DefaultServiceInstance(serviceId + "7901", serviceId, "localhost", 7901, false),
+                        new DefaultServiceInstance(serviceId + "7902", serviceId, "localhost", 7902, false)));
     }
 }
