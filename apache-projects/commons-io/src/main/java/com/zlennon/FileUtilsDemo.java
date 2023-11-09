@@ -34,12 +34,14 @@ public class FileUtilsDemo {
 
 
     public void  testFileUtils() throws IOException {
+        String path="https://www.zlennon.com/userfiles/ckeditor/files/log-history_drawio.png";
         File tempDir = FileUtils.getTempDirectory();
         FileUtils.copyFileToDirectory(file, tempDir);
+        FileUtils.copyURLToFile(new URL(path),tempDir);
+
         File newTempFile = FileUtils.getFile(tempDir, file.getName());
         String data = FileUtils.readFileToString(newTempFile,
                 Charset.defaultCharset());
-        String path="https://www.zlennon.com/userfiles/ckeditor/files/log-history_drawio.png";
 
         File file1 = new File("D:\\tmp\\test.png");
         FileUtils.copyURLToFile(new URL(path), file1);

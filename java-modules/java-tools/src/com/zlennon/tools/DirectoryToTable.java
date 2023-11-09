@@ -1,4 +1,4 @@
-package com.zlennon.tools;
+package zlennon.tools;
 
 import java.io.File;
 import java.io.IOException;
@@ -9,8 +9,8 @@ import java.util.List;
 import java.util.Objects;
 
 public class DirectoryToTable {
-    private static  final  String  sourcePath="D:\\IdeaProject\\appdevelop\\beijingbank_server_vbank3.0.000113\\vbank-visionlite\\vbank-visionlite-busi\\target\\classes\\";
-    private static  final  String  targetPath="E:\\feihu\\发版\\北京\\20230613\\visionlite\\";
+    private static  final  String  sourcePath="D:\\IdeaProject\\appdevelop\\beijingbank_server_vbank3.0.000113\\vbank-link\\target\\classes\\";
+    private static  final  String  targetPath="E:\\feihu\\发版\\北京\\20231108\\link\\";
     private static List<String> fileNames = new ArrayList<String>();
     private static  final  String  classPath="D:\\IdeaProject\\appdevelop\\langfangbank-busiroom\\issue\\20230608";
 
@@ -18,10 +18,9 @@ public class DirectoryToTable {
         File file = new File(classPath);
         //getClassFile(file,fileNames);
         //读取文件名
-        fileNames.add("teller.xml");
-        fileNames.add("WaterStainController.*");
-        fileNames.add("TellerDao.*");
-        fileNames.add("WaterStainServiceImpl.*");
+        fileNames.add("TellerServiceImpl.*");
+        fileNames.add("CapDto.*");
+
     }
 
     public static void main(String[] args)  {

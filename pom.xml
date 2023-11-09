@@ -20,6 +20,7 @@
         <module>testing-modules</module>
 		<module>consistency-problem</module>
         <module>apache-projects/commons-io</module>
+        <module>devops</module>
     </modules>
     <parent>
 		<groupId>org.springframework.boot</groupId>
