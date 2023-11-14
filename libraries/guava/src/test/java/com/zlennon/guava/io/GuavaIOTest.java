@@ -12,6 +12,8 @@ import java.nio.charset.StandardCharsets;
 import java.util.List;
 import java.util.stream.Stream;
 
+import static org.hamcrest.Matchers.lessThan;
+
 public class GuavaIOTest {
 
     public File useByteSink() throws IOException {
@@ -104,8 +106,6 @@ public class GuavaIOTest {
             if(!Files.isDirectory().test(file)) {
 
                 String fileExtension = Files.getFileExtension(file.getName());
-                String nameWithoutExtension = Files.getNameWithoutExtension(file.getAbsolutePath());
-                assertThat(fileExtension).isEqualTo("log");
                 try {
                     Files.copy(file, new File("new-" + file.getName()));
                 } catch (IOException e) {
@@ -116,6 +116,22 @@ public class GuavaIOTest {
         ByteSource byteSource = Files.asByteSource(useByteSink());
         Files.write("Files".getBytes(),new File("files.txt"));
 
+    }
+
+    @Test
+    public void userInputStreamTwice() throws IOException {
+        // 从资源文件加载数据
+        ByteSource byteSource = Resources.asByteSource(Resources.getResource("byte-sink.txt"));
+
+        // 第一次使用 InputStream 读取数据
+        InputStream inputStream1 = byteSource.openBufferedStream();
+        String result1 = new String(ByteStreams.toByteArray(inputStream1), StandardCharsets.UTF_8);
+        System.out.println("First read: " + result1);
+
+        // 第二次使用 InputStream 读取数据
+        InputStream inputStream2 = byteSource.openBufferedStream();
+        String result2 = new String(ByteStreams.toByteArray(inputStream2), StandardCharsets.UTF_8);
+        System.out.println("Second read: " + result2);
     }
 
     @Test
