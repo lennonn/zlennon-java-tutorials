@@ -37,13 +37,13 @@
             <artifactId>spring-boot-starter-web</artifactId>
             <!--排除tomcat-->
 <!--
-<!--            <exclusions>
+          <exclusions>
                 <exclusion>
                     <artifactId>spring-boot-starter-tomcat</artifactId>
                     <groupId>org.springframework.boot</groupId>
                 </exclusion>
-            </exclusions>-->
--->
+            </exclusions>
+       -->
         </dependency>
         <!--引入Netty-->
         <dependency>

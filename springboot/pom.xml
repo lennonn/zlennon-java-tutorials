@@ -45,6 +45,7 @@
 		<module>captcha</module>
 		<module>springboot-init</module>
 		<module>spring-skywalking</module>
+		<module>springboot-doc-openapi</module>
 	</modules>
 
 	<properties>

@@ -23,7 +23,7 @@
           <artifactId>mxgraphx-all</artifactId>
           <version>4.2.1</version>
           <scope>system</scope>
-          <systemPath>src/main/resources/mxgraphx-all-4.2.1.jar</systemPath>
+      <systemPath>${project.basedir}/src/main/resources/mxgraphx-all-4.2.1.jar</systemPath>
         </dependency>
         <!-- https://mvnrepository.com/artifact/org.apache.pdfbox/pdfbox -->
         <dependency>
