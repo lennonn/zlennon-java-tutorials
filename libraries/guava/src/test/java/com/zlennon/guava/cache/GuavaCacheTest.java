@@ -2,6 +2,7 @@ package com.zlennon.guava.cache;
 
 import com.google.common.cache.*;
 import com.zlennon.guava.LoggingForwardingCache;
+import lombok.Data;
 import org.junit.jupiter.api.Test;
 
 import java.util.HashMap;
@@ -98,25 +99,55 @@ public class GuavaCacheTest {
 
 
     @Test
-    public void weakKeyHasNoRef() {
-        CacheLoader<String, String> loader;
-        loader = getCacheLoader();
-        LoadingCache<String, String> cache;
-        cache = CacheBuilder.newBuilder().weakKeys().build(loader);
-        cache.getUnchecked("test");
+    public void weakKeyHasNoRef() throws InterruptedException {
+        CacheLoader<MyKey, String> loader=CacheLoader.from(key->key.getKey()+" reference");
+        LoadingCache<MyKey, String> cache = CacheBuilder.newBuilder().weakKeys().build(loader);
+        MyKey key = new MyKey("weak");
+
+        String value = cache.getUnchecked(key);
+        assertEquals(value,"weak reference");
+        key=null;
         System.gc();
+        TimeUnit.SECONDS.sleep(2);
         assertEquals(1,cache.size());
+        System.out.println(cache.asMap());
     }
 
-    @Test
-    public void whenSoftValue_thenRemoveFromCache() {
-        CacheLoader<String, String> loader;
-        loader = getCacheLoader();
+    @Data
+    private static class MyKey{
+        String key;
 
-        LoadingCache<String, String> cache;
+        public MyKey(String key) {
+            this.key = key;
+        }
+    }
+
+
+    @Test
+    public void whenSoftValue_thenRemoveFromCache() throws ExecutionException, InterruptedException {
+        CacheLoader<String, BigObject> loader;
+        loader = CacheLoader.from(key->new BigObject(key));
+
+        LoadingCache<String, BigObject> cache;
         cache = CacheBuilder.newBuilder().softValues().build(loader);
-        cache.getUnchecked("test");
+        cache.getUnchecked("first");
         assertEquals(1,cache.size());
+        System.out.println(cache.asMap());
+
+        //System.gc();
+        cache.getUnchecked("second");
+        assertEquals(1,cache.size());
+        System.out.println(cache.asMap());
+    }
+
+    class BigObject{
+        String id;
+        byte[] bytes;
+        BigObject(String id){
+            this.id=id;
+            bytes = new byte[1024 * 1024 * 2];
+        }
+
     }
 
 
@@ -174,7 +205,7 @@ public class GuavaCacheTest {
     }
 
     @Test
-    public void whenEntryRemovedFromCache_thenNotify() {
+    public void useListener() {
         CacheLoader<String, String> loader;
         loader =  getCacheLoader();
 
