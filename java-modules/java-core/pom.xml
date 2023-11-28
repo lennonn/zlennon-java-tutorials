@@ -3,8 +3,8 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>java-modules</artifactId>
         <groupId>com.zlennon</groupId>
+        <artifactId>java-modules</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
@@ -23,7 +23,7 @@
           <artifactId>mxgraphx-all</artifactId>
           <version>4.2.1</version>
           <scope>system</scope>
-          <systemPath>${project.basedir}/src/main/resources/mxgraphx-all-4.2.1.jar</systemPath>
+      <systemPath>${project.basedir}/src/main/resources/mxgraphx-all-4.2.1.jar</systemPath>
         </dependency>
         <!-- https://mvnrepository.com/artifact/org.apache.pdfbox/pdfbox -->
         <dependency>

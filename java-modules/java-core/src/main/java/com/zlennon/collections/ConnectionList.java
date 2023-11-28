@@ -11,8 +11,9 @@ public class ConnectionList {
 	    @SuppressWarnings("unused")
 		private static void testIntersection() {  
 	         List<String> list1 = new ArrayList<String>();  
-	         List<String> list2 = new ArrayList<String>();  
-	         list1.add("abc");  list2.add("abc");  
+	         List<String> list2 = new ArrayList<String>();
+
+	         list1.add("abc");  list2.add("abc");
 	         list1.add("123");  list2.add("123");  
 	         list1.add("ABC");  
 	         list2.add("XYZ");  

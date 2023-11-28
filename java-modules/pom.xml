@@ -12,6 +12,7 @@
         <module>java-temp</module>
         <module>java-tools</module>
 		<module>java-sdk</module>
+        <module>java-lambda</module>
     </modules>
     <parent>
 		<groupId>com.zlennon</groupId>
