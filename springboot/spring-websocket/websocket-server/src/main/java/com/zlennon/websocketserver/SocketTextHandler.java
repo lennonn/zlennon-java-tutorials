@@ -20,4 +20,6 @@ public class SocketTextHandler extends TextWebSocketHandler {
         session.sendMessage(new TextMessage(payload + " how may we help you?"));
     }
 
+
+
 }

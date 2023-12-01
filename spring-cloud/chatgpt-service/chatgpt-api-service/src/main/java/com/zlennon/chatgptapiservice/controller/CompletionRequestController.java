@@ -1,11 +1,11 @@
 package com.zlennon.chatgptapiservice.controller;
 
 import com.alibaba.fastjson2.JSONObject;
-import com.theokanning.openai.OpenAiService;
 import com.theokanning.openai.completion.CompletionChoice;
 import com.theokanning.openai.completion.CompletionRequest;
 import com.theokanning.openai.image.CreateImageRequest;
 import com.theokanning.openai.image.ImageResult;
+import com.theokanning.openai.service.OpenAiService;
 import com.zlennon.chatgptapiservice.model.ReqResItemsEntity;
 import com.zlennon.chatgptapiservice.repository.ReqResItemsRepository;
 import lombok.extern.slf4j.Slf4j;

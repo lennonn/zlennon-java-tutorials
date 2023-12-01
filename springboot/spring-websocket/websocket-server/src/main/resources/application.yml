@@ -1,2 +1,10 @@
 server:
   port: 6002
+spring:
+  thymeleaf:
+    cache: false
+    prefix: classpath:/templates/
+    encoding: UTF-8
+    suffix: .html
+    mode: HTML5
+    enabled: true

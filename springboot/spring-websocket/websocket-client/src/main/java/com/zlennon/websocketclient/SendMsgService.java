@@ -23,7 +23,7 @@ public class SendMsgService{
     CountDownLatch count = new CountDownLatch(1);
 
     public String send() throws IOException, ExecutionException, InterruptedException {
-        String url = "ws://localhost:6002/user";
+        String url = "ws://localhost:9088/upload";
 
         StandardWebSocketClient webSocketClient = new StandardWebSocketClient();
         SocketTextHandler handler = new SocketTextHandler(count);

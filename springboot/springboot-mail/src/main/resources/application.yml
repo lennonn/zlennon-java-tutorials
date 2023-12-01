@@ -1,0 +1,18 @@
+attachment:
+  invoice: /Users/zlennon/development/test/attachment
+spring:
+  mail:
+    host: smtp.gmail.com
+    password: password
+    port: 587
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: false
+    templates:
+      path: mail-templates
+    username: username
+server:
+  port: 9005

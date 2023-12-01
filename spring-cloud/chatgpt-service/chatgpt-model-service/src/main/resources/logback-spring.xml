@@ -24,7 +24,6 @@
     </appender>
 
     <!--logstash配置-->
-<!--
     <appender name="LOGSTASH" class="net.logstash.logback.appender.LogstashTcpSocketAppender">
         <destination>127.0.0.1:5044</destination>
         &lt;!&ndash; 日志输出编码 &ndash;&gt;
@@ -50,14 +49,13 @@
                 </pattern>
             </providers>
         </encoder>
-        &lt;!&ndash;<encoder charset="UTF-8" class="net.logstash.logback.encoder.LogstashEncoder"/>&ndash;&gt;
+        <encoder charset="UTF-8" class="net.logstash.logback.encoder.LogstashEncoder"/>
     </appender>
--->
 
     <root>
-<!--
+
         <appender-ref ref="LOGSTASH"/>
--->
+
         <appender-ref ref="CONSOLE"/>
     </root>
 

@@ -45,6 +45,9 @@
 		<module>captcha</module>
 		<module>springboot-init</module>
 		<module>spring-skywalking</module>
+		<module>springboot-grpc</module>
+		<module>springboot-monitor</module>
+		<module>springboot-k8s</module>
 		<module>springboot-doc-openapi</module>
 	</modules>
 
